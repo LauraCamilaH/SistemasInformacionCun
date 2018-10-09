@@ -37,4 +37,42 @@
         Dim ListarPersonas = New ListarPersonas
         ListarPersonas.Show()
     End Sub
+
+    Private Sub CrearToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles CrearToolStripMenuItem2.Click
+        Dim CrearPersonasDising = New CrearPersonasDising
+        CrearPersonasDising.Show()
+
+
+    End Sub
+
+    Private Sub ItmCrearMonitor_Click(sender As Object, e As EventArgs) Handles ItmCrearMonitor.Click
+        Dim CrearMonitorDising = New CrearMonitorDising
+        CrearMonitorDising.Show()
+
+    End Sub
+
+    Private Sub ItmListarMonitor_Click(sender As Object, e As EventArgs) Handles ItmListarMonitor.Click
+        Dim ListarMonitorDising = New ListarMonitorDising
+        ListarMonitorDising.Show()
+
+
+    End Sub
+
+    Private Sub ItmListarCPU_Click(sender As Object, e As EventArgs) Handles ItmListarCPU.Click
+        Dim ListarCpuDising = New ListarCpuDising
+        ListarCpuDising.Show()
+
+
+    End Sub
+
+    Private Sub ItmCrearCPU_Click(sender As Object, e As EventArgs) Handles ItmCrearCPU.Click
+        Dim CrearCpuDising = New CrearMonitorDising
+        CrearMonitorDising.Show()
+
+    End Sub
+
+    Private Sub ItSalirArchivo_Click(sender As Object, e As EventArgs) Handles ItSalirArchivo.Click
+        Dim ArchivoSalirDising = New ArchivoSalirDising
+        ArchivoSalirDising.Show()
+    End Sub
 End Class

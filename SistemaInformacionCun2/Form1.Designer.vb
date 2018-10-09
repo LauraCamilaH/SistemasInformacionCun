@@ -118,7 +118,7 @@ Partial Class Form1
         'ItSalirArchivo
         '
         Me.ItSalirArchivo.Name = "ItSalirArchivo"
-        Me.ItSalirArchivo.Size = New System.Drawing.Size(96, 22)
+        Me.ItSalirArchivo.Size = New System.Drawing.Size(152, 22)
         Me.ItSalirArchivo.Text = "Salir"
         '
         'MeGestionar
@@ -131,13 +131,13 @@ Partial Class Form1
         'ItmCrearCPU
         '
         Me.ItmCrearCPU.Name = "ItmCrearCPU"
-        Me.ItmCrearCPU.Size = New System.Drawing.Size(102, 22)
+        Me.ItmCrearCPU.Size = New System.Drawing.Size(152, 22)
         Me.ItmCrearCPU.Text = "Crear"
         '
         'ItmListarCPU
         '
         Me.ItmListarCPU.Name = "ItmListarCPU"
-        Me.ItmListarCPU.Size = New System.Drawing.Size(102, 22)
+        Me.ItmListarCPU.Size = New System.Drawing.Size(152, 22)
         Me.ItmListarCPU.Text = "Listar"
         '
         'MeMonitor
@@ -150,13 +150,13 @@ Partial Class Form1
         'ItmCrearMonitor
         '
         Me.ItmCrearMonitor.Name = "ItmCrearMonitor"
-        Me.ItmCrearMonitor.Size = New System.Drawing.Size(102, 22)
+        Me.ItmCrearMonitor.Size = New System.Drawing.Size(152, 22)
         Me.ItmCrearMonitor.Text = "Crear"
         '
         'ItmListarMonitor
         '
         Me.ItmListarMonitor.Name = "ItmListarMonitor"
-        Me.ItmListarMonitor.Size = New System.Drawing.Size(102, 22)
+        Me.ItmListarMonitor.Size = New System.Drawing.Size(152, 22)
         Me.ItmListarMonitor.Text = "Listar"
         '
         'MePersonas
@@ -169,13 +169,13 @@ Partial Class Form1
         'CrearToolStripMenuItem2
         '
         Me.CrearToolStripMenuItem2.Name = "CrearToolStripMenuItem2"
-        Me.CrearToolStripMenuItem2.Size = New System.Drawing.Size(102, 22)
+        Me.CrearToolStripMenuItem2.Size = New System.Drawing.Size(152, 22)
         Me.CrearToolStripMenuItem2.Text = "Crear"
         '
         'ListarToolStripMenuItem2
         '
         Me.ListarToolStripMenuItem2.Name = "ListarToolStripMenuItem2"
-        Me.ListarToolStripMenuItem2.Size = New System.Drawing.Size(102, 22)
+        Me.ListarToolStripMenuItem2.Size = New System.Drawing.Size(152, 22)
         Me.ListarToolStripMenuItem2.Text = "Listar"
         '
         'EjercicioClaseToolStripMenuItem
@@ -188,7 +188,7 @@ Partial Class Form1
         'AgregarPersonaToolStripMenuItem
         '
         Me.AgregarPersonaToolStripMenuItem.Name = "AgregarPersonaToolStripMenuItem"
-        Me.AgregarPersonaToolStripMenuItem.Size = New System.Drawing.Size(161, 22)
+        Me.AgregarPersonaToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
         Me.AgregarPersonaToolStripMenuItem.Text = "Agregar Persona"
         '
         'MostrarPersonasToolStripMenuItem
