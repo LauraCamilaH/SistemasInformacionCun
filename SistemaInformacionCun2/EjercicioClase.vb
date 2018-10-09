@@ -19,7 +19,7 @@ Public Class DesignEjercicioClase
         apellido = Textapellido.Text
         cedula = Textcedula.Text
         ciudad = Textciudad.Text
-
+        'Hola
         cadena = nombre & ";" & apellido & ";" & cedula & ";" & ciudad & vbCrLf
         My.Computer.FileSystem.WriteAllText(SpecialDirectories.MyDocuments & "\Bdpersonas.txt", cadena, True)
     End Sub
