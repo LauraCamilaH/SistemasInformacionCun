@@ -47,4 +47,13 @@ Public Class ListarPersonas ' ingresamos al codigo de formulario Listar Personas
 
 
     End Sub
+
+    Private Sub TaListado_TextChanged(sender As Object, e As EventArgs) Handles TaListado.TextChanged
+
+    End Sub
+
+    Private Sub BtRegresarListarPersonas_Click(sender As Object, e As EventArgs) Handles BtRegresarListarPersonas.Click
+        Me.Close()
+        Formularioinicial.Show()
+    End Sub
 End Class

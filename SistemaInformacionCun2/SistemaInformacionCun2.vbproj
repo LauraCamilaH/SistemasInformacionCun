@@ -78,6 +78,12 @@
     <Compile Include="ArchivoSalirDising.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="AsignacionDising.Designer.vb">
+      <DependentUpon>AsignacionDising.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AsignacionDising.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CrearCPUDising.Designer.vb">
       <DependentUpon>CrearCPUDising.vb</DependentUpon>
     </Compile>
@@ -90,29 +96,35 @@
     <Compile Include="CrearMonitorDising.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CrearPersonasDising.Designer.vb">
-      <DependentUpon>CrearPersonasDising.vb</DependentUpon>
+    <Compile Include="CrearPersonas.Designer.vb">
+      <DependentUpon>CrearPersonas.vb</DependentUpon>
     </Compile>
-    <Compile Include="CrearPersonasDising.vb">
+    <Compile Include="CrearPersonas.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EjercicioClase.Designer.vb">
-      <DependentUpon>EjercicioClase.vb</DependentUpon>
-    </Compile>
-    <Compile Include="EjercicioClase.vb">
+    <Compile Include="Formularioinicial.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.vb">
+    <Compile Include="Formularioinicial.Designer.vb">
+      <DependentUpon>Formularioinicial.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="CrearImpresorasDising.Designer.vb">
+      <DependentUpon>CrearImpresorasDising.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CrearImpresorasDising.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ListarCpuDising.Designer.vb">
       <DependentUpon>ListarCpuDising.vb</DependentUpon>
     </Compile>
     <Compile Include="ListarCpuDising.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListarImpresoras.Designer.vb">
+      <DependentUpon>ListarImpresoras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ListarImpresoras.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ListarMonitorDising.Designer.vb">
@@ -147,20 +159,29 @@
     <EmbeddedResource Include="ArchivoSalirDising.resx">
       <DependentUpon>ArchivoSalirDising.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AsignacionDising.resx">
+      <DependentUpon>AsignacionDising.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CrearCPUDising.resx">
       <DependentUpon>CrearCPUDising.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CrearMonitorDising.resx">
       <DependentUpon>CrearMonitorDising.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EjercicioClase.resx">
-      <DependentUpon>EjercicioClase.vb</DependentUpon>
+    <EmbeddedResource Include="CrearPersonas.resx">
+      <DependentUpon>CrearPersonas.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="Formularioinicial.resx">
+      <DependentUpon>Formularioinicial.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrearImpresorasDising.resx">
+      <DependentUpon>CrearImpresorasDising.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListarCpuDising.resx">
       <DependentUpon>ListarCpuDising.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListarImpresoras.resx">
+      <DependentUpon>ListarImpresoras.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListarMonitorDising.resx">
       <DependentUpon>ListarMonitorDising.vb</DependentUpon>
@@ -176,7 +197,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

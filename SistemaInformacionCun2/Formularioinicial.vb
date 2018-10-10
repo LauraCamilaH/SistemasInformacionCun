@@ -1,4 +1,4 @@
-﻿Public Class Form1
+﻿Public Class Formularioinicial
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles LB_usuario.Click
 
     End Sub
@@ -38,12 +38,8 @@
         ListarPersonas.Show()
     End Sub
 
-    Private Sub CrearToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles CrearToolStripMenuItem2.Click
-        Dim CrearPersonasDising = New CrearPersonasDising
-        CrearPersonasDising.Show()
 
 
-    End Sub
 
     Private Sub ItmCrearMonitor_Click(sender As Object, e As EventArgs) Handles ItmCrearMonitor.Click
         Dim CrearMonitorDising = New CrearMonitorDising
@@ -74,5 +70,23 @@
     Private Sub ItSalirArchivo_Click(sender As Object, e As EventArgs) Handles ItSalirArchivo.Click
         Dim ArchivoSalirDising = New ArchivoSalirDising
         ArchivoSalirDising.Show()
+    End Sub
+    Private Sub AsignacionEquiposToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AsignacionEquiposToolStripMenuItem.Click
+        Dim Asignacion = New AsignacionDising
+        AsignacionDising.Show()
+
+    End Sub
+
+    Private Sub CrearImpresorasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CrearImpresorasToolStripMenuItem.Click
+        Dim CrearImpresoras = New CrearImpresorasDising
+        CrearImpresorasDising.Show()
+
+    End Sub
+
+    Private Sub ListarImpresorasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListarImpresorasToolStripMenuItem.Click
+        Dim ListarImpresoras = New ListarImpresoras
+        ListarImpresoras.Show()
+
+
     End Sub
 End Class

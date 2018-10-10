@@ -10,7 +10,7 @@ Public Class DesignEjercicioClase
 
     Private Sub BtRegresar_Click(sender As Object, e As EventArgs) Handles BtRegresar.Click
         Me.Close()
-        Form1.Show()
+        Formularioinicial.Show()
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btRegistar.Click
@@ -19,9 +19,12 @@ Public Class DesignEjercicioClase
         apellido = Textapellido.Text
         cedula = Textcedula.Text
         ciudad = Textciudad.Text
-        'Hola
+
         cadena = nombre & ";" & apellido & ";" & cedula & ";" & ciudad & vbCrLf
         My.Computer.FileSystem.WriteAllText(SpecialDirectories.MyDocuments & "\Bdpersonas.txt", cadena, True)
     End Sub
 
+    Private Sub DesignEjercicioClase_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class
