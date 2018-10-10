@@ -15,6 +15,7 @@
             MsgBox("la contraseña no corresponde! Intente de nuevo")
             Tbusuario.Text = ""
             Tbcontrasena.Text = ""
+            MsgBox("la contraseña no corresponde! Intente de nuevo")
 
         End If
     End Sub
