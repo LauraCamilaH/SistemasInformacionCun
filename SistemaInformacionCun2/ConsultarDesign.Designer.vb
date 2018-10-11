@@ -28,6 +28,7 @@ Partial Class ConsultarDesign
         Me.BtConsultarMonitores = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.BtConsultarImpresoras = New System.Windows.Forms.Button()
+        Me.BtConsultarLimpiar = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'BtRegresarConsultar
@@ -83,11 +84,21 @@ Partial Class ConsultarDesign
         Me.BtConsultarImpresoras.Text = "Consultar Impresoras"
         Me.BtConsultarImpresoras.UseVisualStyleBackColor = True
         '
+        'BtConsultarLimpiar
+        '
+        Me.BtConsultarLimpiar.Location = New System.Drawing.Point(13, 226)
+        Me.BtConsultarLimpiar.Name = "BtConsultarLimpiar"
+        Me.BtConsultarLimpiar.Size = New System.Drawing.Size(155, 24)
+        Me.BtConsultarLimpiar.TabIndex = 6
+        Me.BtConsultarLimpiar.Text = "Limpiar "
+        Me.BtConsultarLimpiar.UseVisualStyleBackColor = True
+        '
         'ConsultarDesign
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(340, 262)
+        Me.Controls.Add(Me.BtConsultarLimpiar)
         Me.Controls.Add(Me.BtConsultarImpresoras)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.BtConsultarMonitores)
@@ -107,4 +118,5 @@ Partial Class ConsultarDesign
     Friend WithEvents BtConsultarMonitores As Button
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents BtConsultarImpresoras As Button
+    Friend WithEvents BtConsultarLimpiar As Button
 End Class

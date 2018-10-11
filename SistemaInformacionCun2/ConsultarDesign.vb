@@ -38,7 +38,7 @@ Public Class ConsultarDesign
 
             End While
 
-            TaListado.Text = cadena
+            TaListado.Text = cadena 'validar    
         End Using
 
 
