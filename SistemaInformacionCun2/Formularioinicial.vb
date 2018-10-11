@@ -87,4 +87,10 @@
 
 
     End Sub
+
+    Private Sub ConsultasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConsultasToolStripMenuItem.Click
+        Dim Consultar = New ConsultarDesign
+        ConsultarDesign.Show()
+
+    End Sub
 End Class

@@ -168,6 +168,9 @@
     <EmbeddedResource Include="AsignacionDesign.resx">
       <DependentUpon>AsignacionDesign.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ConsultarDesign.resx">
+      <DependentUpon>ConsultarDesign.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CrearCPUDesing.resx">
       <DependentUpon>CrearCPUDesing.vb</DependentUpon>
     </EmbeddedResource>
