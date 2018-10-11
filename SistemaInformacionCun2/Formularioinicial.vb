@@ -20,9 +20,6 @@
         End If
     End Sub
 
-    Private Sub MePersonas_Click(sender As Object, e As EventArgs) Handles MePersonas.Click
-
-    End Sub
 
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -43,44 +40,44 @@
 
 
     Private Sub ItmCrearMonitor_Click(sender As Object, e As EventArgs) Handles ItmCrearMonitor.Click
-        Dim CrearMonitorDising = New CrearMonitorDising
+        Dim CrearMonitorDising = New CrearMonitorDesign
         CrearMonitorDising.Show()
 
     End Sub
 
     Private Sub ItmListarMonitor_Click(sender As Object, e As EventArgs) Handles ItmListarMonitor.Click
-        Dim ListarMonitorDising = New ListarMonitorDising
+        Dim ListarMonitorDising = New ListarMonitor
         ListarMonitorDising.Show()
 
 
     End Sub
 
     Private Sub ItmListarCPU_Click(sender As Object, e As EventArgs) Handles ItmListarCPU.Click
-        Dim ListarCpuDising = New ListarCpuDising
+        Dim ListarCpuDising = New ListarCpu
         ListarCpuDising.Show()
 
 
     End Sub
 
     Private Sub ItmCrearCPU_Click(sender As Object, e As EventArgs) Handles ItmCrearCPU.Click
-        Dim CrearCpuDising = New CrearMonitorDising
-        CrearMonitorDising.Show()
+        Dim CrearCpuDising = New CrearMonitorDesign
+        CrearMonitorDesign.Show()
 
     End Sub
 
     Private Sub ItSalirArchivo_Click(sender As Object, e As EventArgs) Handles ItSalirArchivo.Click
-        Dim ArchivoSalirDising = New ArchivoSalirDising
+        Dim ArchivoSalirDising = New ArchivoSalirDesign
         ArchivoSalirDising.Show()
     End Sub
     Private Sub AsignacionEquiposToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AsignacionEquiposToolStripMenuItem.Click
-        Dim Asignacion = New AsignacionDising
-        AsignacionDising.Show()
+        Dim Asignacion = New AsignacionDesign
+        AsignacionDesign.Show()
 
     End Sub
 
     Private Sub CrearImpresorasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CrearImpresorasToolStripMenuItem.Click
-        Dim CrearImpresoras = New CrearImpresorasDising
-        CrearImpresorasDising.Show()
+        Dim CrearImpresoras = New CrearImpresorasDesign
+        CrearImpresorasDesign.Show()
 
     End Sub
 

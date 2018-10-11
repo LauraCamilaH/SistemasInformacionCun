@@ -72,34 +72,40 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArchivoSalirDising.Designer.vb">
-      <DependentUpon>ArchivoSalirDising.vb</DependentUpon>
+    <Compile Include="ArchivoSalirDesign.Designer.vb">
+      <DependentUpon>ArchivoSalirDesign.vb</DependentUpon>
     </Compile>
-    <Compile Include="ArchivoSalirDising.vb">
+    <Compile Include="ArchivoSalirDesign.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AsignacionDising.Designer.vb">
-      <DependentUpon>AsignacionDising.vb</DependentUpon>
+    <Compile Include="AsignacionDesign.Designer.vb">
+      <DependentUpon>AsignacionDesign.vb</DependentUpon>
     </Compile>
-    <Compile Include="AsignacionDising.vb">
+    <Compile Include="AsignacionDesign.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CrearCPUDising.Designer.vb">
-      <DependentUpon>CrearCPUDising.vb</DependentUpon>
+    <Compile Include="Consultar  Design.Designer.vb">
+      <DependentUpon>Consultar  Design.vb</DependentUpon>
     </Compile>
-    <Compile Include="CrearCPUDising.vb">
+    <Compile Include="Consultar  Design.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CrearMonitorDising.Designer.vb">
-      <DependentUpon>CrearMonitorDising.vb</DependentUpon>
+    <Compile Include="CrearCPUDesing.Designer.vb">
+      <DependentUpon>CrearCPUDesing.vb</DependentUpon>
     </Compile>
-    <Compile Include="CrearMonitorDising.vb">
+    <Compile Include="CrearCPUDesing.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CrearPersonas.Designer.vb">
-      <DependentUpon>CrearPersonas.vb</DependentUpon>
+    <Compile Include="CrearMonitorDesign.Designer.vb">
+      <DependentUpon>CrearMonitorDesign.vb</DependentUpon>
     </Compile>
-    <Compile Include="CrearPersonas.vb">
+    <Compile Include="CrearMonitorDesign.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrearPersonasDesign.Designer.vb">
+      <DependentUpon>CrearPersonasDesign.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CrearPersonasDesign.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularioinicial.vb">
@@ -109,16 +115,16 @@
       <DependentUpon>Formularioinicial.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CrearImpresorasDising.Designer.vb">
-      <DependentUpon>CrearImpresorasDising.vb</DependentUpon>
+    <Compile Include="CrearImpresorasDesign.Designer.vb">
+      <DependentUpon>CrearImpresorasDesign.vb</DependentUpon>
     </Compile>
-    <Compile Include="CrearImpresorasDising.vb">
+    <Compile Include="CrearImpresorasDesign.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ListarCpuDising.Designer.vb">
-      <DependentUpon>ListarCpuDising.vb</DependentUpon>
+    <Compile Include="ListarCpu.Designer.vb">
+      <DependentUpon>ListarCpu.vb</DependentUpon>
     </Compile>
-    <Compile Include="ListarCpuDising.vb">
+    <Compile Include="ListarCpu.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ListarImpresoras.Designer.vb">
@@ -127,10 +133,10 @@
     <Compile Include="ListarImpresoras.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ListarMonitorDising.Designer.vb">
-      <DependentUpon>ListarMonitorDising.vb</DependentUpon>
+    <Compile Include="ListarMonitor.Designer.vb">
+      <DependentUpon>ListarMonitor.vb</DependentUpon>
     </Compile>
-    <Compile Include="ListarMonitorDising.vb">
+    <Compile Include="ListarMonitor.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ListarPersonas.Designer.vb">
@@ -156,35 +162,35 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ArchivoSalirDising.resx">
-      <DependentUpon>ArchivoSalirDising.vb</DependentUpon>
+    <EmbeddedResource Include="ArchivoSalirDesign.resx">
+      <DependentUpon>ArchivoSalirDesign.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AsignacionDising.resx">
-      <DependentUpon>AsignacionDising.vb</DependentUpon>
+    <EmbeddedResource Include="AsignacionDesign.resx">
+      <DependentUpon>AsignacionDesign.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CrearCPUDising.resx">
-      <DependentUpon>CrearCPUDising.vb</DependentUpon>
+    <EmbeddedResource Include="CrearCPUDesing.resx">
+      <DependentUpon>CrearCPUDesing.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CrearMonitorDising.resx">
-      <DependentUpon>CrearMonitorDising.vb</DependentUpon>
+    <EmbeddedResource Include="CrearMonitorDesign.resx">
+      <DependentUpon>CrearMonitorDesign.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CrearPersonas.resx">
-      <DependentUpon>CrearPersonas.vb</DependentUpon>
+    <EmbeddedResource Include="CrearPersonasDesign.resx">
+      <DependentUpon>CrearPersonasDesign.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularioinicial.resx">
       <DependentUpon>Formularioinicial.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CrearImpresorasDising.resx">
-      <DependentUpon>CrearImpresorasDising.vb</DependentUpon>
+    <EmbeddedResource Include="CrearImpresorasDesign.resx">
+      <DependentUpon>CrearImpresorasDesign.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ListarCpuDising.resx">
-      <DependentUpon>ListarCpuDising.vb</DependentUpon>
+    <EmbeddedResource Include="ListarCpu.resx">
+      <DependentUpon>ListarCpu.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListarImpresoras.resx">
       <DependentUpon>ListarImpresoras.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ListarMonitorDising.resx">
-      <DependentUpon>ListarMonitorDising.vb</DependentUpon>
+    <EmbeddedResource Include="ListarMonitor.resx">
+      <DependentUpon>ListarMonitor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListarPersonas.resx">
       <DependentUpon>ListarPersonas.vb</DependentUpon>

@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class AsignacionDising
+Partial Class AsignacionDesign
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -48,7 +48,7 @@ Partial Class AsignacionDising
         '
         'BtRegresarAsignacion
         '
-        Me.BtRegresarAsignacion.Location = New System.Drawing.Point(468, 390)
+        Me.BtRegresarAsignacion.Location = New System.Drawing.Point(407, 390)
         Me.BtRegresarAsignacion.Name = "BtRegresarAsignacion"
         Me.BtRegresarAsignacion.Size = New System.Drawing.Size(75, 23)
         Me.BtRegresarAsignacion.TabIndex = 0
@@ -57,34 +57,34 @@ Partial Class AsignacionDising
         '
         'BtCambiarImpresora
         '
-        Me.BtCambiarImpresora.Location = New System.Drawing.Point(409, 187)
+        Me.BtCambiarImpresora.Location = New System.Drawing.Point(407, 146)
         Me.BtCambiarImpresora.Name = "BtCambiarImpresora"
-        Me.BtCambiarImpresora.Size = New System.Drawing.Size(75, 23)
+        Me.BtCambiarImpresora.Size = New System.Drawing.Size(75, 20)
         Me.BtCambiarImpresora.TabIndex = 1
         Me.BtCambiarImpresora.Text = "Cambiar"
         Me.BtCambiarImpresora.UseVisualStyleBackColor = True
         '
         'BtCambiarCpu
         '
-        Me.BtCambiarCpu.Location = New System.Drawing.Point(218, 193)
+        Me.BtCambiarCpu.Location = New System.Drawing.Point(148, 193)
         Me.BtCambiarCpu.Name = "BtCambiarCpu"
-        Me.BtCambiarCpu.Size = New System.Drawing.Size(75, 23)
+        Me.BtCambiarCpu.Size = New System.Drawing.Size(75, 20)
         Me.BtCambiarCpu.TabIndex = 2
         Me.BtCambiarCpu.Text = "Cambiar"
         Me.BtCambiarCpu.UseVisualStyleBackColor = True
         '
         'BttCambiarMonitor
         '
-        Me.BttCambiarMonitor.Location = New System.Drawing.Point(55, 188)
+        Me.BttCambiarMonitor.Location = New System.Drawing.Point(148, 146)
         Me.BttCambiarMonitor.Name = "BttCambiarMonitor"
-        Me.BttCambiarMonitor.Size = New System.Drawing.Size(75, 23)
+        Me.BttCambiarMonitor.Size = New System.Drawing.Size(75, 20)
         Me.BttCambiarMonitor.TabIndex = 3
         Me.BttCambiarMonitor.Text = "Cambiar"
         Me.BttCambiarMonitor.UseVisualStyleBackColor = True
         '
         'BtHistoriaAsignacion
         '
-        Me.BtHistoriaAsignacion.Location = New System.Drawing.Point(21, 250)
+        Me.BtHistoriaAsignacion.Location = New System.Drawing.Point(21, 220)
         Me.BtHistoriaAsignacion.Name = "BtHistoriaAsignacion"
         Me.BtHistoriaAsignacion.Size = New System.Drawing.Size(75, 23)
         Me.BtHistoriaAsignacion.TabIndex = 4
@@ -93,16 +93,16 @@ Partial Class AsignacionDising
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(21, 292)
+        Me.TextBox1.Location = New System.Drawing.Point(21, 249)
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(348, 121)
+        Me.TextBox1.Size = New System.Drawing.Size(380, 164)
         Me.TextBox1.TabIndex = 5
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(4, 168)
+        Me.Label1.Location = New System.Drawing.Point(18, 130)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(45, 13)
         Me.Label1.TabIndex = 6
@@ -111,7 +111,7 @@ Partial Class AsignacionDising
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(183, 168)
+        Me.Label2.Location = New System.Drawing.Point(18, 178)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(29, 13)
         Me.Label2.TabIndex = 7
@@ -120,7 +120,7 @@ Partial Class AsignacionDising
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(350, 168)
+        Me.Label3.Location = New System.Drawing.Point(277, 130)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(53, 13)
         Me.Label3.TabIndex = 8
@@ -138,7 +138,7 @@ Partial Class AsignacionDising
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(297, 75)
+        Me.Label5.Location = New System.Drawing.Point(277, 79)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(44, 13)
         Me.Label5.TabIndex = 10
@@ -146,21 +146,21 @@ Partial Class AsignacionDising
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(89, 75)
+        Me.TextBox2.Location = New System.Drawing.Point(21, 95)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox2.Size = New System.Drawing.Size(202, 20)
         Me.TextBox2.TabIndex = 11
         '
         'TextBox3
         '
-        Me.TextBox3.Location = New System.Drawing.Point(366, 75)
+        Me.TextBox3.Location = New System.Drawing.Point(280, 95)
         Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox3.Size = New System.Drawing.Size(202, 20)
         Me.TextBox3.TabIndex = 12
         '
         'Btcancelar
         '
-        Me.Btcancelar.Location = New System.Drawing.Point(468, 338)
+        Me.Btcancelar.Location = New System.Drawing.Point(407, 361)
         Me.Btcancelar.Name = "Btcancelar"
         Me.Btcancelar.Size = New System.Drawing.Size(75, 23)
         Me.Btcancelar.TabIndex = 13
@@ -169,7 +169,7 @@ Partial Class AsignacionDising
         '
         'BtAsignar
         '
-        Me.BtAsignar.Location = New System.Drawing.Point(468, 290)
+        Me.BtAsignar.Location = New System.Drawing.Point(407, 332)
         Me.BtAsignar.Name = "BtAsignar"
         Me.BtAsignar.Size = New System.Drawing.Size(75, 23)
         Me.BtAsignar.TabIndex = 14
@@ -178,29 +178,29 @@ Partial Class AsignacionDising
         '
         'TextBox4
         '
-        Me.TextBox4.Location = New System.Drawing.Point(55, 165)
+        Me.TextBox4.Location = New System.Drawing.Point(21, 146)
         Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox4.Size = New System.Drawing.Size(121, 20)
         Me.TextBox4.TabIndex = 15
         '
         'TextBox5
         '
-        Me.TextBox5.Location = New System.Drawing.Point(218, 165)
+        Me.TextBox5.Location = New System.Drawing.Point(21, 194)
         Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox5.Size = New System.Drawing.Size(121, 20)
         Me.TextBox5.TabIndex = 16
         '
         'TextBox6
         '
-        Me.TextBox6.Location = New System.Drawing.Point(409, 161)
+        Me.TextBox6.Location = New System.Drawing.Point(280, 146)
         Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox6.Size = New System.Drawing.Size(121, 20)
         Me.TextBox6.TabIndex = 17
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(18, 82)
+        Me.Label6.Location = New System.Drawing.Point(18, 79)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(44, 13)
         Me.Label6.TabIndex = 18
@@ -208,14 +208,14 @@ Partial Class AsignacionDising
         '
         'TextBox7
         '
-        Me.TextBox7.Location = New System.Drawing.Point(135, 33)
+        Me.TextBox7.Location = New System.Drawing.Point(21, 33)
         Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox7.Size = New System.Drawing.Size(380, 20)
         Me.TextBox7.TabIndex = 19
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(294, 31)
+        Me.Button1.Location = New System.Drawing.Point(407, 31)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 20
@@ -225,7 +225,7 @@ Partial Class AsignacionDising
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(157, 9)
+        Me.Label7.Location = New System.Drawing.Point(18, 9)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(184, 13)
         Me.Label7.TabIndex = 21
@@ -235,7 +235,7 @@ Partial Class AsignacionDising
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(568, 425)
+        Me.ClientSize = New System.Drawing.Size(505, 425)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.TextBox7)

@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class ArchivoSalirDising
+Partial Class ArchivoSalirDesign
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -44,15 +44,16 @@ Partial Class ArchivoSalirDising
         Me.BtArchivoSalir.Text = "Salir"
         Me.BtArchivoSalir.UseVisualStyleBackColor = True
         '
-        'ArchivoSalirDising
+        'ArchivoSalirDesign
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(284, 261)
         Me.Controls.Add(Me.BtArchivoSalir)
         Me.Controls.Add(Me.Label1)
-        Me.Name = "ArchivoSalirDising"
-        Me.Text = "ArchivoSalirDising"
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Name = "ArchivoSalirDesign"
+        Me.Text = "Archivo "
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

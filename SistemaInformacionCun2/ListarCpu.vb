@@ -1,4 +1,4 @@
-﻿Public Class ListarCpuDising
+﻿Public Class ListarCpu
     Private Sub ListarCpuDising_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub

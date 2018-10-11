@@ -1,4 +1,4 @@
-﻿Public Class CrearMonitorDising
+﻿Public Class CrearMonitorDesign
     Private Sub BttRegresarMonitor_Click(sender As Object, e As EventArgs) Handles BttRegresarMonitor.Click
         Me.Close()
         Formularioinicial.Show()

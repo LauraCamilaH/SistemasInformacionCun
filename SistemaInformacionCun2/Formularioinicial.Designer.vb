@@ -53,16 +53,17 @@ Partial Class Formularioinicial
         'PictureBox1
         '
         Me.PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 27)
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.PictureBox1.Location = New System.Drawing.Point(218, 103)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(666, 428)
+        Me.PictureBox1.Size = New System.Drawing.Size(288, 178)
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
         'LB_usuario
         '
         Me.LB_usuario.AutoSize = True
-        Me.LB_usuario.Location = New System.Drawing.Point(232, 190)
+        Me.LB_usuario.Location = New System.Drawing.Point(254, 334)
         Me.LB_usuario.Name = "LB_usuario"
         Me.LB_usuario.Size = New System.Drawing.Size(81, 13)
         Me.LB_usuario.TabIndex = 1
@@ -79,7 +80,7 @@ Partial Class Formularioinicial
         '
         'Tbusuario
         '
-        Me.Tbusuario.Location = New System.Drawing.Point(334, 183)
+        Me.Tbusuario.Location = New System.Drawing.Point(347, 331)
         Me.Tbusuario.Name = "Tbusuario"
         Me.Tbusuario.Size = New System.Drawing.Size(100, 20)
         Me.Tbusuario.TabIndex = 3
@@ -209,7 +210,7 @@ Partial Class Formularioinicial
         'ItSalirArchivo
         '
         Me.ItSalirArchivo.Name = "ItSalirArchivo"
-        Me.ItSalirArchivo.Size = New System.Drawing.Size(152, 22)
+        Me.ItSalirArchivo.Size = New System.Drawing.Size(96, 22)
         Me.ItSalirArchivo.Text = "Salir"
         '
         'Formularioinicial

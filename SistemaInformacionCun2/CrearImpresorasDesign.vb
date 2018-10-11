@@ -1,4 +1,4 @@
-﻿Public Class CrearImpresorasDising
+﻿Public Class CrearImpresorasDesign
     Private Sub ImpresorasCrearDising_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
