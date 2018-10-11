@@ -84,10 +84,10 @@
     <Compile Include="AsignacionDesign.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Consultar  Design.Designer.vb">
-      <DependentUpon>Consultar  Design.vb</DependentUpon>
+    <Compile Include="ConsultarDesign.Designer.vb">
+      <DependentUpon>ConsultarDesign.vb</DependentUpon>
     </Compile>
-    <Compile Include="Consultar  Design.vb">
+    <Compile Include="ConsultarDesign.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CrearCPUDesing.Designer.vb">
