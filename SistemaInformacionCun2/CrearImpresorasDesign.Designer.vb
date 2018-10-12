@@ -22,6 +22,7 @@ Partial Class CrearImpresorasDesign
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CrearImpresorasDesign))
         Me.BtRegresarImpresoras = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -30,11 +31,14 @@ Partial Class CrearImpresorasDesign
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BtRegresarImpresoras
         '
-        Me.BtRegresarImpresoras.Location = New System.Drawing.Point(197, 226)
+        Me.BtRegresarImpresoras.Location = New System.Drawing.Point(277, 229)
         Me.BtRegresarImpresoras.Name = "BtRegresarImpresoras"
         Me.BtRegresarImpresoras.Size = New System.Drawing.Size(75, 23)
         Me.BtRegresarImpresoras.TabIndex = 0
@@ -43,7 +47,7 @@ Partial Class CrearImpresorasDesign
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(62, 226)
+        Me.Button2.Location = New System.Drawing.Point(92, 229)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
         Me.Button2.TabIndex = 1
@@ -53,7 +57,7 @@ Partial Class CrearImpresorasDesign
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(59, 36)
+        Me.Label1.Location = New System.Drawing.Point(3, 100)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(18, 13)
         Me.Label1.TabIndex = 2
@@ -62,7 +66,7 @@ Partial Class CrearImpresorasDesign
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(59, 94)
+        Me.Label2.Location = New System.Drawing.Point(3, 140)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(31, 13)
         Me.Label2.TabIndex = 3
@@ -70,39 +74,60 @@ Partial Class CrearImpresorasDesign
         '
         'TxIdimpresoras
         '
-        Me.TxIdimpresoras.Location = New System.Drawing.Point(167, 36)
+        Me.TxIdimpresoras.Location = New System.Drawing.Point(92, 100)
         Me.TxIdimpresoras.Name = "TxIdimpresoras"
-        Me.TxIdimpresoras.Size = New System.Drawing.Size(100, 20)
+        Me.TxIdimpresoras.Size = New System.Drawing.Size(260, 20)
         Me.TxIdimpresoras.TabIndex = 4
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(167, 87)
+        Me.TextBox2.Location = New System.Drawing.Point(92, 140)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox2.Size = New System.Drawing.Size(260, 20)
         Me.TextBox2.TabIndex = 5
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(62, 136)
+        Me.Label3.Location = New System.Drawing.Point(3, 180)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(53, 13)
+        Me.Label3.Size = New System.Drawing.Size(37, 13)
         Me.Label3.TabIndex = 6
-        Me.Label3.Text = "Impresora"
+        Me.Label3.Text = "Marca"
         '
         'TextBox3
         '
-        Me.TextBox3.Location = New System.Drawing.Point(167, 136)
+        Me.TextBox3.Location = New System.Drawing.Point(92, 180)
         Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox3.Size = New System.Drawing.Size(260, 20)
         Me.TextBox3.TabIndex = 7
         '
-        'ImpresorasCrearDising
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(89, 44)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(263, 13)
+        Me.Label4.TabIndex = 8
+        Me.Label4.Text = "Ingrese los datos para crear las Impresoras a gestionar"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(3, 3)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(80, 80)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 9
+        Me.PictureBox1.TabStop = False
+        '
+        'CrearImpresorasDesign
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(284, 261)
+        Me.ClientSize = New System.Drawing.Size(384, 275)
+        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.TextBox3)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.TextBox2)
@@ -111,8 +136,9 @@ Partial Class CrearImpresorasDesign
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.BtRegresarImpresoras)
-        Me.Name = "ImpresorasCrearDising"
+        Me.Name = "CrearImpresorasDesign"
         Me.Text = "ImpresorasCrearDising"
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -126,4 +152,6 @@ Partial Class CrearImpresorasDesign
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

@@ -121,30 +121,6 @@
     <Compile Include="CrearImpresorasDesign.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ListarCpu.Designer.vb">
-      <DependentUpon>ListarCpu.vb</DependentUpon>
-    </Compile>
-    <Compile Include="ListarCpu.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ListarImpresoras.Designer.vb">
-      <DependentUpon>ListarImpresoras.vb</DependentUpon>
-    </Compile>
-    <Compile Include="ListarImpresoras.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ListarMonitor.Designer.vb">
-      <DependentUpon>ListarMonitor.vb</DependentUpon>
-    </Compile>
-    <Compile Include="ListarMonitor.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ListarPersonas.Designer.vb">
-      <DependentUpon>ListarPersonas.vb</DependentUpon>
-    </Compile>
-    <Compile Include="ListarPersonas.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -185,18 +161,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CrearImpresorasDesign.resx">
       <DependentUpon>CrearImpresorasDesign.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ListarCpu.resx">
-      <DependentUpon>ListarCpu.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ListarImpresoras.resx">
-      <DependentUpon>ListarImpresoras.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ListarMonitor.resx">
-      <DependentUpon>ListarMonitor.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ListarPersonas.resx">
-      <DependentUpon>ListarPersonas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
