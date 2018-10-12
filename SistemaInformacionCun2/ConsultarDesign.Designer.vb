@@ -26,7 +26,7 @@ Partial Class ConsultarDesign
         Me.BtConsultarCpu = New System.Windows.Forms.Button()
         Me.BtConsultarPersonas = New System.Windows.Forms.Button()
         Me.BtConsultarMonitores = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TxResultadoColsulta = New System.Windows.Forms.TextBox()
         Me.BtConsultarImpresoras = New System.Windows.Forms.Button()
         Me.BtConsultarLimpiar = New System.Windows.Forms.Button()
         Me.SuspendLayout()
@@ -67,13 +67,14 @@ Partial Class ConsultarDesign
         Me.BtConsultarMonitores.Text = "Consultar Monitores"
         Me.BtConsultarMonitores.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'TxResultadoColsulta
         '
-        Me.TextBox1.Location = New System.Drawing.Point(12, 12)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(318, 163)
-        Me.TextBox1.TabIndex = 4
+        Me.TxResultadoColsulta.Location = New System.Drawing.Point(12, 12)
+        Me.TxResultadoColsulta.Multiline = True
+        Me.TxResultadoColsulta.Name = "TxResultadoColsulta"
+        Me.TxResultadoColsulta.ReadOnly = True
+        Me.TxResultadoColsulta.Size = New System.Drawing.Size(318, 163)
+        Me.TxResultadoColsulta.TabIndex = 4
         '
         'BtConsultarImpresoras
         '
@@ -100,7 +101,7 @@ Partial Class ConsultarDesign
         Me.ClientSize = New System.Drawing.Size(340, 262)
         Me.Controls.Add(Me.BtConsultarLimpiar)
         Me.Controls.Add(Me.BtConsultarImpresoras)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.TxResultadoColsulta)
         Me.Controls.Add(Me.BtConsultarMonitores)
         Me.Controls.Add(Me.BtConsultarPersonas)
         Me.Controls.Add(Me.BtConsultarCpu)
@@ -116,7 +117,7 @@ Partial Class ConsultarDesign
     Friend WithEvents BtConsultarCpu As Button
     Friend WithEvents BtConsultarPersonas As Button
     Friend WithEvents BtConsultarMonitores As Button
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TxResultadoColsulta As TextBox
     Friend WithEvents BtConsultarImpresoras As Button
     Friend WithEvents BtConsultarLimpiar As Button
 End Class

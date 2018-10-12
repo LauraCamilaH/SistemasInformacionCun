@@ -38,14 +38,10 @@ Public Class ConsultarDesign
 
             End While
 
-            TaListado.Text = cadena 'validar    
+            TxResultadoColsulta.Text = cadena 'validar    
         End Using
 
-
     End Sub
 
-    Private Sub TaListado_TextChanged(sender As Object, e As EventArgs) Handles TaListado.TextChanged
-
-    End Sub
 
 End Class
