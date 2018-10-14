@@ -28,9 +28,9 @@ Partial Class CrearCPUDesing
         Me.LabelIDcpu = New System.Windows.Forms.Label()
         Me.LabelSeriecpu = New System.Windows.Forms.Label()
         Me.LabelNombrecpu = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.TextBidCpu = New System.Windows.Forms.TextBox()
+        Me.TextBserieCpu = New System.Windows.Forms.TextBox()
+        Me.TextBmarcaCpu = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -38,7 +38,7 @@ Partial Class CrearCPUDesing
         '
         'BtRegistarcpu
         '
-        Me.BtRegistarcpu.Location = New System.Drawing.Point(67, 240)
+        Me.BtRegistarcpu.Location = New System.Drawing.Point(84, 240)
         Me.BtRegistarcpu.Name = "BtRegistarcpu"
         Me.BtRegistarcpu.Size = New System.Drawing.Size(82, 23)
         Me.BtRegistarcpu.TabIndex = 0
@@ -47,7 +47,7 @@ Partial Class CrearCPUDesing
         '
         'BttRegresarcpu
         '
-        Me.BttRegresarcpu.Location = New System.Drawing.Point(260, 240)
+        Me.BttRegresarcpu.Location = New System.Drawing.Point(277, 240)
         Me.BttRegresarcpu.Name = "BttRegresarcpu"
         Me.BttRegresarcpu.Size = New System.Drawing.Size(86, 23)
         Me.BttRegresarcpu.TabIndex = 1
@@ -57,7 +57,7 @@ Partial Class CrearCPUDesing
         'LabelIDcpu
         '
         Me.LabelIDcpu.AutoSize = True
-        Me.LabelIDcpu.Location = New System.Drawing.Point(3, 100)
+        Me.LabelIDcpu.Location = New System.Drawing.Point(20, 100)
         Me.LabelIDcpu.Name = "LabelIDcpu"
         Me.LabelIDcpu.Size = New System.Drawing.Size(18, 13)
         Me.LabelIDcpu.TabIndex = 2
@@ -66,7 +66,7 @@ Partial Class CrearCPUDesing
         'LabelSeriecpu
         '
         Me.LabelSeriecpu.AutoSize = True
-        Me.LabelSeriecpu.Location = New System.Drawing.Point(3, 140)
+        Me.LabelSeriecpu.Location = New System.Drawing.Point(20, 140)
         Me.LabelSeriecpu.Name = "LabelSeriecpu"
         Me.LabelSeriecpu.Size = New System.Drawing.Size(31, 13)
         Me.LabelSeriecpu.TabIndex = 3
@@ -75,37 +75,37 @@ Partial Class CrearCPUDesing
         'LabelNombrecpu
         '
         Me.LabelNombrecpu.AutoSize = True
-        Me.LabelNombrecpu.Location = New System.Drawing.Point(3, 180)
+        Me.LabelNombrecpu.Location = New System.Drawing.Point(20, 180)
         Me.LabelNombrecpu.Name = "LabelNombrecpu"
         Me.LabelNombrecpu.Size = New System.Drawing.Size(37, 13)
         Me.LabelNombrecpu.TabIndex = 4
         Me.LabelNombrecpu.Text = "Marca"
         '
-        'TextBox1
+        'TextBidCpu
         '
-        Me.TextBox1.Location = New System.Drawing.Point(67, 100)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(279, 20)
-        Me.TextBox1.TabIndex = 5
+        Me.TextBidCpu.Location = New System.Drawing.Point(84, 100)
+        Me.TextBidCpu.Name = "TextBidCpu"
+        Me.TextBidCpu.Size = New System.Drawing.Size(279, 20)
+        Me.TextBidCpu.TabIndex = 5
         '
-        'TextBox2
+        'TextBserieCpu
         '
-        Me.TextBox2.Location = New System.Drawing.Point(67, 140)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(279, 20)
-        Me.TextBox2.TabIndex = 6
+        Me.TextBserieCpu.Location = New System.Drawing.Point(84, 140)
+        Me.TextBserieCpu.Name = "TextBserieCpu"
+        Me.TextBserieCpu.Size = New System.Drawing.Size(279, 20)
+        Me.TextBserieCpu.TabIndex = 6
         '
-        'TextBox3
+        'TextBmarcaCpu
         '
-        Me.TextBox3.Location = New System.Drawing.Point(67, 180)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(279, 20)
-        Me.TextBox3.TabIndex = 7
+        Me.TextBmarcaCpu.Location = New System.Drawing.Point(84, 180)
+        Me.TextBmarcaCpu.Name = "TextBmarcaCpu"
+        Me.TextBmarcaCpu.Size = New System.Drawing.Size(279, 20)
+        Me.TextBmarcaCpu.TabIndex = 7
         '
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(3, 3)
+        Me.PictureBox1.Location = New System.Drawing.Point(20, 3)
         Me.PictureBox1.Margin = New System.Windows.Forms.Padding(1)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(80, 80)
@@ -116,7 +116,7 @@ Partial Class CrearCPUDesing
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(91, 44)
+        Me.Label1.Location = New System.Drawing.Point(108, 44)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(234, 13)
         Me.Label1.TabIndex = 9
@@ -129,9 +129,9 @@ Partial Class CrearCPUDesing
         Me.ClientSize = New System.Drawing.Size(384, 275)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.TextBmarcaCpu)
+        Me.Controls.Add(Me.TextBserieCpu)
+        Me.Controls.Add(Me.TextBidCpu)
         Me.Controls.Add(Me.LabelNombrecpu)
         Me.Controls.Add(Me.LabelSeriecpu)
         Me.Controls.Add(Me.LabelIDcpu)
@@ -150,9 +150,9 @@ Partial Class CrearCPUDesing
     Friend WithEvents LabelIDcpu As Label
     Friend WithEvents LabelSeriecpu As Label
     Friend WithEvents LabelNombrecpu As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents TextBidCpu As TextBox
+    Friend WithEvents TextBserieCpu As TextBox
+    Friend WithEvents TextBmarcaCpu As TextBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label1 As Label
 End Class

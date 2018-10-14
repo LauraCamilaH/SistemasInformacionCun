@@ -42,8 +42,14 @@
     End Sub
 
     Private Sub ItSalirArchivo_Click(sender As Object, e As EventArgs) Handles ItSalirArchivo.Click
-        Dim ArchivoSalirDising = New ArchivoSalirDesign
-        ArchivoSalirDising.Show()
+
+        LB_usuario.Visible = True
+        LB_clave.Visible = True
+        Tbusuario.Visible = True
+        Tbcontrasena.Visible = True
+        BIngresar.Visible = True
+        Tbusuario.Text = ""
+        Tbcontrasena.Text = ""
 
 
 

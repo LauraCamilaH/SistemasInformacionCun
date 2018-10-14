@@ -19,9 +19,13 @@ Public Class DesignEjercicioClase
         apellido = Textapellido.Text
         cedula = Textcedula.Text
         ciudad = Textciudad.Text
-
         cadena = nombre & ";" & apellido & ";" & cedula & ";" & ciudad & vbCrLf
         My.Computer.FileSystem.WriteAllText(SpecialDirectories.MyDocuments & "\Bdpersonas.txt", cadena, True)
+        MsgBox("los datos fueron ingresados")
+        Textnombre.Text = ""
+        Textapellido.Text = ""
+        Textciudad.Text = ""
+        Textcedula.Text = ""
     End Sub
 
     Private Sub DesignEjercicioClase_Load(sender As Object, e As EventArgs) Handles MyBase.Load

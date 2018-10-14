@@ -71,7 +71,7 @@ Partial Class DesignEjercicioClase
         'Textapellido
         '
         Me.Textapellido.BackColor = System.Drawing.SystemColors.Window
-        Me.Textapellido.Location = New System.Drawing.Point(94, 190)
+        Me.Textapellido.Location = New System.Drawing.Point(94, 130)
         Me.Textapellido.Name = "Textapellido"
         Me.Textapellido.Size = New System.Drawing.Size(267, 20)
         Me.Textapellido.TabIndex = 3
@@ -79,7 +79,7 @@ Partial Class DesignEjercicioClase
         'Textcedula
         '
         Me.Textcedula.BackColor = System.Drawing.SystemColors.Window
-        Me.Textcedula.Location = New System.Drawing.Point(94, 130)
+        Me.Textcedula.Location = New System.Drawing.Point(94, 190)
         Me.Textcedula.Name = "Textcedula"
         Me.Textcedula.Size = New System.Drawing.Size(267, 20)
         Me.Textcedula.TabIndex = 4
