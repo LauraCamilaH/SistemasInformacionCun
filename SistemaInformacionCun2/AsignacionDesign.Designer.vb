@@ -27,23 +27,23 @@ Partial Class AsignacionDesign
         Me.BtCambiarImpresora = New System.Windows.Forms.Button()
         Me.BtCambiarCpu = New System.Windows.Forms.Button()
         Me.BttCambiarMonitor = New System.Windows.Forms.Button()
-        Me.BtHistoriaAsignacion = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.BtHistoria = New System.Windows.Forms.Button()
+        Me.TextBoxListahistoria = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.TextBoxNombre = New System.Windows.Forms.TextBox()
+        Me.TextBoxApellido = New System.Windows.Forms.TextBox()
         Me.Btcancelar = New System.Windows.Forms.Button()
         Me.BtAsignar = New System.Windows.Forms.Button()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.TextBoxMonitor = New System.Windows.Forms.TextBox()
+        Me.TextBoxCpu = New System.Windows.Forms.TextBox()
+        Me.TextBoxImpresora = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.BtBuscar = New System.Windows.Forms.Button()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -85,22 +85,22 @@ Partial Class AsignacionDesign
         Me.BttCambiarMonitor.Text = "Cambiar"
         Me.BttCambiarMonitor.UseVisualStyleBackColor = True
         '
-        'BtHistoriaAsignacion
+        'BtHistoria
         '
-        Me.BtHistoriaAsignacion.Location = New System.Drawing.Point(22, 296)
-        Me.BtHistoriaAsignacion.Name = "BtHistoriaAsignacion"
-        Me.BtHistoriaAsignacion.Size = New System.Drawing.Size(70, 23)
-        Me.BtHistoriaAsignacion.TabIndex = 4
-        Me.BtHistoriaAsignacion.Text = "Historia"
-        Me.BtHistoriaAsignacion.UseVisualStyleBackColor = True
+        Me.BtHistoria.Location = New System.Drawing.Point(22, 296)
+        Me.BtHistoria.Name = "BtHistoria"
+        Me.BtHistoria.Size = New System.Drawing.Size(70, 23)
+        Me.BtHistoria.TabIndex = 4
+        Me.BtHistoria.Text = "Historia"
+        Me.BtHistoria.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'TextBoxListahistoria
         '
-        Me.TextBox1.Location = New System.Drawing.Point(21, 325)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(393, 164)
-        Me.TextBox1.TabIndex = 5
+        Me.TextBoxListahistoria.Location = New System.Drawing.Point(21, 325)
+        Me.TextBoxListahistoria.Multiline = True
+        Me.TextBoxListahistoria.Name = "TextBoxListahistoria"
+        Me.TextBoxListahistoria.Size = New System.Drawing.Size(393, 164)
+        Me.TextBoxListahistoria.TabIndex = 5
         '
         'Label1
         '
@@ -147,19 +147,19 @@ Partial Class AsignacionDesign
         Me.Label5.TabIndex = 10
         Me.Label5.Text = "Apellido"
         '
-        'TextBox2
+        'TextBoxNombre
         '
-        Me.TextBox2.Location = New System.Drawing.Point(80, 110)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(415, 20)
-        Me.TextBox2.TabIndex = 11
+        Me.TextBoxNombre.Location = New System.Drawing.Point(80, 110)
+        Me.TextBoxNombre.Name = "TextBoxNombre"
+        Me.TextBoxNombre.Size = New System.Drawing.Size(415, 20)
+        Me.TextBoxNombre.TabIndex = 11
         '
-        'TextBox3
+        'TextBoxApellido
         '
-        Me.TextBox3.Location = New System.Drawing.Point(80, 136)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(415, 20)
-        Me.TextBox3.TabIndex = 12
+        Me.TextBoxApellido.Location = New System.Drawing.Point(80, 136)
+        Me.TextBoxApellido.Name = "TextBoxApellido"
+        Me.TextBoxApellido.Size = New System.Drawing.Size(415, 20)
+        Me.TextBoxApellido.TabIndex = 12
         '
         'Btcancelar
         '
@@ -179,26 +179,26 @@ Partial Class AsignacionDesign
         Me.BtAsignar.Text = "Asignar"
         Me.BtAsignar.UseVisualStyleBackColor = True
         '
-        'TextBox4
+        'TextBoxMonitor
         '
-        Me.TextBox4.Location = New System.Drawing.Point(80, 200)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(334, 20)
-        Me.TextBox4.TabIndex = 15
+        Me.TextBoxMonitor.Location = New System.Drawing.Point(80, 200)
+        Me.TextBoxMonitor.Name = "TextBoxMonitor"
+        Me.TextBoxMonitor.Size = New System.Drawing.Size(334, 20)
+        Me.TextBoxMonitor.TabIndex = 15
         '
-        'TextBox5
+        'TextBoxCpu
         '
-        Me.TextBox5.Location = New System.Drawing.Point(80, 226)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(334, 20)
-        Me.TextBox5.TabIndex = 16
+        Me.TextBoxCpu.Location = New System.Drawing.Point(80, 226)
+        Me.TextBoxCpu.Name = "TextBoxCpu"
+        Me.TextBoxCpu.Size = New System.Drawing.Size(334, 20)
+        Me.TextBoxCpu.TabIndex = 16
         '
-        'TextBox6
+        'TextBoxImpresora
         '
-        Me.TextBox6.Location = New System.Drawing.Point(80, 252)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(334, 20)
-        Me.TextBox6.TabIndex = 17
+        Me.TextBoxImpresora.Location = New System.Drawing.Point(80, 252)
+        Me.TextBoxImpresora.Name = "TextBoxImpresora"
+        Me.TextBoxImpresora.Size = New System.Drawing.Size(334, 20)
+        Me.TextBoxImpresora.TabIndex = 17
         '
         'Label6
         '
@@ -216,14 +216,14 @@ Partial Class AsignacionDesign
         Me.TextBox7.Size = New System.Drawing.Size(391, 20)
         Me.TextBox7.TabIndex = 19
         '
-        'Button1
+        'BtBuscar
         '
-        Me.Button1.Location = New System.Drawing.Point(420, 56)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 20
-        Me.Button1.Text = "Buscar"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.BtBuscar.Location = New System.Drawing.Point(420, 56)
+        Me.BtBuscar.Name = "BtBuscar"
+        Me.BtBuscar.Size = New System.Drawing.Size(75, 23)
+        Me.BtBuscar.TabIndex = 20
+        Me.BtBuscar.Text = "Buscar"
+        Me.BtBuscar.UseVisualStyleBackColor = True
         '
         'Label7
         '
@@ -251,23 +251,23 @@ Partial Class AsignacionDesign
         Me.ClientSize = New System.Drawing.Size(503, 496)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.BtBuscar)
         Me.Controls.Add(Me.TextBox7)
         Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.TextBox6)
-        Me.Controls.Add(Me.TextBox5)
-        Me.Controls.Add(Me.TextBox4)
+        Me.Controls.Add(Me.TextBoxImpresora)
+        Me.Controls.Add(Me.TextBoxCpu)
+        Me.Controls.Add(Me.TextBoxMonitor)
         Me.Controls.Add(Me.BtAsignar)
         Me.Controls.Add(Me.Btcancelar)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.TextBox2)
+        Me.Controls.Add(Me.TextBoxApellido)
+        Me.Controls.Add(Me.TextBoxNombre)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.BtHistoriaAsignacion)
+        Me.Controls.Add(Me.TextBoxListahistoria)
+        Me.Controls.Add(Me.BtHistoria)
         Me.Controls.Add(Me.BttCambiarMonitor)
         Me.Controls.Add(Me.BtCambiarCpu)
         Me.Controls.Add(Me.BtCambiarImpresora)
@@ -284,23 +284,23 @@ Partial Class AsignacionDesign
     Friend WithEvents BtCambiarImpresora As Button
     Friend WithEvents BtCambiarCpu As Button
     Friend WithEvents BttCambiarMonitor As Button
-    Friend WithEvents BtHistoriaAsignacion As Button
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents BtHistoria As Button
+    Friend WithEvents TextBoxListahistoria As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents TextBoxNombre As TextBox
+    Friend WithEvents TextBoxApellido As TextBox
     Friend WithEvents Btcancelar As Button
     Friend WithEvents BtAsignar As Button
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents TextBox6 As TextBox
+    Friend WithEvents TextBoxMonitor As TextBox
+    Friend WithEvents TextBoxCpu As TextBox
+    Friend WithEvents TextBoxImpresora As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents TextBox7 As TextBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents BtBuscar As Button
     Friend WithEvents Label7 As Label
     Friend WithEvents PictureBox1 As PictureBox
 End Class

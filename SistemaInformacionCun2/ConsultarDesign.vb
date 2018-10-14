@@ -33,6 +33,7 @@ Public Class ConsultarDesign
                         FileIO.MalformedLineException
                     MsgBox("no existe archivo de lectura")
 
+
                 End Try
 
             End While
