@@ -1,11 +1,7 @@
 ﻿Imports Microsoft.VisualBasic.FileIO
 
 Public Class DesignEjercicioClase
-    Dim nombre As String
-    Dim apellido As String
-    Dim cedula As String
-    Dim ciudad As String
-    Dim cadena As String
+
 
 
     Private Sub BtRegresar_Click(sender As Object, e As EventArgs) Handles BtRegresar.Click
@@ -14,21 +10,17 @@ Public Class DesignEjercicioClase
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btRegistar.Click
+        Dim Laurita = New AdministradorPersonas()
+        Dim id = Laurita.CrearPersona(Textcedula.Text, Textnombre.Text, Textapellido.Text, Textciudad.Text)
 
-        nombre = Textnombre.Text
-        apellido = Textapellido.Text
-        cedula = Textcedula.Text
-        ciudad = Textciudad.Text
-        cadena = nombre & ";" & apellido & ";" & cedula & ";" & ciudad & vbCrLf
-        My.Computer.FileSystem.WriteAllText(SpecialDirectories.MyDocuments & "\Bdpersonas.txt", cadena, True)
-        MsgBox("los datos fueron ingresados")
-        Textnombre.Text = ""
-        Textapellido.Text = ""
-        Textciudad.Text = ""
+        MsgBox("Se ha creado la persona con id " & id)
         Textcedula.Text = ""
+        Textapellido.Text = ""
+        Textnombre.Text = ""
+        Textciudad.Text = ""
+
     End Sub
 
-    Private Sub DesignEjercicioClase_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-    End Sub
+
 End Class

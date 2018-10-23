@@ -13,13 +13,11 @@ Public Class CrearCPUDesing
     End Sub
 
     Private Sub BtRegistarcpu_Click(sender As Object, e As EventArgs) Handles BtRegistarcpu.Click
-        id = TextBidCpu.Text
-        serie = TextBserieCpu.Text
-        marca = TextBmarcaCpu.Text
-        Cadena = id & ";" & serie & ";" & marca & vbCrLf
-        My.Computer.FileSystem.WriteAllText(SpecialDirectories.MyDocuments & "\Bdcpu.txt", Cadena, True)
-        MsgBox("los datos fueron registrados")
-        TextBidCpu.Text = ""
+        Dim Bdcpu = New AdministrardorCpu
+        Dim idcpu = Bdcpu.CrearCpu(TextBserieCpu.Text, TextBmarcaCpu.Text)
+
+        MsgBox("Se ha creado la cpu con el id " & idcpu)
+
         TextBserieCpu.Text = ""
         TextBmarcaCpu.Text = ""
 

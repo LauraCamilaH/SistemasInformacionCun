@@ -25,10 +25,8 @@ Partial Class CrearCPUDesing
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CrearCPUDesing))
         Me.BtRegistarcpu = New System.Windows.Forms.Button()
         Me.BttRegresarcpu = New System.Windows.Forms.Button()
-        Me.LabelIDcpu = New System.Windows.Forms.Label()
         Me.LabelSeriecpu = New System.Windows.Forms.Label()
         Me.LabelNombrecpu = New System.Windows.Forms.Label()
-        Me.TextBidCpu = New System.Windows.Forms.TextBox()
         Me.TextBserieCpu = New System.Windows.Forms.TextBox()
         Me.TextBmarcaCpu = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -54,15 +52,6 @@ Partial Class CrearCPUDesing
         Me.BttRegresarcpu.Text = "Regresar"
         Me.BttRegresarcpu.UseVisualStyleBackColor = True
         '
-        'LabelIDcpu
-        '
-        Me.LabelIDcpu.AutoSize = True
-        Me.LabelIDcpu.Location = New System.Drawing.Point(20, 100)
-        Me.LabelIDcpu.Name = "LabelIDcpu"
-        Me.LabelIDcpu.Size = New System.Drawing.Size(18, 13)
-        Me.LabelIDcpu.TabIndex = 2
-        Me.LabelIDcpu.Text = "ID"
-        '
         'LabelSeriecpu
         '
         Me.LabelSeriecpu.AutoSize = True
@@ -80,13 +69,6 @@ Partial Class CrearCPUDesing
         Me.LabelNombrecpu.Size = New System.Drawing.Size(37, 13)
         Me.LabelNombrecpu.TabIndex = 4
         Me.LabelNombrecpu.Text = "Marca"
-        '
-        'TextBidCpu
-        '
-        Me.TextBidCpu.Location = New System.Drawing.Point(84, 100)
-        Me.TextBidCpu.Name = "TextBidCpu"
-        Me.TextBidCpu.Size = New System.Drawing.Size(279, 20)
-        Me.TextBidCpu.TabIndex = 5
         '
         'TextBserieCpu
         '
@@ -131,10 +113,8 @@ Partial Class CrearCPUDesing
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.TextBmarcaCpu)
         Me.Controls.Add(Me.TextBserieCpu)
-        Me.Controls.Add(Me.TextBidCpu)
         Me.Controls.Add(Me.LabelNombrecpu)
         Me.Controls.Add(Me.LabelSeriecpu)
-        Me.Controls.Add(Me.LabelIDcpu)
         Me.Controls.Add(Me.BttRegresarcpu)
         Me.Controls.Add(Me.BtRegistarcpu)
         Me.Name = "CrearCPUDesing"
@@ -147,10 +127,8 @@ Partial Class CrearCPUDesing
 
     Friend WithEvents BtRegistarcpu As Button
     Friend WithEvents BttRegresarcpu As Button
-    Friend WithEvents LabelIDcpu As Label
     Friend WithEvents LabelSeriecpu As Label
     Friend WithEvents LabelNombrecpu As Label
-    Friend WithEvents TextBidCpu As TextBox
     Friend WithEvents TextBserieCpu As TextBox
     Friend WithEvents TextBmarcaCpu As TextBox
     Friend WithEvents PictureBox1 As PictureBox

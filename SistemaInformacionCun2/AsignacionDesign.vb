@@ -40,6 +40,30 @@ Public Class AsignacionDesign
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BtBuscar.Click
+        Dim Buscarpersonas = New AdministradorPersonas
+        Dim Datospersona = Buscarpersonas.BuscarDatosPersona(TextBbuscarcedula.Text)
+
+        If Datospersona.Length = 0 Then
+            TextBoxApellido.Text = ""
+            TextBoxNombre.Text = ""
+            TextBoxCpu.Text = ""
+            TextBoxImpresora.Text = ""
+            TextBoxMonitor.Text = ""
+            MsgBox("No se encuentra la persona con ese numero de cédula")
+            Return
+        End If
+
+        TextBoxApellido.Text = Datospersona(3)
+        TextBoxNombre.Text = Datospersona(2)
+        TextBoxCpu.Text = Datospersona(6)
+        TextBoxImpresora.Text = Datospersona(7)
+        TextBoxMonitor.Text = Datospersona(5)
+
+
+
+
+    End Sub
+    Private Sub organizar()
         Dim cadena As String
         For index1 As Integer = 0 To (Bdasignacion.Length - 1) - 1
             For index2 As Integer = 0 To (Bdasignacion.Length - 1) - 1

@@ -72,6 +72,9 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdministradorDB.vb" />
+    <Compile Include="AdministradorPersonas.vb" />
+    <Compile Include="AdministrardorCpu.vb" />
     <Compile Include="AsignacionDesign.Designer.vb">
       <DependentUpon>AsignacionDesign.vb</DependentUpon>
     </Compile>

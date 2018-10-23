@@ -42,7 +42,7 @@ Partial Class AsignacionDesign
         Me.TextBoxCpu = New System.Windows.Forms.TextBox()
         Me.TextBoxImpresora = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
+        Me.TextBbuscarcedula = New System.Windows.Forms.TextBox()
         Me.BtBuscar = New System.Windows.Forms.Button()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -209,12 +209,12 @@ Partial Class AsignacionDesign
         Me.Label6.TabIndex = 18
         Me.Label6.Text = "Nombre"
         '
-        'TextBox7
+        'TextBbuscarcedula
         '
-        Me.TextBox7.Location = New System.Drawing.Point(23, 58)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(391, 20)
-        Me.TextBox7.TabIndex = 19
+        Me.TextBbuscarcedula.Location = New System.Drawing.Point(23, 58)
+        Me.TextBbuscarcedula.Name = "TextBbuscarcedula"
+        Me.TextBbuscarcedula.Size = New System.Drawing.Size(391, 20)
+        Me.TextBbuscarcedula.TabIndex = 19
         '
         'BtBuscar
         '
@@ -252,7 +252,7 @@ Partial Class AsignacionDesign
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.BtBuscar)
-        Me.Controls.Add(Me.TextBox7)
+        Me.Controls.Add(Me.TextBbuscarcedula)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.TextBoxImpresora)
         Me.Controls.Add(Me.TextBoxCpu)
@@ -299,7 +299,7 @@ Partial Class AsignacionDesign
     Friend WithEvents TextBoxCpu As TextBox
     Friend WithEvents TextBoxImpresora As TextBox
     Friend WithEvents Label6 As Label
-    Friend WithEvents TextBox7 As TextBox
+    Friend WithEvents TextBbuscarcedula As TextBox
     Friend WithEvents BtBuscar As Button
     Friend WithEvents Label7 As Label
     Friend WithEvents PictureBox1 As PictureBox
