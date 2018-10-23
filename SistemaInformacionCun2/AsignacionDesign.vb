@@ -83,4 +83,35 @@ Public Class AsignacionDesign
         Next
         TextBoxListahistoria.Text = cadena
     End Sub
+
+    Private Sub BttCambiarMonitor_Click(sender As Object, e As EventArgs) Handles BttCambiarMonitor.Click
+        Dim administrarPersonas = New AdministradorPersonas
+        Dim Resultado = administrarPersonas.ActualizarMonitor(TextBbuscarcedula.Text, TextBoxMonitor.Text)
+        If Resultado = 1 Then
+            MsgBox(" monitor ya esta asignado")
+            Return
+        End If
+        MsgBox("Se ha actualizado el registro")
+    End Sub
+
+    Private Sub BtCambiarCpu_Click(sender As Object, e As EventArgs) Handles BtCambiarCpu.Click
+        Dim administrarPersonas = New AdministradorPersonas
+        Dim resultado = administrarPersonas.ActualizarCpu(TextBbuscarcedula.Text, TextBoxCpu.Text)
+        If resultado = 1 Then
+            MsgBox(" cpu  ya esta asignado")
+            Return
+        End If
+
+        MsgBox("Se ha actualizado el registro")
+    End Sub
+
+    Private Sub BtCambiarImpresora_Click(sender As Object, e As EventArgs) Handles BtCambiarImpresora.Click
+        Dim administrarPersonas = New AdministradorPersonas
+        Dim resultado = administrarPersonas.ActualizarImpresora(TextBbuscarcedula.Text, TextBoxImpresora.Text)
+        If resultado = 1 Then
+            MsgBox(" impresora ya esta asignado")
+            Return
+        End If
+        MsgBox("Se ha actualizado el registro")
+    End Sub
 End Class

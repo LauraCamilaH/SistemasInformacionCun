@@ -9,12 +9,12 @@ Public Class AdministradorDB
     End Sub
 
     Public Function ObtenerUltimoId() As Integer
-        Dim Pepino As String()() = CargarDBMemoria()
-        If Pepino.Length = 0 Then
+        Dim Basedatos As String()() = CargarDBMemoria() 'cargael archivo en una variable que se llama base de datos 
+        If Basedatos.Length = 0 Then
             Return 0
         End If
-        Dim UltimaFila = Pepino(Pepino.Length - 1)
-        Return UltimaFila(0)
+        Dim UltimaFila = Basedatos(Basedatos.Length - 1) ' para saber el indice a lo longitud de un arreglo cualquiera le resto-1  para saber el indice 
+        Return UltimaFila(0) ' retorna el valor del indice que esta e cero en este caso es el Id 
     End Function
 
     Public Function ConsultarComoString() As String
@@ -32,6 +32,24 @@ Public Class AdministradorDB
         Return Cadena
 
     End Function
+
+
+    Public Sub ActualizarArchivo(BaseDatos As String()())
+
+        Dim Cadena As String = ""
+
+        For Each Fila In BaseDatos
+            For Each Celda In Fila
+                Cadena = Cadena & Celda & ";"
+            Next Celda
+            Cadena = Cadena.Remove(Cadena.Length - 1, 1) ''Remover el punto y coma sobrante de cada linea
+            Cadena = Cadena & vbNewLine
+        Next Fila
+
+
+        My.Computer.FileSystem.WriteAllText(SpecialDirectories.MyDocuments & "\" & nombreArchivo, Cadena, False) ''sobreescribe el archivo
+
+    End Sub
 
     Public Function CargarDBMemoria() As String()()
 
