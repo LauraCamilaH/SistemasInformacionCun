@@ -7,7 +7,10 @@ Public Class AdministradorDB
     Public Sub New(nombre As String)
         nombreArchivo = nombre
     End Sub
-
+    ''' <summary>
+    ''' obtiene el ultimo id ingresado en la base de datos
+    ''' </summary>
+    ''' <returns></returns>
     Public Function ObtenerUltimoId() As Integer
         Dim Basedatos As String()() = CargarDBMemoria() 'cargael archivo en una variable que se llama base de datos 
         If Basedatos.Length = 0 Then
@@ -16,7 +19,10 @@ Public Class AdministradorDB
         Dim UltimaFila = Basedatos(Basedatos.Length - 1) ' para saber el indice a lo longitud de un arreglo cualquiera le resto-1  para saber el indice 
         Return UltimaFila(0) ' retorna el valor del indice que esta e cero en este caso es el Id 
     End Function
-
+    ''' <summary>
+    ''' Obtiene todo lo que esta en la base de datos y formatea en cadena de texto
+    ''' </summary>
+    ''' <returns></returns>
     Public Function ConsultarComoString() As String
         Dim ConsultarBD = CargarDBMemoria()
         Dim Cadena As String = ""
@@ -32,7 +38,10 @@ Public Class AdministradorDB
         Return Cadena
 
     End Function
-
+    ''' <summary>
+    ''' formatea la matriz en formato cvs y la guarda en el archivo separado por punto y coma
+    ''' </summary>
+    ''' <param name="BaseDatos"></param>
 
     Public Sub ActualizarArchivo(BaseDatos As String()())
 
@@ -50,7 +59,10 @@ Public Class AdministradorDB
         My.Computer.FileSystem.WriteAllText(SpecialDirectories.MyDocuments & "\" & nombreArchivo, Cadena, False) ''sobreescribe el archivo
 
     End Sub
-
+    ''' <summary>
+    ''' carga en archivo en una arreglo de dos dimensiones y lo retorna 
+    ''' </summary>
+    ''' <returns></returns>
     Public Function CargarDBMemoria() As String()()
 
         Dim currentRow As String()

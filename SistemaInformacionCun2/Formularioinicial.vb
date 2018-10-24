@@ -1,4 +1,13 @@
 ﻿Public Class Formularioinicial
+    Public Sub New()
+
+        ' This call is required by the designer.
+        InitializeComponent()
+        MenuStrip1.Visible = False
+
+        ' Add any initialization after the InitializeComponent() call.
+
+    End Sub
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles LB_usuario.Click
 
     End Sub
@@ -15,6 +24,7 @@
             Tbusuario.Visible = False
             Tbcontrasena.Visible = False
             BIngresar.Visible = False
+            MenuStrip1.Visible = True
 
         ElseIf Tbcontrasena.Text <> "123" Then
             MsgBox("la contraseña no corresponde! Intente de nuevo")

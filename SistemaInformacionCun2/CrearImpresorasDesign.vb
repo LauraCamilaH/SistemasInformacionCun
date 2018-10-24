@@ -12,15 +12,13 @@ Public Class CrearImpresorasDesign
     End Sub
 
     Private Sub BtRegistarImpresoras_Click(sender As Object, e As EventArgs) Handles BtRegistarImpresoras.Click
-        id = TxIdimpresoras.Text
-        serie = TxSerieImpresora.Text
-        marca = TxmarcaImpresora.Text
-        cadena = id & ";" & serie & ";" & marca & vbCrLf
+        Dim administrador = New AdministradorImpresora
 
-        My.Computer.FileSystem.WriteAllText(SpecialDirectories.MyDocuments & " \Bdimpresoras.txt", cadena, True)
-
+        administrador.CrearImpresora(TxSerieImpresora.Text, TxmarcaImpresora.Text, CInt(TextBoxDia.Text), CInt(TextBoxmes.Text), CInt(TextBoxaño.Text))
         MsgBox("Los datos han sido registrados")
-        TxIdimpresoras.Text = ""
+        TextBoxmes.Text = ""
+        TextBoxaño.Text = ""
+        TextBoxDia.Text = ""
         TxSerieImpresora.Text = ""
         TxmarcaImpresora.Text = ""
 

@@ -6,7 +6,7 @@ Public Class AdministradorMonitor : Inherits AdministradorDB
     End Sub
     Public Function CrearMonitor(serie As String, marca As String)
 
-        Dim idmonitor = ObtenerUltimoId() + 1S
+        Dim idmonitor = ObtenerUltimoId() + 1
         Dim cadena = idmonitor & ";" & serie & ";" & marca & vbCrLf
         ''Escribe la linea de texto en el archivo
         My.Computer.FileSystem.WriteAllText(SpecialDirectories.MyDocuments & "\" & nombreArchivo, cadena, True)

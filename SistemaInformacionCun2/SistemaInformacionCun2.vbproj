@@ -73,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdministradorDB.vb" />
+    <Compile Include="AdministradorImpresora.vb" />
     <Compile Include="AdministradorMonitor.vb" />
     <Compile Include="AdministradorPersonas.vb" />
     <Compile Include="AdministrardorCpu.vb" />
