@@ -3,7 +3,7 @@
 Public Class AdministradorPersonas : Inherits AdministradorDB
 
     Public Sub New()
-        MyBase.New("BDPersonas.csv")
+        MyBase.New("BDPersonas.csv", 4)
     End Sub
 
     Public Function CrearPersona(cedula As String, nombre As String, apellido As String, ciudad As String) As Integer

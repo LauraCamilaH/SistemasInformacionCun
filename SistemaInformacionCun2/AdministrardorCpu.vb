@@ -2,7 +2,7 @@
 
 Public Class AdministrardorCpu : Inherits AdministradorDB
     Public Sub New()
-        MyBase.New("BDcpu.cvs")
+        MyBase.New("BDcpu.cvs", 3)
     End Sub
     Public Function CrearCpu(serie As String, marca As String)
 

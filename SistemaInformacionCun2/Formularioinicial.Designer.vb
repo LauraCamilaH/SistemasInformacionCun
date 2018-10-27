@@ -44,6 +44,7 @@ Partial Class Formularioinicial
         Me.ConsultasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MeArchivo = New System.Windows.Forms.ToolStripMenuItem()
         Me.ItSalirArchivo = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CRUDToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -132,12 +133,12 @@ Partial Class Formularioinicial
         'ItmCrearCPU
         '
         Me.ItmCrearCPU.Name = "ItmCrearCPU"
-        Me.ItmCrearCPU.Size = New System.Drawing.Size(152, 22)
+        Me.ItmCrearCPU.Size = New System.Drawing.Size(128, 22)
         Me.ItmCrearCPU.Text = "Crear CPU"
         '
         'IToolStripMenuItem
         '
-        Me.IToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CrearImpresorasToolStripMenuItem})
+        Me.IToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CrearImpresorasToolStripMenuItem, Me.CRUDToolStripMenuItem})
         Me.IToolStripMenuItem.Name = "IToolStripMenuItem"
         Me.IToolStripMenuItem.Size = New System.Drawing.Size(77, 20)
         Me.IToolStripMenuItem.Text = "Impresoras"
@@ -184,7 +185,7 @@ Partial Class Formularioinicial
         'ConsultasToolStripMenuItem
         '
         Me.ConsultasToolStripMenuItem.Name = "ConsultasToolStripMenuItem"
-        Me.ConsultasToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ConsultasToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
         Me.ConsultasToolStripMenuItem.Text = "Consultas"
         '
         'MeArchivo
@@ -199,6 +200,12 @@ Partial Class Formularioinicial
         Me.ItSalirArchivo.Name = "ItSalirArchivo"
         Me.ItSalirArchivo.Size = New System.Drawing.Size(96, 22)
         Me.ItSalirArchivo.Text = "Salir"
+        '
+        'CRUDToolStripMenuItem
+        '
+        Me.CRUDToolStripMenuItem.Name = "CRUDToolStripMenuItem"
+        Me.CRUDToolStripMenuItem.Size = New System.Drawing.Size(163, 22)
+        Me.CRUDToolStripMenuItem.Text = "CRUD"
         '
         'Formularioinicial
         '
@@ -244,4 +251,5 @@ Partial Class Formularioinicial
     Friend WithEvents AsignacionEquiposToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ConsultarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ConsultasToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CRUDToolStripMenuItem As ToolStripMenuItem
 End Class

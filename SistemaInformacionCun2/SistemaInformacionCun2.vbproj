@@ -107,6 +107,12 @@
     <Compile Include="CrearPersonasDesign.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CRUDImpresora.Designer.vb">
+      <DependentUpon>CRUDImpresora.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CRUDImpresora.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularioinicial.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CrearPersonasDesign.resx">
       <DependentUpon>CrearPersonasDesign.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRUDImpresora.resx">
+      <DependentUpon>CRUDImpresora.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularioinicial.resx">
       <DependentUpon>Formularioinicial.vb</DependentUpon>

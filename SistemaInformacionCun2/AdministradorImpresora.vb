@@ -2,9 +2,9 @@
 
 Public Class AdministradorImpresora : Inherits AdministradorDB
     Public Sub New()
-        MyBase.New("BDimpresora.cvs")
+        MyBase.New("BDimpresora.cvs", 3)
     End Sub
-    Public Function CrearImpresora(serie As String, marca As String, dia As Integer, mes As Integer, anio As Integer)
+    Public Function CrearImpresora(serie As String, marca As String, dia As Integer, mes As Integer, anio As Integer) As Integer
 
         Dim idimpresora = ObtenerUltimoId() + 1
         Dim fecha = dia & "/" & mes & "/" & anio

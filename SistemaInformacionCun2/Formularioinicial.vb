@@ -82,5 +82,8 @@
 
     End Sub
 
-
+    Private Sub CRUDToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CRUDToolStripMenuItem.Click
+        Dim Crud = New CRUDImpresora
+        Crud.Show()
+    End Sub
 End Class
