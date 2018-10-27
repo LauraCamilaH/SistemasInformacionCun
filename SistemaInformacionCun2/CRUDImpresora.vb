@@ -37,6 +37,12 @@
     End Sub
 
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
+        Dim validacion = ValidarCampos()
+        If Not String.IsNullOrEmpty(validacion) Then
+            MsgBox(validacion)
+            Return
+        End If
+
         Dim id = TxtIdentificador.Text
         If String.IsNullOrEmpty(id) Then ''Si el id está en blanco es que el elemento es nuevo
             Crear()
@@ -84,6 +90,18 @@
         lista.Add(TxtMarcaImpresora.Text)
         lista.Add("01/01/2018")
         Return lista
+    End Function
+
+    Protected Overridable Function ValidarCampos() As String
+
+        ''Si el campo está vácio o está lleno de espacios
+        If String.IsNullOrWhiteSpace(TxtSerialImpresora.Text) Then
+            Return "Por favor ingrese un valor para el serial"
+        End If
+        If String.IsNullOrWhiteSpace(TxtMarcaImpresora.Text) Then
+            Return "Por favor ingrese la marca de la impresora"
+        End If
+        Return "" ''No hay errores, retornamos una cadena vacia
     End Function
 
     Protected Overridable Sub CargarCamposTexto(filaSeleccionada As DataGridViewRow)
