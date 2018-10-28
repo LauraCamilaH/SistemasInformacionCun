@@ -70,8 +70,9 @@ Public Class AdministradorDB
     Public Function Eliminar(Id As String) As Boolean
         Dim BaseDatos = CargarBD()
 
-        Dim IndiceEliminar = -1
-        Dim IndiceActual = 0
+        Dim IndiceEliminar As Integer = -1 'Indicador para saber si entra al primer if 
+        Dim IndiceActual As Integer = 0
+
         For Each FilaDB In BaseDatos
             If FilaDB(0) = Id Then
                 IndiceEliminar = IndiceActual

@@ -23,4 +23,5 @@ Public Class CrearImpresorasDesign
         TxmarcaImpresora.Text = ""
 
     End Sub
+
 End Class

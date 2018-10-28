@@ -10,6 +10,7 @@
             Dim ColumnaTabla = New DataGridViewColumn()
             ColumnaTabla.HeaderText = Columna
             ColumnaTabla.Name = Columna
+            ColumnaTabla.SortMode = DataGridViewColumnSortMode.Automatic '' super importante me encanto es el ordenar automatico funciona paracedio a a filtar en excel
             DataGrid.Columns.Add(ColumnaTabla)
         Next
         Recargar()
