@@ -113,6 +113,22 @@
     <Compile Include="CRUDImpresora.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CRUDPersonasDesign.Designer.vb">
+      <DependentUpon>CRUDPersonasDesign.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CRUDPersonasDesign.vb" />
+    <Compile Include="CRUPCpuDesign.Designer.vb">
+      <DependentUpon>CRUPCpuDesign.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CRUPCpuDesign.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CRUPMonitorDesign.Designer.vb">
+      <DependentUpon>CRUPMonitorDesign.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CRUPMonitorDesign.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularioinicial.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +176,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CRUDImpresora.resx">
       <DependentUpon>CRUDImpresora.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRUDPersonasDesign.resx">
+      <DependentUpon>CRUDPersonasDesign.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRUPCpuDesign.resx">
+      <DependentUpon>CRUPCpuDesign.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRUPMonitorDesign.resx">
+      <DependentUpon>CRUPMonitorDesign.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularioinicial.resx">
       <DependentUpon>Formularioinicial.vb</DependentUpon>

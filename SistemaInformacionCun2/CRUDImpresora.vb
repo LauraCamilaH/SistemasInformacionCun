@@ -5,13 +5,13 @@
     Private Columnas As String() = {"Identificador", "Serial", "Marca", "Fecha creación"}
 
     Private Sub CRUDImpresora_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        DataGrid.Columns.Clear()
+        DataGridImpresoras.Columns.Clear()
         For Each Columna In Columnas
             Dim ColumnaTabla = New DataGridViewColumn()
             ColumnaTabla.HeaderText = Columna
             ColumnaTabla.Name = Columna
             ColumnaTabla.SortMode = DataGridViewColumnSortMode.Automatic '' super importante me encanto es el ordenar automatico funciona paracedio a a filtar en excel
-            DataGrid.Columns.Add(ColumnaTabla)
+            DataGridImpresoras.Columns.Add(ColumnaTabla)
         Next
         Recargar()
     End Sub
@@ -125,7 +125,7 @@
     Private Sub Recargar()
         Dim BD As List(Of List(Of String)) = AdminImpresoras.CargarBD()
         LimpiarCampos()
-        DataGrid.Rows.Clear() ''Eliminamos todas las filas del DataGrid
+        DataGridImpresoras.Rows.Clear() ''Eliminamos todas las filas del DataGrid
 
         For Each FilaBD As List(Of String) In BD '' Itera sobre los registros en base de datos
             Dim FilaTabla = New DataGridViewRow ''Se crea una fila para el datagrid
@@ -134,7 +134,7 @@
                 Celda.Value = CeldaBD ''Se asigna el valor del la celda del datagrid
                 FilaTabla.Cells.Add(Celda) ''Agregamos la celda del datagrid a la fila del datagrid
             Next
-            DataGrid.Rows.Add(FilaTabla) ''Se agrega la fila al datagrid
+            DataGridImpresoras.Rows.Add(FilaTabla) ''Se agrega la fila al datagrid
         Next
     End Sub
 
@@ -144,13 +144,14 @@
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
-    Private Sub DataGrid_SelectionChanged(sender As Object, e As EventArgs) Handles DataGrid.SelectionChanged
-        If Not DataGrid.SelectedRows.Count = 1 Then
+    Private Sub DataGrid_SelectionChanged(sender As Object, e As EventArgs) Handles DataGridImpresoras.SelectionChanged
+        If Not DataGridImpresoras.SelectedRows.Count = 1 Then
             LimpiarCampos()
             Return
         End If
-        Dim filaSeleccionada = DataGrid.Rows(DataGrid.SelectedRows(0).Index)
+        Dim filaSeleccionada = DataGridImpresoras.Rows(DataGridImpresoras.SelectedRows(0).Index)
         CargarCamposTexto(filaSeleccionada)
         BtnEliminar.Enabled = True
     End Sub
+
 End Class
