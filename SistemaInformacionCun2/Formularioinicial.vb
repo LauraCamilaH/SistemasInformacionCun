@@ -86,4 +86,20 @@
         Dim Crud = New CRUDImpresora
         Crud.Show()
     End Sub
+
+    Private Sub AdministradorDePersonalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AdministradorDePersonalToolStripMenuItem.Click
+        Dim Crud = New CRUDPersonasDesign
+        Crud.Show()
+    End Sub
+
+    Private Sub AdministradorCPUToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AdministradorCPUToolStripMenuItem.Click
+        Dim Crud = New CRUDCpuDesign
+        Crud.Show()
+
+    End Sub
+
+    Private Sub AdministradorMonitoresToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AdministradorMonitoresToolStripMenuItem.Click
+        Dim Crud = New CRUDMonitorDesign
+        Crud.Show()
+    End Sub
 End Class

@@ -62,7 +62,7 @@ Partial Class CRUDImpresora
         Me.DataGridImpresoras.AllowUserToResizeRows = False
         Me.DataGridImpresoras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridImpresoras.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.Serial, Me.Marca})
-        Me.DataGridImpresoras.Location = New System.Drawing.Point(12, 240)
+        Me.DataGridImpresoras.Location = New System.Drawing.Point(12, 236)
         Me.DataGridImpresoras.MultiSelect = False
         Me.DataGridImpresoras.Name = "DataGridImpresoras"
         Me.DataGridImpresoras.ReadOnly = True

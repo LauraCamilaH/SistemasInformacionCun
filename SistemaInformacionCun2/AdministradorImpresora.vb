@@ -1,11 +1,10 @@
 ﻿Imports Microsoft.VisualBasic.FileIO
 
 Public Class AdministradorImpresora : Inherits AdministradorDB
-    Public Sub New()
+    Public Sub New() 'contructor
         MyBase.New("BDimpresora.cvs", 3)
     End Sub
     Public Function CrearImpresora(serie As String, marca As String, dia As Integer, mes As Integer, anio As Integer) As Integer
-
         Dim idimpresora = ObtenerUltimoId() + 1
         Dim fecha = dia & "/" & mes & "/" & anio
         Dim cadena = idimpresora & ";" & serie & ";" & marca & ";" & fecha & vbCrLf

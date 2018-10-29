@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class CRUDPersonasDesign
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,14 +20,14 @@ Partial Class CRUDPersonasDesign
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.TextBoxApellidoPersonas = New System.Windows.Forms.TextBox()
+        Me.TextBoxCedulaPersonas = New System.Windows.Forms.TextBox()
+        Me.TextBoxSdoNombrePersonas = New System.Windows.Forms.TextBox()
+        Me.TextBoxCargoPersonas = New System.Windows.Forms.TextBox()
+        Me.TextBoxSueldoPersonas = New System.Windows.Forms.TextBox()
+        Me.TextBoxCiudadPersonas = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -37,9 +37,9 @@ Partial Class CRUDPersonasDesign
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
+        Me.TextBoxIDPersonas = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
+        Me.TextBoxPrimerNombrePersonas = New System.Windows.Forms.TextBox()
         Me.BtnNuevo = New System.Windows.Forms.Button()
         Me.BtnGuardar = New System.Windows.Forms.Button()
         Me.DataGridPersonas = New System.Windows.Forms.DataGridView()
@@ -49,50 +49,54 @@ Partial Class CRUDPersonasDesign
         Me.BtnAscendente = New System.Windows.Forms.Button()
         Me.BtnDesendente = New System.Windows.Forms.Button()
         Me.Label11 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.DataGridPersonas, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'TextBox1
+        'TextBoxApellidoPersonas
         '
-        Me.TextBox1.Location = New System.Drawing.Point(280, 194)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(250, 20)
-        Me.TextBox1.TabIndex = 0
+        Me.TextBoxApellidoPersonas.Location = New System.Drawing.Point(280, 194)
+        Me.TextBoxApellidoPersonas.Name = "TextBoxApellidoPersonas"
+        Me.TextBoxApellidoPersonas.Size = New System.Drawing.Size(250, 20)
+        Me.TextBoxApellidoPersonas.TabIndex = 0
         '
-        'TextBox2
+        'TextBoxCedulaPersonas
         '
-        Me.TextBox2.Location = New System.Drawing.Point(13, 144)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(250, 20)
-        Me.TextBox2.TabIndex = 1
+        Me.TextBoxCedulaPersonas.AcceptsReturn = True
+        Me.TextBoxCedulaPersonas.Location = New System.Drawing.Point(13, 144)
+        Me.TextBoxCedulaPersonas.MaxLength = 3
+        Me.TextBoxCedulaPersonas.Name = "TextBoxCedulaPersonas"
+        Me.TextBoxCedulaPersonas.Size = New System.Drawing.Size(250, 20)
+        Me.TextBoxCedulaPersonas.TabIndex = 1
         '
-        'TextBox3
+        'TextBoxSdoNombrePersonas
         '
-        Me.TextBox3.Location = New System.Drawing.Point(13, 194)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(250, 20)
-        Me.TextBox3.TabIndex = 2
+        Me.TextBoxSdoNombrePersonas.Location = New System.Drawing.Point(13, 194)
+        Me.TextBoxSdoNombrePersonas.Name = "TextBoxSdoNombrePersonas"
+        Me.TextBoxSdoNombrePersonas.Size = New System.Drawing.Size(250, 20)
+        Me.TextBoxSdoNombrePersonas.TabIndex = 2
         '
-        'TextBox4
+        'TextBoxCargoPersonas
         '
-        Me.TextBox4.Location = New System.Drawing.Point(12, 245)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(250, 20)
-        Me.TextBox4.TabIndex = 3
+        Me.TextBoxCargoPersonas.Location = New System.Drawing.Point(12, 245)
+        Me.TextBoxCargoPersonas.Name = "TextBoxCargoPersonas"
+        Me.TextBoxCargoPersonas.Size = New System.Drawing.Size(250, 20)
+        Me.TextBoxCargoPersonas.TabIndex = 3
         '
-        'TextBox5
+        'TextBoxSueldoPersonas
         '
-        Me.TextBox5.Location = New System.Drawing.Point(280, 245)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(250, 20)
-        Me.TextBox5.TabIndex = 4
+        Me.TextBoxSueldoPersonas.Location = New System.Drawing.Point(280, 245)
+        Me.TextBoxSueldoPersonas.Name = "TextBoxSueldoPersonas"
+        Me.TextBoxSueldoPersonas.Size = New System.Drawing.Size(250, 20)
+        Me.TextBoxSueldoPersonas.TabIndex = 4
         '
-        'TextBox6
+        'TextBoxCiudadPersonas
         '
-        Me.TextBox6.Location = New System.Drawing.Point(12, 294)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(250, 20)
-        Me.TextBox6.TabIndex = 5
+        Me.TextBoxCiudadPersonas.Location = New System.Drawing.Point(12, 294)
+        Me.TextBoxCiudadPersonas.Name = "TextBoxCiudadPersonas"
+        Me.TextBoxCiudadPersonas.Size = New System.Drawing.Size(250, 20)
+        Me.TextBoxCiudadPersonas.TabIndex = 5
         '
         'Label1
         '
@@ -177,12 +181,13 @@ Partial Class CRUDPersonasDesign
         Me.Label9.TabIndex = 14
         Me.Label9.Text = "Id"
         '
-        'TextBox7
+        'TextBoxIDPersonas
         '
-        Me.TextBox7.Location = New System.Drawing.Point(13, 96)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(517, 20)
-        Me.TextBox7.TabIndex = 15
+        Me.TextBoxIDPersonas.Location = New System.Drawing.Point(13, 96)
+        Me.TextBoxIDPersonas.Name = "TextBoxIDPersonas"
+        Me.TextBoxIDPersonas.ReadOnly = True
+        Me.TextBoxIDPersonas.Size = New System.Drawing.Size(517, 20)
+        Me.TextBoxIDPersonas.TabIndex = 15
         '
         'Label10
         '
@@ -193,12 +198,12 @@ Partial Class CRUDPersonasDesign
         Me.Label10.TabIndex = 16
         Me.Label10.Text = "Segundo Nombre "
         '
-        'TextBox8
+        'TextBoxPrimerNombrePersonas
         '
-        Me.TextBox8.Location = New System.Drawing.Point(280, 144)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(250, 20)
-        Me.TextBox8.TabIndex = 17
+        Me.TextBoxPrimerNombrePersonas.Location = New System.Drawing.Point(280, 144)
+        Me.TextBoxPrimerNombrePersonas.Name = "TextBoxPrimerNombrePersonas"
+        Me.TextBoxPrimerNombrePersonas.Size = New System.Drawing.Size(250, 20)
+        Me.TextBoxPrimerNombrePersonas.TabIndex = 17
         '
         'BtnNuevo
         '
@@ -280,11 +285,22 @@ Partial Class CRUDPersonasDesign
         Me.Label11.TabIndex = 26
         Me.Label11.Text = "Ordenar"
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.SistemaInformacionCun2.My.Resources.Resources.personas
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 12)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(100, 50)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 27
+        Me.PictureBox1.TabStop = False
+        '
         'CRUDPersonasDesign
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(554, 553)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.BtnDesendente)
         Me.Controls.Add(Me.BtnAscendente)
@@ -294,9 +310,9 @@ Partial Class CRUDPersonasDesign
         Me.Controls.Add(Me.DataGridPersonas)
         Me.Controls.Add(Me.BtnGuardar)
         Me.Controls.Add(Me.BtnNuevo)
-        Me.Controls.Add(Me.TextBox8)
+        Me.Controls.Add(Me.TextBoxPrimerNombrePersonas)
         Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.TextBox7)
+        Me.Controls.Add(Me.TextBoxIDPersonas)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)
@@ -306,26 +322,27 @@ Partial Class CRUDPersonasDesign
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.TextBox6)
-        Me.Controls.Add(Me.TextBox5)
-        Me.Controls.Add(Me.TextBox4)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.TextBoxCiudadPersonas)
+        Me.Controls.Add(Me.TextBoxSueldoPersonas)
+        Me.Controls.Add(Me.TextBoxCargoPersonas)
+        Me.Controls.Add(Me.TextBoxSdoNombrePersonas)
+        Me.Controls.Add(Me.TextBoxCedulaPersonas)
+        Me.Controls.Add(Me.TextBoxApellidoPersonas)
         Me.Name = "CRUDPersonasDesign"
         Me.Text = "CRUDPersonasDesign"
         CType(Me.DataGridPersonas, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents TextBox6 As TextBox
+    Friend WithEvents TextBoxApellidoPersonas As TextBox
+    Friend WithEvents TextBoxCedulaPersonas As TextBox
+    Friend WithEvents TextBoxSdoNombrePersonas As TextBox
+    Friend WithEvents TextBoxCargoPersonas As TextBox
+    Friend WithEvents TextBoxSueldoPersonas As TextBox
+    Friend WithEvents TextBoxCiudadPersonas As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
@@ -335,13 +352,11 @@ Partial Class CRUDPersonasDesign
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
-    Friend WithEvents TextBox7 As TextBox
+    Friend WithEvents TextBoxIDPersonas As TextBox
     Friend WithEvents Label10 As Label
-    Friend WithEvents TextBox8 As TextBox
+    Friend WithEvents TextBoxPrimerNombrePersonas As TextBox
 
-    Private Sub CRUDPersonasDesign_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-    End Sub
 
     Friend WithEvents BtnNuevo As Button
     Friend WithEvents BtnGuardar As Button
@@ -352,3 +367,5 @@ Partial Class CRUDPersonasDesign
     Friend WithEvents BtnAscendente As Button
     Friend WithEvents BtnDesendente As Button
     Friend WithEvents Label11 As Label
+    Friend WithEvents PictureBox1 As PictureBox
+End Class

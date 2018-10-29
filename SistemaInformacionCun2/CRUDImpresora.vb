@@ -1,6 +1,5 @@
 ﻿Public Class CRUDImpresora
 
-
     Private AdminImpresoras As AdministradorImpresora = New AdministradorImpresora
     Private Columnas As String() = {"Identificador", "Serial", "Marca", "Fecha creación"}
 
@@ -153,5 +152,6 @@
         CargarCamposTexto(filaSeleccionada)
         BtnEliminar.Enabled = True
     End Sub
+
 
 End Class
