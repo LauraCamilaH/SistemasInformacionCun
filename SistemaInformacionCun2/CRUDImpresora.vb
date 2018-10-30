@@ -1,16 +1,16 @@
 ﻿Public Class CRUDImpresora
 
-    Private AdminImpresoras As AdministradorImpresora = New AdministradorImpresora
+    Private AdminImpresoras As AdministradorImpresora = New AdministradorImpresora 'llama a la clase administrador de impresora y la instancia
     Private Columnas As String() = {"Identificador", "Serial", "Marca", "Fecha creación"}
 
     Private Sub CRUDImpresora_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         DataGridImpresoras.Columns.Clear()
-        For Each Columna In Columnas
+        For Each Columna In Columnas 'ingresa a un ciclo Por cada Columna en el arreglo de string que tenemos 
             Dim ColumnaTabla = New DataGridViewColumn()
-            ColumnaTabla.HeaderText = Columna
-            ColumnaTabla.Name = Columna
+            ColumnaTabla.HeaderText = Columna ' obtiene o establece el texto del título en la celda del encabezado de la columna
+            ColumnaTabla.Name = Columna 'Pone o estable el nombre de las columnas 
             ColumnaTabla.SortMode = DataGridViewColumnSortMode.Automatic '' super importante me encanto es el ordenar automatico funciona paracedio a a filtar en excel
-            DataGridImpresoras.Columns.Add(ColumnaTabla)
+            DataGridImpresoras.Columns.Add(ColumnaTabla) ' agrega las columnas de la coleccion 
         Next
         Recargar()
     End Sub

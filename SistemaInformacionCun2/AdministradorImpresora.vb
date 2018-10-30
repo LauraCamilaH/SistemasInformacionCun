@@ -1,6 +1,6 @@
 ﻿Imports Microsoft.VisualBasic.FileIO
 
-Public Class AdministradorImpresora : Inherits AdministradorDB
+Public Class AdministradorImpresora : Inherits AdministradorDB 'hereda
     Public Sub New() 'contructor
         MyBase.New("BDimpresora.cvs", 3)
     End Sub

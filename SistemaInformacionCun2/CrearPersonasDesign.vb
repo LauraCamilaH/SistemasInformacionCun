@@ -10,8 +10,8 @@ Public Class DesignEjercicioClase
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btRegistar.Click
-        Dim Laurita = New AdministradorPersonas()
-        Dim id = Laurita.CrearPersona(Textcedula.Text, Textnombre.Text, Textapellido.Text, Textciudad.Text)
+        Dim AdministradorPer = New AdministradorPersonas()
+        Dim id = AdministradorPer.CrearPersona(Textcedula.Text, Textnombre.Text, Textapellido.Text, Textciudad.Text)
 
         MsgBox("Se ha creado la persona con id " & id)
         Textcedula.Text = ""
@@ -21,6 +21,7 @@ Public Class DesignEjercicioClase
 
     End Sub
 
+    Private Sub DesignEjercicioClase_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-
+    End Sub
 End Class

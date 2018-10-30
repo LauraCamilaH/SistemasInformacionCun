@@ -23,4 +23,9 @@ Public Class ConsultarDesign
         TxResultadoColsulta.Text = "listado de registro de impresoras en la BD " & vbNewLine & bdimpresora.ConsultarComoString()
 
     End Sub
+
+    Private Sub BtConsultarMonitores_Click(sender As Object, e As EventArgs) Handles BtConsultarMonitores.Click
+        Dim bdMonitor = New AdministradorMonitor
+        TxResultadoColsulta.Text = "Listado de registro de monitores en la BD" & vbNewLine & bdMonitor.ConsultarComoString()
+    End Sub
 End Class
