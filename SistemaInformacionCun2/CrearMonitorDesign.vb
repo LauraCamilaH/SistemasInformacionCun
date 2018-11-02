@@ -17,8 +17,12 @@ Public Class CrearMonitorDesign
 
         Dim idmonitor = administrador.CrearMonitor(TexBSerieMonitor.Text, TexBMarcaMonitor.Text)
         MsgBox("los datos fueron registrados con id: " & idmonitor)
-        TexBIdmonitor.Text = ""
+
         TexBSerieMonitor.Text = ""
         TexBMarcaMonitor.Text = ""
+    End Sub
+
+    Private Sub CrearMonitorDesign_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class

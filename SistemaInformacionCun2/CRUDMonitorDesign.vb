@@ -3,14 +3,7 @@
     Private Columnas As String() = {"Identificador", "Serial", "Marca"} 'nombramos las columnas 
 
     Private Sub CRUDMonitorDesign_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        DataGridMonitor.Columns.Clear()
-        For Each Columna In Columnas
-            Dim ColumnaTabla = New DataGridViewColumn() 'metodo ver columnas de la DataGrid- ColumnaTabla es la variable que se creo para no confundirnos de la columnas de la data
-            ColumnaTabla.HeaderText = Columna
-            ColumnaTabla.Name = Columna
-            DataGridMonitor.Columns.Add(ColumnaTabla)
-        Next
-        Recargar() 'llama al metodo recargar 
+
     End Sub
 
     Private Sub BtnActualizar_Click(sender As Object, e As EventArgs) Handles BtnActualizar.Click

@@ -50,6 +50,8 @@ Partial Class CRUDImpresora
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.TextBoxValorI = New System.Windows.Forms.TextBox()
+        Me.label = New System.Windows.Forms.Label()
         CType(Me.DataGridImpresoras, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -138,7 +140,7 @@ Partial Class CRUDImpresora
         Me.TxtIdentificador.Location = New System.Drawing.Point(13, 96)
         Me.TxtIdentificador.Name = "TxtIdentificador"
         Me.TxtIdentificador.ReadOnly = True
-        Me.TxtIdentificador.Size = New System.Drawing.Size(515, 20)
+        Me.TxtIdentificador.Size = New System.Drawing.Size(254, 20)
         Me.TxtIdentificador.TabIndex = 6
         '
         'TxTSerial
@@ -159,15 +161,15 @@ Partial Class CRUDImpresora
         '
         'TxtMarcaImpresora
         '
-        Me.TxtMarcaImpresora.Location = New System.Drawing.Point(278, 144)
+        Me.TxtMarcaImpresora.Location = New System.Drawing.Point(278, 96)
         Me.TxtMarcaImpresora.Name = "TxtMarcaImpresora"
-        Me.TxtMarcaImpresora.Size = New System.Drawing.Size(250, 20)
+        Me.TxtMarcaImpresora.Size = New System.Drawing.Size(249, 20)
         Me.TxtMarcaImpresora.TabIndex = 9
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(275, 128)
+        Me.Label2.Location = New System.Drawing.Point(275, 80)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(37, 13)
         Me.Label2.TabIndex = 10
@@ -287,11 +289,29 @@ Partial Class CRUDImpresora
         Me.Label8.TabIndex = 23
         Me.Label8.Text = "Ordenar"
         '
+        'TextBoxValorI
+        '
+        Me.TextBoxValorI.Location = New System.Drawing.Point(278, 144)
+        Me.TextBoxValorI.Name = "TextBoxValorI"
+        Me.TextBoxValorI.Size = New System.Drawing.Size(249, 20)
+        Me.TextBoxValorI.TabIndex = 24
+        '
+        'label
+        '
+        Me.label.AutoSize = True
+        Me.label.Location = New System.Drawing.Point(275, 128)
+        Me.label.Name = "label"
+        Me.label.Size = New System.Drawing.Size(31, 13)
+        Me.label.TabIndex = 25
+        Me.label.Text = "Valor"
+        '
         'CRUDImpresora
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(549, 540)
+        Me.ClientSize = New System.Drawing.Size(549, 541)
+        Me.Controls.Add(Me.label)
+        Me.Controls.Add(Me.TextBoxValorI)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label6)
@@ -352,4 +372,6 @@ Partial Class CRUDImpresora
     Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
+    Friend WithEvents TextBoxValorI As TextBox
+    Friend WithEvents label As Label
 End Class

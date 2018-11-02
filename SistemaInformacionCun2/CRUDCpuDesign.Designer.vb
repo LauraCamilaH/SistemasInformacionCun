@@ -47,6 +47,8 @@ Partial Class CRUDCpuDesign
         Me.BtnAscendente = New System.Windows.Forms.Button()
         Me.BtnDescendente = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.TextBoxValorC = New System.Windows.Forms.TextBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -128,7 +130,7 @@ Partial Class CRUDCpuDesign
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(279, 128)
+        Me.Label4.Location = New System.Drawing.Point(279, 80)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(37, 13)
         Me.Label4.TabIndex = 8
@@ -148,7 +150,7 @@ Partial Class CRUDCpuDesign
         Me.TextBoxIDPersonas.Location = New System.Drawing.Point(11, 96)
         Me.TextBoxIDPersonas.Name = "TextBoxIDPersonas"
         Me.TextBoxIDPersonas.ReadOnly = True
-        Me.TextBoxIDPersonas.Size = New System.Drawing.Size(521, 20)
+        Me.TextBoxIDPersonas.Size = New System.Drawing.Size(251, 20)
         Me.TextBoxIDPersonas.TabIndex = 10
         '
         'TextBoxSerieCPU
@@ -160,7 +162,7 @@ Partial Class CRUDCpuDesign
         '
         'TextBoxMarcaCpu
         '
-        Me.TextBoxMarcaCpu.Location = New System.Drawing.Point(282, 144)
+        Me.TextBoxMarcaCpu.Location = New System.Drawing.Point(281, 96)
         Me.TextBoxMarcaCpu.Name = "TextBoxMarcaCpu"
         Me.TextBoxMarcaCpu.Size = New System.Drawing.Size(250, 20)
         Me.TextBoxMarcaCpu.TabIndex = 12
@@ -259,11 +261,29 @@ Partial Class CRUDCpuDesign
         Me.PictureBox1.TabIndex = 23
         Me.PictureBox1.TabStop = False
         '
-        'CRUPCpuDesign
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(282, 128)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(31, 13)
+        Me.Label3.TabIndex = 24
+        Me.Label3.Text = "Valor"
+        '
+        'TextBoxValorC
+        '
+        Me.TextBoxValorC.Location = New System.Drawing.Point(281, 144)
+        Me.TextBoxValorC.Name = "TextBoxValorC"
+        Me.TextBoxValorC.Size = New System.Drawing.Size(250, 20)
+        Me.TextBoxValorC.TabIndex = 25
+        '
+        'CRUDCpuDesign
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(554, 531)
+        Me.ClientSize = New System.Drawing.Size(554, 541)
+        Me.Controls.Add(Me.TextBoxValorC)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.BtnDescendente)
         Me.Controls.Add(Me.BtnAscendente)
@@ -288,7 +308,7 @@ Partial Class CRUDCpuDesign
         Me.Controls.Add(Me.BtnNuevo)
         Me.Controls.Add(Me.BtnGuardar)
         Me.Controls.Add(Me.BtnModificar)
-        Me.Name = "CRUPCpuDesign"
+        Me.Name = "CRUDCpuDesign"
         Me.Text = "CRUPCpuDesign"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -321,4 +341,6 @@ Partial Class CRUDCpuDesign
     Friend WithEvents BtnAscendente As Button
     Friend WithEvents BtnDescendente As Button
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents TextBoxValorC As TextBox
 End Class

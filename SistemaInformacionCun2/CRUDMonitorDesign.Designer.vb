@@ -45,6 +45,8 @@ Partial Class CRUDMonitorDesign
         Me.BtnDescendente = New System.Windows.Forms.Button()
         Me.BtnAscendente = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.TextBoxValorM = New System.Windows.Forms.TextBox()
         CType(Me.DataGridMonitor, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -83,7 +85,7 @@ Partial Class CRUDMonitorDesign
         Me.TextBoxIdMonitor.Location = New System.Drawing.Point(17, 97)
         Me.TextBoxIdMonitor.Name = "TextBoxIdMonitor"
         Me.TextBoxIdMonitor.ReadOnly = True
-        Me.TextBoxIdMonitor.Size = New System.Drawing.Size(515, 20)
+        Me.TextBoxIdMonitor.Size = New System.Drawing.Size(245, 20)
         Me.TextBoxIdMonitor.TabIndex = 3
         '
         'Label4
@@ -98,7 +100,7 @@ Partial Class CRUDMonitorDesign
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(275, 128)
+        Me.Label5.Location = New System.Drawing.Point(275, 80)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(37, 13)
         Me.Label5.TabIndex = 5
@@ -113,7 +115,7 @@ Partial Class CRUDMonitorDesign
         '
         'TextBoxMarcaMonitor
         '
-        Me.TextBoxMarcaMonitor.Location = New System.Drawing.Point(278, 144)
+        Me.TextBoxMarcaMonitor.Location = New System.Drawing.Point(278, 97)
         Me.TextBoxMarcaMonitor.Name = "TextBoxMarcaMonitor"
         Me.TextBoxMarcaMonitor.Size = New System.Drawing.Size(254, 20)
         Me.TextBoxMarcaMonitor.TabIndex = 7
@@ -247,11 +249,29 @@ Partial Class CRUDMonitorDesign
         Me.PictureBox1.TabIndex = 22
         Me.PictureBox1.TabStop = False
         '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(275, 128)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(31, 13)
+        Me.Label7.TabIndex = 23
+        Me.Label7.Text = "Valor"
+        '
+        'TextBoxValorM
+        '
+        Me.TextBoxValorM.Location = New System.Drawing.Point(278, 144)
+        Me.TextBoxValorM.Name = "TextBoxValorM"
+        Me.TextBoxValorM.Size = New System.Drawing.Size(254, 20)
+        Me.TextBoxValorM.TabIndex = 24
+        '
         'CRUDMonitorDesign
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(554, 461)
+        Me.ClientSize = New System.Drawing.Size(554, 516)
+        Me.Controls.Add(Me.TextBoxValorM)
+        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.BtnAscendente)
         Me.Controls.Add(Me.BtnDescendente)
@@ -307,4 +327,6 @@ Partial Class CRUDMonitorDesign
     Friend WithEvents BtnDescendente As Button
     Friend WithEvents BtnAscendente As Button
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents TextBoxValorM As TextBox
 End Class

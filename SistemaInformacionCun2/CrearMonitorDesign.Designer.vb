@@ -25,20 +25,26 @@ Partial Class CrearMonitorDesign
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CrearMonitorDesign))
         Me.BttRegresarMonitor = New System.Windows.Forms.Button()
         Me.BttRegistarMonitor = New System.Windows.Forms.Button()
-        Me.LabelID = New System.Windows.Forms.Label()
         Me.LabelSerie = New System.Windows.Forms.Label()
-        Me.TexBIdmonitor = New System.Windows.Forms.TextBox()
         Me.TexBSerieMonitor = New System.Windows.Forms.TextBox()
         Me.TexBMarcaMonitor = New System.Windows.Forms.TextBox()
         Me.LabelNombreEq = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.TextBoxDíaMonitor = New System.Windows.Forms.TextBox()
+        Me.TextBoxanioMonitor = New System.Windows.Forms.TextBox()
+        Me.TextBoMesMonitor = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.TextBoxValorMonitor = New System.Windows.Forms.TextBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BttRegresarMonitor
         '
-        Me.BttRegresarMonitor.Location = New System.Drawing.Point(269, 240)
+        Me.BttRegresarMonitor.Location = New System.Drawing.Point(280, 307)
         Me.BttRegresarMonitor.Name = "BttRegresarMonitor"
         Me.BttRegresarMonitor.Size = New System.Drawing.Size(75, 23)
         Me.BttRegresarMonitor.TabIndex = 0
@@ -47,56 +53,40 @@ Partial Class CrearMonitorDesign
         '
         'BttRegistarMonitor
         '
-        Me.BttRegistarMonitor.Location = New System.Drawing.Point(101, 240)
+        Me.BttRegistarMonitor.Location = New System.Drawing.Point(199, 307)
         Me.BttRegistarMonitor.Name = "BttRegistarMonitor"
         Me.BttRegistarMonitor.Size = New System.Drawing.Size(75, 23)
         Me.BttRegistarMonitor.TabIndex = 1
         Me.BttRegistarMonitor.Text = "Registar"
         Me.BttRegistarMonitor.UseVisualStyleBackColor = True
         '
-        'LabelID
-        '
-        Me.LabelID.AutoSize = True
-        Me.LabelID.Location = New System.Drawing.Point(12, 100)
-        Me.LabelID.Name = "LabelID"
-        Me.LabelID.Size = New System.Drawing.Size(18, 13)
-        Me.LabelID.TabIndex = 2
-        Me.LabelID.Text = "ID"
-        '
         'LabelSerie
         '
         Me.LabelSerie.AutoSize = True
-        Me.LabelSerie.Location = New System.Drawing.Point(12, 130)
+        Me.LabelSerie.Location = New System.Drawing.Point(18, 105)
         Me.LabelSerie.Name = "LabelSerie"
         Me.LabelSerie.Size = New System.Drawing.Size(31, 13)
         Me.LabelSerie.TabIndex = 3
         Me.LabelSerie.Text = "Serie"
         '
-        'TexBIdmonitor
-        '
-        Me.TexBIdmonitor.Location = New System.Drawing.Point(101, 100)
-        Me.TexBIdmonitor.Name = "TexBIdmonitor"
-        Me.TexBIdmonitor.Size = New System.Drawing.Size(254, 20)
-        Me.TexBIdmonitor.TabIndex = 4
-        '
         'TexBSerieMonitor
         '
-        Me.TexBSerieMonitor.Location = New System.Drawing.Point(101, 130)
+        Me.TexBSerieMonitor.Location = New System.Drawing.Point(20, 121)
         Me.TexBSerieMonitor.Name = "TexBSerieMonitor"
-        Me.TexBSerieMonitor.Size = New System.Drawing.Size(254, 20)
+        Me.TexBSerieMonitor.Size = New System.Drawing.Size(340, 20)
         Me.TexBSerieMonitor.TabIndex = 5
         '
         'TexBMarcaMonitor
         '
-        Me.TexBMarcaMonitor.Location = New System.Drawing.Point(101, 160)
+        Me.TexBMarcaMonitor.Location = New System.Drawing.Point(21, 164)
         Me.TexBMarcaMonitor.Name = "TexBMarcaMonitor"
-        Me.TexBMarcaMonitor.Size = New System.Drawing.Size(254, 20)
+        Me.TexBMarcaMonitor.Size = New System.Drawing.Size(340, 20)
         Me.TexBMarcaMonitor.TabIndex = 6
         '
         'LabelNombreEq
         '
         Me.LabelNombreEq.AutoSize = True
-        Me.LabelNombreEq.Location = New System.Drawing.Point(12, 160)
+        Me.LabelNombreEq.Location = New System.Drawing.Point(18, 144)
         Me.LabelNombreEq.Name = "LabelNombreEq"
         Me.LabelNombreEq.Size = New System.Drawing.Size(37, 13)
         Me.LabelNombreEq.TabIndex = 7
@@ -121,19 +111,89 @@ Partial Class CrearMonitorDesign
         Me.PictureBox1.TabIndex = 9
         Me.PictureBox1.TabStop = False
         '
+        'TextBoxDíaMonitor
+        '
+        Me.TextBoxDíaMonitor.Location = New System.Drawing.Point(21, 248)
+        Me.TextBoxDíaMonitor.Name = "TextBoxDíaMonitor"
+        Me.TextBoxDíaMonitor.Size = New System.Drawing.Size(100, 20)
+        Me.TextBoxDíaMonitor.TabIndex = 10
+        '
+        'TextBoxanioMonitor
+        '
+        Me.TextBoxanioMonitor.Location = New System.Drawing.Point(255, 248)
+        Me.TextBoxanioMonitor.Name = "TextBoxanioMonitor"
+        Me.TextBoxanioMonitor.Size = New System.Drawing.Size(105, 20)
+        Me.TextBoxanioMonitor.TabIndex = 11
+        '
+        'TextBoMesMonitor
+        '
+        Me.TextBoMesMonitor.Location = New System.Drawing.Point(139, 248)
+        Me.TextBoMesMonitor.Name = "TextBoMesMonitor"
+        Me.TextBoMesMonitor.Size = New System.Drawing.Size(100, 20)
+        Me.TextBoMesMonitor.TabIndex = 12
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(18, 232)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(25, 13)
+        Me.Label2.TabIndex = 13
+        Me.Label2.Text = "Día"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(136, 232)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(27, 13)
+        Me.Label3.TabIndex = 14
+        Me.Label3.Text = "Mes"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(252, 232)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(26, 13)
+        Me.Label4.TabIndex = 15
+        Me.Label4.Text = "Año"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(18, 187)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(31, 13)
+        Me.Label5.TabIndex = 16
+        Me.Label5.Text = "Valor"
+        '
+        'TextBoxValorMonitor
+        '
+        Me.TextBoxValorMonitor.Location = New System.Drawing.Point(21, 203)
+        Me.TextBoxValorMonitor.Name = "TextBoxValorMonitor"
+        Me.TextBoxValorMonitor.Size = New System.Drawing.Size(340, 20)
+        Me.TextBoxValorMonitor.TabIndex = 17
+        '
         'CrearMonitorDesign
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(384, 275)
+        Me.ClientSize = New System.Drawing.Size(384, 342)
+        Me.Controls.Add(Me.TextBoxValorMonitor)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.TextBoMesMonitor)
+        Me.Controls.Add(Me.TextBoxanioMonitor)
+        Me.Controls.Add(Me.TextBoxDíaMonitor)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.LabelNombreEq)
         Me.Controls.Add(Me.TexBMarcaMonitor)
         Me.Controls.Add(Me.TexBSerieMonitor)
-        Me.Controls.Add(Me.TexBIdmonitor)
         Me.Controls.Add(Me.LabelSerie)
-        Me.Controls.Add(Me.LabelID)
         Me.Controls.Add(Me.BttRegistarMonitor)
         Me.Controls.Add(Me.BttRegresarMonitor)
         Me.Name = "CrearMonitorDesign"
@@ -146,12 +206,18 @@ Partial Class CrearMonitorDesign
 
     Friend WithEvents BttRegresarMonitor As Button
     Friend WithEvents BttRegistarMonitor As Button
-    Friend WithEvents LabelID As Label
     Friend WithEvents LabelSerie As Label
-    Friend WithEvents TexBIdmonitor As TextBox
     Friend WithEvents TexBSerieMonitor As TextBox
     Friend WithEvents TexBMarcaMonitor As TextBox
     Friend WithEvents LabelNombreEq As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents TextBoxDíaMonitor As TextBox
+    Friend WithEvents TextBoxanioMonitor As TextBox
+    Friend WithEvents TextBoMesMonitor As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents TextBoxValorMonitor As TextBox
 End Class

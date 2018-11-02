@@ -299,7 +299,7 @@ Partial Class CRUDPersonasDesign
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(554, 553)
+        Me.ClientSize = New System.Drawing.Size(554, 591)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.BtnDesendente)
