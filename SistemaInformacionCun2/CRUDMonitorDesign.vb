@@ -3,7 +3,7 @@
     Private Columnas As String() = {"Identificador", "Serial", "Marca"} 'nombramos las columnas 
 
     Private Sub CRUDMonitorDesign_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        ''Cambio sincronizado
     End Sub
 
     Private Sub BtnActualizar_Click(sender As Object, e As EventArgs) Handles BtnActualizar.Click
