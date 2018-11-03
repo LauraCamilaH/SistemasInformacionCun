@@ -67,6 +67,15 @@ Public Class AdministradorDB
 
     End Sub
 
+    Public Function EliminarElemento(arreglo As String()(), fila As Integer) As String()()
+        If fila >= arreglo.Length Then
+            Return arreglo
+        End If
+        ''[a,b,c],[d,e,f],[g,h,i] , 1  -> [a,b,c],[g,h,i]
+
+
+    End Function
+
     Public Function Eliminar(Id As String) As Boolean
         Dim BaseDatos = CargarBD()
 
