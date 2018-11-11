@@ -33,7 +33,7 @@ Partial Class CRUDCpuDesign
         Me.Ordenar = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.TextBoxIDPersonas = New System.Windows.Forms.TextBox()
+        Me.TextBoxIDcpu = New System.Windows.Forms.TextBox()
         Me.TextBoxSerieCPU = New System.Windows.Forms.TextBox()
         Me.TextBoxMarcaCpu = New System.Windows.Forms.TextBox()
         Me.TextBoxDiaCpu = New System.Windows.Forms.TextBox()
@@ -42,14 +42,14 @@ Partial Class CRUDCpuDesign
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewcpu = New System.Windows.Forms.DataGridView()
         Me.BtnEliminar = New System.Windows.Forms.Button()
         Me.BtnAscendente = New System.Windows.Forms.Button()
         Me.BtnDescendente = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TextBoxValorC = New System.Windows.Forms.TextBox()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridViewcpu, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -145,13 +145,13 @@ Partial Class CRUDCpuDesign
         Me.Label5.TabIndex = 9
         Me.Label5.Text = "Serie"
         '
-        'TextBoxIDPersonas
+        'TextBoxIDcpu
         '
-        Me.TextBoxIDPersonas.Location = New System.Drawing.Point(11, 96)
-        Me.TextBoxIDPersonas.Name = "TextBoxIDPersonas"
-        Me.TextBoxIDPersonas.ReadOnly = True
-        Me.TextBoxIDPersonas.Size = New System.Drawing.Size(251, 20)
-        Me.TextBoxIDPersonas.TabIndex = 10
+        Me.TextBoxIDcpu.Location = New System.Drawing.Point(11, 96)
+        Me.TextBoxIDcpu.Name = "TextBoxIDcpu"
+        Me.TextBoxIDcpu.ReadOnly = True
+        Me.TextBoxIDcpu.Size = New System.Drawing.Size(251, 20)
+        Me.TextBoxIDcpu.TabIndex = 10
         '
         'TextBoxSerieCPU
         '
@@ -215,13 +215,13 @@ Partial Class CRUDCpuDesign
         Me.Label7.TabIndex = 18
         Me.Label7.Text = "Año"
         '
-        'DataGridView1
+        'DataGridViewcpu
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 240)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(520, 229)
-        Me.DataGridView1.TabIndex = 19
+        Me.DataGridViewcpu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridViewcpu.Location = New System.Drawing.Point(12, 240)
+        Me.DataGridViewcpu.Name = "DataGridViewcpu"
+        Me.DataGridViewcpu.Size = New System.Drawing.Size(520, 229)
+        Me.DataGridViewcpu.TabIndex = 19
         '
         'BtnEliminar
         '
@@ -288,7 +288,7 @@ Partial Class CRUDCpuDesign
         Me.Controls.Add(Me.BtnDescendente)
         Me.Controls.Add(Me.BtnAscendente)
         Me.Controls.Add(Me.BtnEliminar)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.DataGridViewcpu)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label1)
@@ -297,7 +297,7 @@ Partial Class CRUDCpuDesign
         Me.Controls.Add(Me.TextBoxDiaCpu)
         Me.Controls.Add(Me.TextBoxMarcaCpu)
         Me.Controls.Add(Me.TextBoxSerieCPU)
-        Me.Controls.Add(Me.TextBoxIDPersonas)
+        Me.Controls.Add(Me.TextBoxIDcpu)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Ordenar)
@@ -310,7 +310,7 @@ Partial Class CRUDCpuDesign
         Me.Controls.Add(Me.BtnModificar)
         Me.Name = "CRUDCpuDesign"
         Me.Text = "CRUPCpuDesign"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridViewcpu, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -327,7 +327,7 @@ Partial Class CRUDCpuDesign
     Friend WithEvents Ordenar As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents TextBoxIDPersonas As TextBox
+    Friend WithEvents TextBoxIDcpu As TextBox
     Friend WithEvents TextBoxSerieCPU As TextBox
     Friend WithEvents TextBoxMarcaCpu As TextBox
     Friend WithEvents TextBoxDiaCpu As TextBox
@@ -336,7 +336,7 @@ Partial Class CRUDCpuDesign
     Friend WithEvents Label1 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents DataGridViewcpu As DataGridView
     Friend WithEvents BtnEliminar As Button
     Friend WithEvents BtnAscendente As Button
     Friend WithEvents BtnDescendente As Button

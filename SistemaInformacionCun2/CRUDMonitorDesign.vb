@@ -18,7 +18,7 @@
     End Sub
     Private Sub RecargarM()
         Dim BD As String()() = AdminMonitor.CargarDBMemoria
-        LimpiarCampos() '?
+        LimpiarCampos()
         DataGridMonitor.Rows.Clear() ''Eliminamos todas las filas del DataGrid
 
         For Each FilaBD In BD '' Itera sobre los registros en base de datos
@@ -35,25 +35,48 @@
         LimpiarCamposTexto()
         BtnEliminar.Enabled = False
     End Sub
-    Public Function EliminarElemento(Matriz As String()(), fila As Integer) As String()()
-        Dim arreglo As String()() = New String(Matriz.Length - 2)() {}
-        Dim contador As Integer = 0
+    Private Sub Actualizar()
+        Dim Fila = CamposDeTextoArreglo()
+        If AdminMonitor.Actualizar(Fila) Then
+            MsgBox("Se actualizó el registro")
+            RecargarM()
+        Else
+            MsgBox("No se actualizó ningún registro")
+        End If
+    End Sub
 
-        For Each filas In Matriz
-            If Not contador = fila Then
-                If contador < fila Then
-                    arreglo(contador) = filas
-                Else
-                    arreglo(contador - 1) = filas
-                End If
-            End If
-            contador += 1
-        Next
+    Private Sub Crear()
+        Dim NuevoId = AdminMonitor.Crear(CamposDeTextoArreglo())
+        If NuevoId > 0 Then
+            MsgBox("Se ha creado la impresora con Id: " & NuevoId)
+            RecargarM()
+            LimpiarCampos()
+        ElseIf NuevoId = -1 Then
+            MsgBox("Ya existe un elemento con el serial")
+        ElseIf NuevoId = -2 Then
+            MsgBox("Error interno, comuniquese con el administrador") ''Es un error del programador!!!
+        End If
+    End Sub
+    Private Function CamposDeTextoArreglo() As String()
+        Dim fecha = TextBoxDiaMonitor.Text & "/" & TextBoxMesMonitor.Text & "/" & TextBoxAnioMonitor.Text
 
-        Return arreglo
-        RecargarM()
+
+        Dim Id = TextBoxIdMonitor.Text
+
+        ''Esta función es llamada al crear o actualizar, por tal motivo debemos
+        ''agregar o no el campo id, ya que si es llamada desde actualizar es 
+        ''porque hay un ID ya cargado en el campo de texto y debe agregarse,
+        ''si no lo hay, entonces es llamado desde el crear y no se debe agregar
+        ''este primer elemento
+        If Not String.IsNullOrEmpty(Id) Then 'si no es nulo o vacio, registro antiguo tiene id
+            Dim Fila() As String = New String(4) {Id, TextBoxSerialMonitor.Text, TextBoxMarcaMonitor.Text, fecha, TextBoxValorM.Text}
+            Return Fila
+
+        End If
+
+        Return {TextBoxSerialMonitor.Text, TextBoxMarcaMonitor.Text, fecha, TextBoxValorM.Text}
     End Function
-    Protected Overridable Function ValidarCampos() As String
+    Private Function ValidarCampos() As String
 
         ''Si el campo está vácio o está lleno de espacios
         If String.IsNullOrWhiteSpace(TextBoxSerialMonitor.Text) Then
@@ -65,6 +88,15 @@
         If String.IsNullOrWhiteSpace(TextBoxValorM.Text) Then
             Return "Por favor ingrese el valor"
         End If
+        If String.IsNullOrWhiteSpace(TextBoxMesMonitor.Text) Then
+            Return "Por favor ingrese un valor para el mes"
+        End If
+        If String.IsNullOrWhiteSpace(TextBoxDiaMonitor.Text) Then
+            Return "Por favor ingrese el día"
+        End If
+        If String.IsNullOrWhiteSpace(TextBoxAnioMonitor.Text) Then
+            Return "Por favor ingrese el año"
+        End If
         Return "" ''No hay errores, retornamos una cadena vacia
     End Function
     Private Sub BtnActualizar_Click(sender As Object, e As EventArgs) Handles BtnActualizar.Click
@@ -72,7 +104,15 @@
     End Sub
 
     Private Sub BtnEliminar_Click(sender As Object, e As EventArgs) Handles BtnEliminar.Click
-        'EliminarElemento(Matriz()(), TextBoxIdMonitor.Text)
+        Dim Id = TextBoxIdMonitor.Text
+        If Not String.IsNullOrEmpty(Id) Then
+            If AdminMonitor.Eliminar(Id) Then
+                MsgBox("El elemento con id " & Id & " ha sido eliminado")
+                RecargarM()
+            Else
+                MsgBox("No se pudo eliminar ningún elemento")
+            End If
+        End If
     End Sub
 
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
@@ -84,9 +124,9 @@
 
         Dim id = TextBoxIdMonitor.Text
         If String.IsNullOrEmpty(id) Then ''Si el id está en blanco es que el elemento es nuevo
-            ' Crear()
+            Crear()
         Else
-            'Actualizar()
+            Actualizar()
         End If
     End Sub
 
@@ -105,6 +145,24 @@
         TextBoxSerialMonitor.Text = ""
         TextBoxMesMonitor.Text = ""
 
+    End Sub
+
+    Private Sub CargarCamposTexto(filaSeleccionada As DataGridViewRow)
+        TextBoxIdMonitor.Text = filaSeleccionada.Cells(0).Value
+        TextBoxSerialMonitor.Text = filaSeleccionada.Cells(1).Value
+        TextBoxMarcaMonitor.Text = filaSeleccionada.Cells(2).Value
+        TextBoxAnioMonitor.Text = filaSeleccionada.Cells(3).Value
+        TextBoxValorM.Text = filaSeleccionada.Cells(4).Value
+
+    End Sub
+    Private Sub DataGrid_SelectionChanged(sender As Object, e As EventArgs) Handles DataGridMonitor.SelectionChanged
+        If Not DataGridMonitor.SelectedRows.Count = 1 Then
+            LimpiarCampos()
+            Return
+        End If
+        Dim filaSeleccionada = DataGridMonitor.Rows(DataGridMonitor.SelectedRows(0).Index)
+        CargarCamposTexto(filaSeleccionada)
+        BtnEliminar.Enabled = True
     End Sub
 
     Private Sub BtnModificar_Click(sender As Object, e As EventArgs) Handles BtnModificar.Click

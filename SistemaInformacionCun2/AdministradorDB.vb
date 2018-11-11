@@ -67,17 +67,9 @@ Public Class AdministradorDB
 
     End Sub
 
-    Public Function EliminarElemento(arreglo As String()(), fila As Integer) As String()()
-        If fila >= arreglo.Length Then
-            Return arreglo
-        End If
-        ''[a,b,c],[d,e,f],[g,h,i] , 1  -> [a,b,c],[g,h,i]
-
-        Return arreglo
-    End Function
 
     Public Function Eliminar(Id As String) As Boolean
-        Dim BaseDatos = CargarBD()
+        Dim BaseDatos = CargarDBMemoria()
 
         Dim IndiceEliminar As Integer = -1 'Indicador para saber si entra al primer if 
         Dim IndiceActual As Integer = 0
@@ -93,16 +85,15 @@ Public Class AdministradorDB
         If IndiceEliminar = -1 Then
             Return False
         End If
-
-        BaseDatos.RemoveAt(IndiceEliminar)
-        ActualizarArchivoLista(BaseDatos)
+        BaseDatos = EliminarElemento(BaseDatos, IndiceEliminar)
+        ActualizarArchivo(BaseDatos)
         Return True
     End Function
 
 
-    Public Function Actualizar(Fila As List(Of String)) As Boolean
+    Public Function Actualizar(Fila As String()) As Boolean
         Dim Id = Fila(0) ''El id de la fila viene en el indice cero
-        Dim BaseDatos = CargarBD()
+        Dim BaseDatos = CargarDBMemoria()
 
         Dim IndiceAEditar = -1
         Dim IndiceActual = 0
@@ -120,20 +111,20 @@ Public Class AdministradorDB
         End If
 
         BaseDatos(IndiceAEditar) = Fila
-        ActualizarArchivoLista(BaseDatos)
+        ActualizarArchivo(BaseDatos)
         Return True ''La actualización fue satisfactoria
 
     End Function
 
 
-    Public Function Crear(Fila As List(Of String)) As Integer
-        Dim DB = CargarBD()
+    Public Function Crear(Arreglo As String()) As Integer
+        Dim DB = CargarDBMemoria()
 
-        If Not Fila.Count = CantidadCampos Then
+        If Not Arreglo.Count = CantidadCampos Then
             Return -2 ''La cantidad de campos no es valida
         End If
 
-        Dim ValorUnico = Fila(0) ''Como no se incluye el id, el valor único está en el índice cero
+        Dim ValorUnico = Arreglo(0) ''Como no se incluye el id, el valor único está en el índice cero
 
         For Each FilaDB In DB
             If ValorUnico = FilaDB(1) Then
@@ -142,10 +133,42 @@ Public Class AdministradorDB
         Next
 
         Dim SiguienteId = ObtenerUltimoId() + 1
-        Fila.Insert(0, SiguienteId)
-        DB.Add(Fila)
-        ActualizarArchivoLista(DB)
+        Arreglo = InsertarElemento(Arreglo, 0, SiguienteId)
+
+        DB = InsertarElemntoMatriz(DB, (DB.Length - 1), Arreglo)
+        ActualizarArchivo(DB)
         Return SiguienteId
+    End Function
+
+    Public Function InsertarElemento(Arreglo As String(), indice As Integer, insertar As String) As String()
+
+        Dim retornar As String() = New String(Arreglo.Length) {}
+        Dim contador As Integer = 0
+        For Each valor In Arreglo
+            If contador < indice Then
+                retornar(contador) = valor
+            Else
+                retornar(contador + 1) = valor
+            End If
+            contador += 1
+        Next
+        retornar(indice) = insertar
+        Return retornar
+    End Function
+    Public Function InsertarElemntoMatriz(matriz As String()(), indice As Integer, insertar As String()) As String()()
+        ''[a,b,c],[g,h,i],     1, [d,e,f]  -> [a,b,c],[d,e,f],[g,h,i]
+        Dim retornar As String()() = New String(matriz.Length)() {}
+        Dim contador As Integer = 0
+        For Each valor In matriz
+            If contador < indice Then
+                retornar(contador) = valor
+            Else
+                retornar(contador + 1) = valor
+            End If
+            contador += 1
+        Next
+        retornar(indice) = insertar
+        Return retornar
     End Function
 
     ''' <summary>
@@ -189,48 +212,25 @@ Public Class AdministradorDB
         Return BdMemoria
     End Function
 
-    Public Function CargarBD() As List(Of List(Of String))
+    Public Function EliminarElemento(Matriz As String()(), fila As Integer) As String()()
+        Dim arreglo As String()() = New String(Matriz.Length - 2)() {}
+        Dim contador As Integer = 0
 
-        Dim BdMemoria = New List(Of List(Of String))
+        For Each filas In Matriz
+            If Not contador = fila Then
+                If contador < fila Then
+                    arreglo(contador) = filas
+                Else
+                    arreglo(contador - 1) = filas
+                End If
+            End If
+            contador += 1
+        Next
 
-        Dim rutaArchivo = SpecialDirectories.MyDocuments & "\" & nombreArchivo
-        If Not FileSystem.FileExists(rutaArchivo) Then ''No Existe este archivo?
-            Return BdMemoria ''Retorna la lista (vacía)
-        End If
+        Return arreglo
 
-        Using MyReader As New Microsoft.VisualBasic.FileIO.TextFieldParser(rutaArchivo)
-            MyReader.TextFieldType = FileIO.FieldType.Delimited
-            While Not MyReader.EndOfData ''Mientras no sea el fin de los datos
-                Try
-                    Dim CurrentLine = MyReader.ReadLine ''Leemos la linea de texto actual
-                    Dim filaActual() As String = CurrentLine.Split(";") ''Se separan los elementos de la linea
-                    Dim Fila = New List(Of String) ''Creamos la lista que será la Fila en la matriz
-                    Fila.AddRange(filaActual) ''Agregamos todos los elementos anteriormente separados
-                    BdMemoria.Add(Fila) ''Agregamos la fila a la base de datos en memoria
-                Catch ex As Microsoft.VisualBasic.FileIO.MalformedLineException
-                    MsgBox("no existe archivo de lectura")
-                End Try
-            End While
-
-        End Using
-        Return BdMemoria
     End Function
 
-    Public Sub ActualizarArchivoLista(BaseDatos As List(Of List(Of String)))
 
-        Dim Cadena As String = ""
-
-        For Each Fila In BaseDatos
-            For Each Celda In Fila
-                Cadena = Cadena & Celda & ";"
-            Next Celda
-            Cadena = Cadena.Remove(Cadena.Length - 1, 1) ''Remover el punto y coma sobrante de cada linea
-            Cadena = Cadena & vbNewLine
-        Next Fila
-
-
-        My.Computer.FileSystem.WriteAllText(SpecialDirectories.MyDocuments & "\" & nombreArchivo, Cadena, False) ''sobreescribe el archivo
-
-    End Sub
 
 End Class

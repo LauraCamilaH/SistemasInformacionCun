@@ -53,14 +53,11 @@ Public Class AsignacionDesign
             Return
         End If
 
-        TextBoxApellido.Text = Datospersona(3)
+        TextBoxApellido.Text = Datospersona(4)
         TextBoxNombre.Text = Datospersona(2)
-        TextBoxCpu.Text = Datospersona(6)
-        TextBoxImpresora.Text = Datospersona(7)
-        TextBoxMonitor.Text = Datospersona(5)
-
-
-
+        TextBoxCpu.Text = Datospersona(7)
+        TextBoxImpresora.Text = Datospersona(8)
+        TextBoxMonitor.Text = Datospersona(6)
 
     End Sub
     Private Sub organizar()
@@ -113,5 +110,9 @@ Public Class AsignacionDesign
             Return
         End If
         MsgBox("Se ha actualizado el registro")
+    End Sub
+
+    Private Sub BtHistoria_Click(sender As Object, e As EventArgs) Handles BtHistoria.Click
+
     End Sub
 End Class

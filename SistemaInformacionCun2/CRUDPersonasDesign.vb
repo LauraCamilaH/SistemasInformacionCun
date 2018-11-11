@@ -51,26 +51,9 @@
         TextBoxMes.Text = ""
 
     End Sub
-    Public Function EliminarElemento(Matriz As String()(), fila As Integer) As String()()
-        Dim arreglo As String()() = New String(Matriz.Length - 2)() {}
-        Dim contador As Integer = 0
 
-        For Each filas In Matriz
-            If Not contador = fila Then
-                If contador < fila Then
-                    arreglo(contador) = filas
-                Else
-                    arreglo(contador - 1) = filas
-                End If
-            End If
-            contador += 1
-        Next
 
-        Return arreglo
-        Recargar()
-    End Function
-
-    Protected Overridable Function ValidarCampos() As String
+    Private Function ValidarCampos() As String
 
         ''Si el campo está vácio o está lleno de espacios
         If String.IsNullOrWhiteSpace(TextBoxCedulaPersonas.Text) Then
@@ -82,8 +65,41 @@
         If String.IsNullOrWhiteSpace(TextBoxApellidoPersonas.Text) Then
             Return "Por favor ingrese el apellido"
         End If
+        If String.IsNullOrWhiteSpace(TextBoxCiudadPersonas.Text) Then
+            Return "Por favor ingrese  la ciudad"
+        End If
+        If String.IsNullOrWhiteSpace(TextBoxPrimerNombrePersonas.Text) Then
+            Return "Por favor ingrese el Primer Nombre"
+        End If
+        If String.IsNullOrWhiteSpace(TextBoxSdoNombrePersonas.Text) Then
+            Return "Por favor ingrese el segundo nombre"
+        End If
+        If String.IsNullOrWhiteSpace(TextBoxSueldoPersonas.Text) Then
+            Return "Por favor ingrese el sueldo"
+        End If
+        If String.IsNullOrWhiteSpace(TextBoxCargoPersonas.Text) Then
+            Return "Por favor ingrese el cargo"
+        End If
+        If String.IsNullOrWhiteSpace(TextBoxAño.Text) Then
+            Return "Por favor ingrese el año"
+        End If
+        If String.IsNullOrWhiteSpace(TextBoxMes.Text) Then
+            Return "Por favor ingrese el mes"
+        End If
+        If String.IsNullOrWhiteSpace(TextBoxdia.Text) Then
+            Return "Por favor ingrese el dia"
+        End If
         Return "" ''No hay errores, retornamos una cadena vacia
     End Function
+    Private Sub DataGrid_SelectionChanged(sender As Object, e As EventArgs) Handles DataGridPersonas.SelectionChanged
+        If Not DataGridPersonas.SelectedRows.Count = 1 Then
+            LimpiarCampos()
+            Return
+        End If
+        Dim filaSeleccionada = DataGridPersonas.Rows(DataGridPersonas.SelectedRows(0).Index)
+        CargarCamposTexto(filaSeleccionada)
+        BtnEliminar.Enabled = True
+    End Sub
 
 
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
@@ -95,12 +111,68 @@
 
         Dim id = TextBoxIDPersonas.Text
         If String.IsNullOrEmpty(id) Then ''Si el id está en blanco es que el elemento es nuevo
-            ' Crear()
+            Crear()
         Else
-            'Actualizar()
+            Actualizar()
+        End If
+    End Sub
+    Private Sub Actualizar()
+        Dim Fila = CamposDeTextoArreglo()
+        If AdmiPersonas.Actualizar(Fila) Then
+            MsgBox("Se actualizó el registro")
+            Recargar()
+        Else
+            MsgBox("No se actualizó ningún registro")
         End If
     End Sub
 
+    Private Sub Crear()
+        Dim NuevoId = AdmiPersonas.Crear(CamposDeTextoArreglo())
+        If NuevoId > 0 Then
+            MsgBox("Se ha creado la impresora con Id: " & NuevoId)
+            Recargar()
+            LimpiarCampos()
+        ElseIf NuevoId = -1 Then
+            MsgBox("Ya existe un elemento con el serial")
+        ElseIf NuevoId = -2 Then
+            MsgBox("Error interno, comuniquese con el administrador") ''Es un error del programador!!!
+        End If
+    End Sub
+
+    Private Function CamposDeTextoArreglo() As String()
+        Dim fecha = TextBoxdia.Text & "/" & TextBoxMes.Text & "/" & TextBoxAño.Text
+
+
+        Dim Id = TextBoxIDPersonas.Text
+        Dim Codmonitor = "0"
+        Dim CodImpresora = "0"
+        Dim CodCpu = "0"
+
+        ''Esta función es llamada al crear o actualizar, por tal motivo debemos
+        ''agregar o no el campo id, ya que si es llamada desde actualizar es 
+        ''porque hay un ID ya cargado en el campo de texto y debe agregarse,
+        ''si no lo hay, entonces es llamado desde el crear y no se debe agregar
+        ''este primer elemento
+        If Not String.IsNullOrEmpty(Id) Then 'si no es nulo o vacio, registro antiguo tiene id
+            Dim Fila() As String = New String(12) {Id, TextBoxCedulaPersonas.Text, TextBoxPrimerNombrePersonas.Text, fecha, TextBoxSdoNombrePersonas.Text, TextBoxApellidoPersonas.Text, TextBoxCiudadPersonas.Text, Codmonitor, CodCpu, CodImpresora, TextBoxCargoPersonas.Text, TextBoxSueldoPersonas.Text, fecha}
+            Return Fila
+
+        End If
+
+        Return {Id, TextBoxCedulaPersonas.Text, TextBoxPrimerNombrePersonas.Text, fecha, TextBoxSdoNombrePersonas.Text, TextBoxApellidoPersonas.Text, TextBoxCiudadPersonas.Text, Codmonitor, CodCpu, CodImpresora, TextBoxCargoPersonas.Text, TextBoxSueldoPersonas.Text, fecha}
+    End Function
+
+    Private Sub CargarCamposTexto(filaSeleccionada As DataGridViewRow)
+        TextBoxIDPersonas.Text = filaSeleccionada.Cells(0).Value
+        TextBoxCedulaPersonas.Text = filaSeleccionada.Cells(1).Value
+        TextBoxPrimerNombrePersonas.Text = filaSeleccionada.Cells(2).Value
+        TextBoxSdoNombrePersonas.Text = filaSeleccionada.Cells(3).Value
+        TextBoxApellidoPersonas.Text = filaSeleccionada.Cells(4).Value
+        TextBoxCiudadPersonas.Text = filaSeleccionada.Cells(5).Value
+        TextBoxCargoPersonas.Text = filaSeleccionada.Cells(9).Value
+        TextBoxSueldoPersonas.Text = filaSeleccionada.Cells(10).Value
+        TextBoxAño.Text = filaSeleccionada.Cells(11).Value
+    End Sub
     Private Sub BtnNuevo_Click(sender As Object, e As EventArgs) Handles BtnNuevo.Click
         LimpiarCampos()
         TextBoxCedulaPersonas.Focus()
@@ -115,7 +187,15 @@
     End Sub
 
     Private Sub BtnEliminar_Click(sender As Object, e As EventArgs) Handles BtnEliminar.Click
-        'EliminarElemento(Matriz()(), TextBoxIDPersonas.Text)
+        Dim Id = TextBoxIDPersonas.Text
+        If Not String.IsNullOrEmpty(Id) Then
+            If AdmiPersonas.Eliminar(Id) Then
+                MsgBox("El elemento con id " & Id & " ha sido eliminado")
+                Recargar()
+            Else
+                MsgBox("No se pudo eliminar ningún elemento")
+            End If
+        End If
     End Sub
 
     Private Sub BtnAscendente_Click(sender As Object, e As EventArgs) Handles BtnAscendente.Click
