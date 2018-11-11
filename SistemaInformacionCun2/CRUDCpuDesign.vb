@@ -137,7 +137,15 @@
         TextBoxIDcpu.Text = filaSeleccionada.Cells(0).Value
         TextBoxSerieCPU.Text = filaSeleccionada.Cells(1).Value
         TextBoxMarcaCpu.Text = filaSeleccionada.Cells(2).Value
-        TextBoxAnioCpu.Text = filaSeleccionada.Cells(3).Value
+
+        Dim fecha As String = filaSeleccionada.Cells(3).Value
+        If Not String.IsNullOrEmpty(fecha) Then
+            Dim partes = fecha.Split("/")
+            TextBoxDiaCpu.Text = partes(0)
+            TextBoxMesCpu.Text = partes(1)
+            TextBoxAnioCpu.Text = partes(2)
+        End If
+
         TextBoxValorC.Text = filaSeleccionada.Cells(4).Value
 
     End Sub
@@ -160,7 +168,7 @@
         Recargar()
     End Sub
 
-    Private Sub BtnModificar_Click(sender As Object, e As EventArgs) Handles BtnModificar.Click
+    Private Sub BtnModificar_Click(sender As Object, e As EventArgs)
 
     End Sub
 

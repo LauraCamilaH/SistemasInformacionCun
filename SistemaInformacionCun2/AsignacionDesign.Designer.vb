@@ -36,8 +36,6 @@ Partial Class AsignacionDesign
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TextBoxNombre = New System.Windows.Forms.TextBox()
         Me.TextBoxApellido = New System.Windows.Forms.TextBox()
-        Me.Btcancelar = New System.Windows.Forms.Button()
-        Me.BtAsignar = New System.Windows.Forms.Button()
         Me.TextBoxMonitor = New System.Windows.Forms.TextBox()
         Me.TextBoxCpu = New System.Windows.Forms.TextBox()
         Me.TextBoxImpresora = New System.Windows.Forms.TextBox()
@@ -161,24 +159,6 @@ Partial Class AsignacionDesign
         Me.TextBoxApellido.Size = New System.Drawing.Size(415, 20)
         Me.TextBoxApellido.TabIndex = 12
         '
-        'Btcancelar
-        '
-        Me.Btcancelar.Location = New System.Drawing.Point(420, 437)
-        Me.Btcancelar.Name = "Btcancelar"
-        Me.Btcancelar.Size = New System.Drawing.Size(75, 23)
-        Me.Btcancelar.TabIndex = 13
-        Me.Btcancelar.Text = "Cancelar"
-        Me.Btcancelar.UseVisualStyleBackColor = True
-        '
-        'BtAsignar
-        '
-        Me.BtAsignar.Location = New System.Drawing.Point(420, 408)
-        Me.BtAsignar.Name = "BtAsignar"
-        Me.BtAsignar.Size = New System.Drawing.Size(75, 23)
-        Me.BtAsignar.TabIndex = 14
-        Me.BtAsignar.Text = "Asignar"
-        Me.BtAsignar.UseVisualStyleBackColor = True
-        '
         'TextBoxMonitor
         '
         Me.TextBoxMonitor.Location = New System.Drawing.Point(80, 200)
@@ -257,8 +237,6 @@ Partial Class AsignacionDesign
         Me.Controls.Add(Me.TextBoxImpresora)
         Me.Controls.Add(Me.TextBoxCpu)
         Me.Controls.Add(Me.TextBoxMonitor)
-        Me.Controls.Add(Me.BtAsignar)
-        Me.Controls.Add(Me.Btcancelar)
         Me.Controls.Add(Me.TextBoxApellido)
         Me.Controls.Add(Me.TextBoxNombre)
         Me.Controls.Add(Me.Label5)
@@ -293,8 +271,6 @@ Partial Class AsignacionDesign
     Friend WithEvents Label5 As Label
     Friend WithEvents TextBoxNombre As TextBox
     Friend WithEvents TextBoxApellido As TextBox
-    Friend WithEvents Btcancelar As Button
-    Friend WithEvents BtAsignar As Button
     Friend WithEvents TextBoxMonitor As TextBox
     Friend WithEvents TextBoxCpu As TextBox
     Friend WithEvents TextBoxImpresora As TextBox

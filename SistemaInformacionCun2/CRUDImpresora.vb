@@ -125,8 +125,15 @@
         TxtIdentificador.Text = filaSeleccionada.Cells(0).Value
         TxtSerialImpresora.Text = filaSeleccionada.Cells(1).Value
         TxtMarcaImpresora.Text = filaSeleccionada.Cells(2).Value
-        TextBoxAnio.Text = filaSeleccionada.Cells(3).Value
         TextBoxValorI.Text = filaSeleccionada.Cells(4).Value
+
+        Dim fecha As String = filaSeleccionada.Cells(3).Value
+        If Not String.IsNullOrEmpty(fecha) Then
+            Dim partes = fecha.Split("/")
+            TextBoxdia.Text = partes(0)
+            TextBoxmes.Text = partes(1)
+            TextBoxAnio.Text = partes(2)
+        End If
 
     End Sub
 
@@ -177,7 +184,7 @@
         BtnEliminar.Enabled = True
     End Sub
 
-    Private Sub BtnModificar_Click(sender As Object, e As EventArgs) Handles BtnModificar.Click
+    Private Sub BtnModificar_Click(sender As Object, e As EventArgs)
 
     End Sub
 

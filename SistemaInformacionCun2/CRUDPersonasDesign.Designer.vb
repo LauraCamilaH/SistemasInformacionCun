@@ -231,9 +231,16 @@ Partial Class CRUDPersonasDesign
         '
         'DataGridPersonas
         '
+        Me.DataGridPersonas.AllowUserToAddRows = False
+        Me.DataGridPersonas.AllowUserToDeleteRows = False
+        Me.DataGridPersonas.AllowUserToOrderColumns = True
+        Me.DataGridPersonas.AllowUserToResizeRows = False
         Me.DataGridPersonas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridPersonas.Location = New System.Drawing.Point(12, 345)
+        Me.DataGridPersonas.MultiSelect = False
         Me.DataGridPersonas.Name = "DataGridPersonas"
+        Me.DataGridPersonas.ReadOnly = True
+        Me.DataGridPersonas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridPersonas.Size = New System.Drawing.Size(517, 161)
         Me.DataGridPersonas.TabIndex = 20
         '

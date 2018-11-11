@@ -171,7 +171,14 @@
         TextBoxCiudadPersonas.Text = filaSeleccionada.Cells(5).Value
         TextBoxCargoPersonas.Text = filaSeleccionada.Cells(9).Value
         TextBoxSueldoPersonas.Text = filaSeleccionada.Cells(10).Value
-        TextBoxAño.Text = filaSeleccionada.Cells(11).Value
+
+        Dim fecha As String = filaSeleccionada.Cells(11).Value
+        If Not String.IsNullOrEmpty(fecha) Then
+            Dim partes = fecha.Split("/")
+            TextBoxdia.Text = partes(0)
+            TextBoxMes.Text = partes(1)
+            TextBoxAño.Text = partes(2)
+        End If
     End Sub
     Private Sub BtnNuevo_Click(sender As Object, e As EventArgs) Handles BtnNuevo.Click
         LimpiarCampos()

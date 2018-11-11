@@ -42,7 +42,6 @@ Partial Class CRUDImpresora
         Me.Label4 = New System.Windows.Forms.Label()
         Me.BtnAscendente = New System.Windows.Forms.Button()
         Me.BtnDescendente = New System.Windows.Forms.Button()
-        Me.BtnModificar = New System.Windows.Forms.Button()
         Me.TextBoxdia = New System.Windows.Forms.TextBox()
         Me.TextBoxmes = New System.Windows.Forms.TextBox()
         Me.TextBoxAnio = New System.Windows.Forms.TextBox()
@@ -92,7 +91,7 @@ Partial Class CRUDImpresora
         '
         'BtnEliminar
         '
-        Me.BtnEliminar.Location = New System.Drawing.Point(174, 485)
+        Me.BtnEliminar.Location = New System.Drawing.Point(93, 485)
         Me.BtnEliminar.Name = "BtnEliminar"
         Me.BtnEliminar.Size = New System.Drawing.Size(75, 23)
         Me.BtnEliminar.TabIndex = 1
@@ -114,7 +113,7 @@ Partial Class CRUDImpresora
         Me.BtnGuardar.Name = "BtnGuardar"
         Me.BtnGuardar.Size = New System.Drawing.Size(120, 23)
         Me.BtnGuardar.TabIndex = 3
-        Me.BtnGuardar.Text = "Guardar"
+        Me.BtnGuardar.Text = "Modificar y Guardar"
         Me.BtnGuardar.UseVisualStyleBackColor = True
         '
         'BtnActualizar
@@ -223,15 +222,6 @@ Partial Class CRUDImpresora
         Me.BtnDescendente.Text = "Descendente "
         Me.BtnDescendente.UseVisualStyleBackColor = True
         '
-        'BtnModificar
-        '
-        Me.BtnModificar.Location = New System.Drawing.Point(93, 485)
-        Me.BtnModificar.Name = "BtnModificar"
-        Me.BtnModificar.Size = New System.Drawing.Size(75, 23)
-        Me.BtnModificar.TabIndex = 16
-        Me.BtnModificar.Text = "Modificar "
-        Me.BtnModificar.UseVisualStyleBackColor = True
-        '
         'TextBoxdia
         '
         Me.TextBoxdia.Location = New System.Drawing.Point(15, 198)
@@ -319,7 +309,6 @@ Partial Class CRUDImpresora
         Me.Controls.Add(Me.TextBoxAnio)
         Me.Controls.Add(Me.TextBoxmes)
         Me.Controls.Add(Me.TextBoxdia)
-        Me.Controls.Add(Me.BtnModificar)
         Me.Controls.Add(Me.BtnDescendente)
         Me.Controls.Add(Me.BtnAscendente)
         Me.Controls.Add(Me.Label4)
@@ -364,7 +353,6 @@ Partial Class CRUDImpresora
     Friend WithEvents Label4 As Label
     Friend WithEvents BtnAscendente As Button
     Friend WithEvents BtnDescendente As Button
-    Friend WithEvents BtnModificar As Button
     Friend WithEvents TextBoxdia As TextBox
     Friend WithEvents TextBoxmes As TextBox
     Friend WithEvents TextBoxAnio As TextBox

@@ -2,7 +2,7 @@
 
 Public Class AsignacionDesign
     Dim currentRow As String()
-    Dim Bdasignacion As String()()
+    Dim Bdcpu As String()()
     Dim numero As Integer
 
     Private Sub CargarBds()
@@ -18,10 +18,10 @@ Public Class AsignacionDesign
                     Dim currentField As String
                     For Each currentField In currentRow
                         Dim vColeccion() As String = currentField.Split(";")
-                        ReDim Preserve Bdasignacion(numero)
-                        Bdasignacion(numero) = vColeccion
+                        ReDim Preserve Bdcpu(numero)
+                        Bdcpu(numero) = vColeccion
 
-                        cadena &= Bdasignacion(numero)(0) & " " & Bdasignacion(numero)(1) & " " & Bdasignacion(numero)(2) & " " & Bdasignacion(numero)(3) & vbNewLine
+                        cadena &= Bdcpu(numero)(0) & " " & Bdcpu(numero)(1) & " " & Bdcpu(numero)(2) & " " & Bdcpu(numero)(3) & vbNewLine
                         numero += 1
 
                     Next
@@ -62,20 +62,20 @@ Public Class AsignacionDesign
     End Sub
     Private Sub organizar()
         Dim cadena As String
-        For index1 As Integer = 0 To (Bdasignacion.Length - 1) - 1
-            For index2 As Integer = 0 To (Bdasignacion.Length - 1) - 1
-                If CInt(Bdasignacion(index2)(3)) < CInt(Bdasignacion(index2 + 1)(3)) Then
+        For index1 As Integer = 0 To (Bdcpu.Length - 1) - 1
+            For index2 As Integer = 0 To (Bdcpu.Length - 1) - 1
+                If CInt(Bdcpu(index2)(3)) < CInt(Bdcpu(index2 + 1)(3)) Then
                     Dim ArregloLocal As String()
-                    ArregloLocal = Bdasignacion(index2 + 1)
-                    Bdasignacion(index2 + 1) = Bdasignacion(index2)
-                    Bdasignacion(index2) = ArregloLocal
+                    ArregloLocal = Bdcpu(index2 + 1)
+                    Bdcpu(index2 + 1) = Bdcpu(index2)
+                    Bdcpu(index2) = ArregloLocal
 
                 End If
             Next
         Next
         cadena = " Listado de registros enl la base de datos " & vbNewLine
-        For index1 As Integer = 0 To (Bdasignacion.Length - 1)
-            cadena &= Bdasignacion(index1)(0) & " " & Bdasignacion(index1)(1) & " " & Bdasignacion(index1)(2) & " " & Bdasignacion(index1)(3) & vbNewLine
+        For index1 As Integer = 0 To (Bdcpu.Length - 1)
+            cadena &= Bdcpu(index1)(0) & " " & Bdcpu(index1)(1) & " " & Bdcpu(index1)(2) & " " & Bdcpu(index1)(3) & vbNewLine
 
         Next
         TextBoxListahistoria.Text = cadena
@@ -113,6 +113,12 @@ Public Class AsignacionDesign
     End Sub
 
     Private Sub BtHistoria_Click(sender As Object, e As EventArgs) Handles BtHistoria.Click
+
+    End Sub
+
+
+
+    Private Sub AsignacionDesign_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
 End Class

@@ -23,7 +23,6 @@ Partial Class CRUDCpuDesign
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CRUDCpuDesign))
-        Me.BtnModificar = New System.Windows.Forms.Button()
         Me.BtnGuardar = New System.Windows.Forms.Button()
         Me.BtnNuevo = New System.Windows.Forms.Button()
         Me.BtnActualizar = New System.Windows.Forms.Button()
@@ -53,22 +52,13 @@ Partial Class CRUDCpuDesign
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'BtnModificar
-        '
-        Me.BtnModificar.Location = New System.Drawing.Point(93, 485)
-        Me.BtnModificar.Name = "BtnModificar"
-        Me.BtnModificar.Size = New System.Drawing.Size(75, 23)
-        Me.BtnModificar.TabIndex = 0
-        Me.BtnModificar.Text = "Modificar"
-        Me.BtnModificar.UseVisualStyleBackColor = True
-        '
         'BtnGuardar
         '
         Me.BtnGuardar.Location = New System.Drawing.Point(412, 202)
         Me.BtnGuardar.Name = "BtnGuardar"
         Me.BtnGuardar.Size = New System.Drawing.Size(120, 23)
         Me.BtnGuardar.TabIndex = 1
-        Me.BtnGuardar.Text = "Guardar"
+        Me.BtnGuardar.Text = "Modificar y Guardar"
         Me.BtnGuardar.UseVisualStyleBackColor = True
         '
         'BtnNuevo
@@ -217,15 +207,22 @@ Partial Class CRUDCpuDesign
         '
         'DataGridViewcpu
         '
+        Me.DataGridViewcpu.AllowUserToAddRows = False
+        Me.DataGridViewcpu.AllowUserToDeleteRows = False
+        Me.DataGridViewcpu.AllowUserToOrderColumns = True
+        Me.DataGridViewcpu.AllowUserToResizeRows = False
         Me.DataGridViewcpu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridViewcpu.Location = New System.Drawing.Point(12, 240)
+        Me.DataGridViewcpu.MultiSelect = False
         Me.DataGridViewcpu.Name = "DataGridViewcpu"
+        Me.DataGridViewcpu.ReadOnly = True
+        Me.DataGridViewcpu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridViewcpu.Size = New System.Drawing.Size(520, 229)
         Me.DataGridViewcpu.TabIndex = 19
         '
         'BtnEliminar
         '
-        Me.BtnEliminar.Location = New System.Drawing.Point(175, 485)
+        Me.BtnEliminar.Location = New System.Drawing.Point(93, 484)
         Me.BtnEliminar.Name = "BtnEliminar"
         Me.BtnEliminar.Size = New System.Drawing.Size(75, 23)
         Me.BtnEliminar.TabIndex = 20
@@ -307,7 +304,6 @@ Partial Class CRUDCpuDesign
         Me.Controls.Add(Me.BtnActualizar)
         Me.Controls.Add(Me.BtnNuevo)
         Me.Controls.Add(Me.BtnGuardar)
-        Me.Controls.Add(Me.BtnModificar)
         Me.Name = "CRUDCpuDesign"
         Me.Text = "CRUPCpuDesign"
         CType(Me.DataGridViewcpu, System.ComponentModel.ISupportInitialize).EndInit()
@@ -316,8 +312,6 @@ Partial Class CRUDCpuDesign
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents BtnModificar As Button
     Friend WithEvents BtnGuardar As Button
     Friend WithEvents BtnNuevo As Button
     Friend WithEvents BtnActualizar As Button

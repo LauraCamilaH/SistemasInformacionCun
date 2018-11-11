@@ -188,9 +188,16 @@ Partial Class CRUDMonitorDesign
         '
         'DataGridMonitor
         '
+        Me.DataGridMonitor.AllowUserToAddRows = False
+        Me.DataGridMonitor.AllowUserToDeleteRows = False
+        Me.DataGridMonitor.AllowUserToOrderColumns = True
+        Me.DataGridMonitor.AllowUserToResizeRows = False
         Me.DataGridMonitor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridMonitor.Location = New System.Drawing.Point(12, 240)
+        Me.DataGridMonitor.MultiSelect = False
         Me.DataGridMonitor.Name = "DataGridMonitor"
+        Me.DataGridMonitor.ReadOnly = True
+        Me.DataGridMonitor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridMonitor.Size = New System.Drawing.Size(520, 150)
         Me.DataGridMonitor.TabIndex = 16
         '

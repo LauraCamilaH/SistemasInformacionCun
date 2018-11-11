@@ -151,7 +151,14 @@
         TextBoxIdMonitor.Text = filaSeleccionada.Cells(0).Value
         TextBoxSerialMonitor.Text = filaSeleccionada.Cells(1).Value
         TextBoxMarcaMonitor.Text = filaSeleccionada.Cells(2).Value
-        TextBoxAnioMonitor.Text = filaSeleccionada.Cells(3).Value
+
+        Dim fecha As String = filaSeleccionada.Cells(3).Value
+        If Not String.IsNullOrEmpty(fecha) Then
+            Dim partes = fecha.Split("/")
+            TextBoxDiaMonitor.Text = partes(0)
+            TextBoxMesMonitor.Text = partes(1)
+            TextBoxAnioMonitor.Text = partes(2)
+        End If
         TextBoxValorM.Text = filaSeleccionada.Cells(4).Value
 
     End Sub
