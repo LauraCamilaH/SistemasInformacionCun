@@ -40,10 +40,7 @@ Partial Class CRUDMonitorDesign
         Me.BtnGuardar = New System.Windows.Forms.Button()
         Me.DataGridMonitor = New System.Windows.Forms.DataGridView()
         Me.BtnActualizar = New System.Windows.Forms.Button()
-        Me.BtnModificar = New System.Windows.Forms.Button()
         Me.BtnEliminar = New System.Windows.Forms.Button()
-        Me.BtnDescendente = New System.Windows.Forms.Button()
-        Me.BtnAscendente = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.TextBoxValorM = New System.Windows.Forms.TextBox()
@@ -183,7 +180,7 @@ Partial Class CRUDMonitorDesign
         Me.BtnGuardar.Name = "BtnGuardar"
         Me.BtnGuardar.Size = New System.Drawing.Size(120, 23)
         Me.BtnGuardar.TabIndex = 15
-        Me.BtnGuardar.Text = "Guardar"
+        Me.BtnGuardar.Text = "Modificar y Guardar"
         Me.BtnGuardar.UseVisualStyleBackColor = True
         '
         'DataGridMonitor
@@ -210,41 +207,14 @@ Partial Class CRUDMonitorDesign
         Me.BtnActualizar.Text = "Actualizar"
         Me.BtnActualizar.UseVisualStyleBackColor = True
         '
-        'BtnModificar
-        '
-        Me.BtnModificar.Location = New System.Drawing.Point(94, 417)
-        Me.BtnModificar.Name = "BtnModificar"
-        Me.BtnModificar.Size = New System.Drawing.Size(75, 23)
-        Me.BtnModificar.TabIndex = 18
-        Me.BtnModificar.Text = "Modificar"
-        Me.BtnModificar.UseVisualStyleBackColor = True
-        '
         'BtnEliminar
         '
-        Me.BtnEliminar.Location = New System.Drawing.Point(176, 418)
+        Me.BtnEliminar.Location = New System.Drawing.Point(98, 418)
         Me.BtnEliminar.Name = "BtnEliminar"
         Me.BtnEliminar.Size = New System.Drawing.Size(75, 23)
         Me.BtnEliminar.TabIndex = 19
         Me.BtnEliminar.Text = "Eliminar"
         Me.BtnEliminar.UseVisualStyleBackColor = True
-        '
-        'BtnDescendente
-        '
-        Me.BtnDescendente.Location = New System.Drawing.Point(447, 417)
-        Me.BtnDescendente.Name = "BtnDescendente"
-        Me.BtnDescendente.Size = New System.Drawing.Size(85, 23)
-        Me.BtnDescendente.TabIndex = 20
-        Me.BtnDescendente.Text = "Descendente"
-        Me.BtnDescendente.UseVisualStyleBackColor = True
-        '
-        'BtnAscendente
-        '
-        Me.BtnAscendente.Location = New System.Drawing.Point(361, 417)
-        Me.BtnAscendente.Name = "BtnAscendente"
-        Me.BtnAscendente.Size = New System.Drawing.Size(75, 23)
-        Me.BtnAscendente.TabIndex = 21
-        Me.BtnAscendente.Text = "Ascendente"
-        Me.BtnAscendente.UseVisualStyleBackColor = True
         '
         'PictureBox1
         '
@@ -280,10 +250,7 @@ Partial Class CRUDMonitorDesign
         Me.Controls.Add(Me.TextBoxValorM)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.BtnAscendente)
-        Me.Controls.Add(Me.BtnDescendente)
         Me.Controls.Add(Me.BtnEliminar)
-        Me.Controls.Add(Me.BtnModificar)
         Me.Controls.Add(Me.BtnActualizar)
         Me.Controls.Add(Me.DataGridMonitor)
         Me.Controls.Add(Me.BtnGuardar)
@@ -329,10 +296,7 @@ Partial Class CRUDMonitorDesign
     Friend WithEvents BtnGuardar As Button
     Friend WithEvents DataGridMonitor As DataGridView
     Friend WithEvents BtnActualizar As Button
-    Friend WithEvents BtnModificar As Button
     Friend WithEvents BtnEliminar As Button
-    Friend WithEvents BtnDescendente As Button
-    Friend WithEvents BtnAscendente As Button
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label7 As Label
     Friend WithEvents TextBoxValorM As TextBox

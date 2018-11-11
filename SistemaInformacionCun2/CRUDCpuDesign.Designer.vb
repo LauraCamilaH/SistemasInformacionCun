@@ -29,7 +29,6 @@ Partial Class CRUDCpuDesign
         Me.CPU = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Id = New System.Windows.Forms.Label()
-        Me.Ordenar = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TextBoxIDcpu = New System.Windows.Forms.TextBox()
@@ -43,8 +42,6 @@ Partial Class CRUDCpuDesign
         Me.Label7 = New System.Windows.Forms.Label()
         Me.DataGridViewcpu = New System.Windows.Forms.DataGridView()
         Me.BtnEliminar = New System.Windows.Forms.Button()
-        Me.BtnAscendente = New System.Windows.Forms.Button()
-        Me.BtnDescendente = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TextBoxValorC = New System.Windows.Forms.TextBox()
@@ -107,15 +104,6 @@ Partial Class CRUDCpuDesign
         Me.Id.Size = New System.Drawing.Size(16, 13)
         Me.Id.TabIndex = 6
         Me.Id.Text = "Id"
-        '
-        'Ordenar
-        '
-        Me.Ordenar.AutoSize = True
-        Me.Ordenar.Location = New System.Drawing.Point(318, 490)
-        Me.Ordenar.Name = "Ordenar"
-        Me.Ordenar.Size = New System.Drawing.Size(45, 13)
-        Me.Ordenar.TabIndex = 7
-        Me.Ordenar.Text = "Ordenar"
         '
         'Label4
         '
@@ -229,24 +217,6 @@ Partial Class CRUDCpuDesign
         Me.BtnEliminar.Text = "Eliminar"
         Me.BtnEliminar.UseVisualStyleBackColor = True
         '
-        'BtnAscendente
-        '
-        Me.BtnAscendente.Location = New System.Drawing.Point(363, 485)
-        Me.BtnAscendente.Name = "BtnAscendente"
-        Me.BtnAscendente.Size = New System.Drawing.Size(75, 23)
-        Me.BtnAscendente.TabIndex = 21
-        Me.BtnAscendente.Text = "Ascendente"
-        Me.BtnAscendente.UseVisualStyleBackColor = True
-        '
-        'BtnDescendente
-        '
-        Me.BtnDescendente.Location = New System.Drawing.Point(444, 484)
-        Me.BtnDescendente.Name = "BtnDescendente"
-        Me.BtnDescendente.Size = New System.Drawing.Size(87, 23)
-        Me.BtnDescendente.TabIndex = 22
-        Me.BtnDescendente.Text = "Descendente"
-        Me.BtnDescendente.UseVisualStyleBackColor = True
-        '
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.SistemaInformacionCun2.My.Resources.Resources.Cpu
@@ -282,8 +252,6 @@ Partial Class CRUDCpuDesign
         Me.Controls.Add(Me.TextBoxValorC)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.BtnDescendente)
-        Me.Controls.Add(Me.BtnAscendente)
         Me.Controls.Add(Me.BtnEliminar)
         Me.Controls.Add(Me.DataGridViewcpu)
         Me.Controls.Add(Me.Label7)
@@ -297,7 +265,6 @@ Partial Class CRUDCpuDesign
         Me.Controls.Add(Me.TextBoxIDcpu)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Ordenar)
         Me.Controls.Add(Me.Id)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.CPU)
@@ -318,7 +285,6 @@ Partial Class CRUDCpuDesign
     Friend WithEvents CPU As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Id As Label
-    Friend WithEvents Ordenar As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents TextBoxIDcpu As TextBox
@@ -332,8 +298,6 @@ Partial Class CRUDCpuDesign
     Friend WithEvents Label7 As Label
     Friend WithEvents DataGridViewcpu As DataGridView
     Friend WithEvents BtnEliminar As Button
-    Friend WithEvents BtnAscendente As Button
-    Friend WithEvents BtnDescendente As Button
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label3 As Label
     Friend WithEvents TextBoxValorC As TextBox

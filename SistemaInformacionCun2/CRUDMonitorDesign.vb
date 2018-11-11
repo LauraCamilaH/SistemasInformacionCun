@@ -172,11 +172,11 @@
         BtnEliminar.Enabled = True
     End Sub
 
-    Private Sub BtnModificar_Click(sender As Object, e As EventArgs) Handles BtnModificar.Click
+    Private Sub BtnModificar_Click(sender As Object, e As EventArgs) 
 
     End Sub
 
-    Private Sub BtnAscendente_Click(sender As Object, e As EventArgs) Handles BtnAscendente.Click
+    Private Sub BtnAscendente_Click(sender As Object, e As EventArgs) 
 
     End Sub
 End Class

@@ -205,11 +205,11 @@
         End If
     End Sub
 
-    Private Sub BtnAscendente_Click(sender As Object, e As EventArgs) Handles BtnAscendente.Click
+    Private Sub BtnAscendente_Click(sender As Object, e As EventArgs) 
 
     End Sub
 
-    Private Sub BtnDesendente_Click(sender As Object, e As EventArgs) Handles BtnDesendente.Click
+    Private Sub BtnDesendente_Click(sender As Object, e As EventArgs) 
 
     End Sub
 

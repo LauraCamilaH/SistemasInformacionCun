@@ -46,9 +46,6 @@ Partial Class CRUDPersonasDesign
         Me.BtnActualizar = New System.Windows.Forms.Button()
         Me.BtnModificar = New System.Windows.Forms.Button()
         Me.BtnEliminar = New System.Windows.Forms.Button()
-        Me.BtnAscendente = New System.Windows.Forms.Button()
-        Me.BtnDesendente = New System.Windows.Forms.Button()
-        Me.Label11 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TextBoxdia = New System.Windows.Forms.TextBox()
         Me.TextBoxMes = New System.Windows.Forms.TextBox()
@@ -271,33 +268,6 @@ Partial Class CRUDPersonasDesign
         Me.BtnEliminar.Text = "Eliminar"
         Me.BtnEliminar.UseVisualStyleBackColor = True
         '
-        'BtnAscendente
-        '
-        Me.BtnAscendente.Location = New System.Drawing.Point(374, 525)
-        Me.BtnAscendente.Name = "BtnAscendente"
-        Me.BtnAscendente.Size = New System.Drawing.Size(75, 23)
-        Me.BtnAscendente.TabIndex = 24
-        Me.BtnAscendente.Text = "Ascendente"
-        Me.BtnAscendente.UseVisualStyleBackColor = True
-        '
-        'BtnDesendente
-        '
-        Me.BtnDesendente.Location = New System.Drawing.Point(455, 525)
-        Me.BtnDesendente.Name = "BtnDesendente"
-        Me.BtnDesendente.Size = New System.Drawing.Size(75, 23)
-        Me.BtnDesendente.TabIndex = 25
-        Me.BtnDesendente.Text = "Desentente"
-        Me.BtnDesendente.UseVisualStyleBackColor = True
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(323, 530)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(45, 13)
-        Me.Label11.TabIndex = 26
-        Me.Label11.Text = "Ordenar"
-        '
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.SistemaInformacionCun2.My.Resources.Resources.personas
@@ -369,9 +339,6 @@ Partial Class CRUDPersonasDesign
         Me.Controls.Add(Me.TextBoxMes)
         Me.Controls.Add(Me.TextBoxdia)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.Label11)
-        Me.Controls.Add(Me.BtnDesendente)
-        Me.Controls.Add(Me.BtnAscendente)
         Me.Controls.Add(Me.BtnEliminar)
         Me.Controls.Add(Me.BtnModificar)
         Me.Controls.Add(Me.BtnActualizar)
@@ -432,9 +399,6 @@ Partial Class CRUDPersonasDesign
     Friend WithEvents BtnActualizar As Button
     Friend WithEvents BtnModificar As Button
     Friend WithEvents BtnEliminar As Button
-    Friend WithEvents BtnAscendente As Button
-    Friend WithEvents BtnDesendente As Button
-    Friend WithEvents Label11 As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents TextBoxdia As TextBox
     Friend WithEvents TextBoxMes As TextBox

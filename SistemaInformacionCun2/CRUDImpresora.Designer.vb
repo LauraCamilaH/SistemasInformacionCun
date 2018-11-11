@@ -40,15 +40,12 @@ Partial Class CRUDImpresora
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.BtnAscendente = New System.Windows.Forms.Button()
-        Me.BtnDescendente = New System.Windows.Forms.Button()
         Me.TextBoxdia = New System.Windows.Forms.TextBox()
         Me.TextBoxmes = New System.Windows.Forms.TextBox()
         Me.TextBoxAnio = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.TextBoxValorI = New System.Windows.Forms.TextBox()
         Me.label = New System.Windows.Forms.Label()
         CType(Me.DataGridImpresoras, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -204,24 +201,6 @@ Partial Class CRUDImpresora
         Me.Label4.TabIndex = 13
         Me.Label4.Text = "Edite la información de impresoras en el siguiente formulario."
         '
-        'BtnAscendente
-        '
-        Me.BtnAscendente.Location = New System.Drawing.Point(361, 485)
-        Me.BtnAscendente.Name = "BtnAscendente"
-        Me.BtnAscendente.Size = New System.Drawing.Size(75, 23)
-        Me.BtnAscendente.TabIndex = 14
-        Me.BtnAscendente.Text = "Ascendente "
-        Me.BtnAscendente.UseVisualStyleBackColor = True
-        '
-        'BtnDescendente
-        '
-        Me.BtnDescendente.Location = New System.Drawing.Point(442, 485)
-        Me.BtnDescendente.Name = "BtnDescendente"
-        Me.BtnDescendente.Size = New System.Drawing.Size(85, 23)
-        Me.BtnDescendente.TabIndex = 15
-        Me.BtnDescendente.Text = "Descendente "
-        Me.BtnDescendente.UseVisualStyleBackColor = True
-        '
         'TextBoxdia
         '
         Me.TextBoxdia.Location = New System.Drawing.Point(15, 198)
@@ -270,15 +249,6 @@ Partial Class CRUDImpresora
         Me.Label7.TabIndex = 22
         Me.Label7.Text = "Año"
         '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(310, 490)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(45, 13)
-        Me.Label8.TabIndex = 23
-        Me.Label8.Text = "Ordenar"
-        '
         'TextBoxValorI
         '
         Me.TextBoxValorI.Location = New System.Drawing.Point(278, 144)
@@ -302,15 +272,12 @@ Partial Class CRUDImpresora
         Me.ClientSize = New System.Drawing.Size(549, 541)
         Me.Controls.Add(Me.label)
         Me.Controls.Add(Me.TextBoxValorI)
-        Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.TextBoxAnio)
         Me.Controls.Add(Me.TextBoxmes)
         Me.Controls.Add(Me.TextBoxdia)
-        Me.Controls.Add(Me.BtnDescendente)
-        Me.Controls.Add(Me.BtnAscendente)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.PictureBox1)
@@ -351,15 +318,12 @@ Partial Class CRUDImpresora
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents BtnAscendente As Button
-    Friend WithEvents BtnDescendente As Button
     Friend WithEvents TextBoxdia As TextBox
     Friend WithEvents TextBoxmes As TextBox
     Friend WithEvents TextBoxAnio As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label
-    Friend WithEvents Label8 As Label
     Friend WithEvents TextBoxValorI As TextBox
     Friend WithEvents label As Label
 End Class
