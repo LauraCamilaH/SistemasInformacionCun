@@ -73,7 +73,7 @@ Public Class AdministradorDB
         End If
         ''[a,b,c],[d,e,f],[g,h,i] , 1  -> [a,b,c],[g,h,i]
 
-
+        Return arreglo
     End Function
 
     Public Function Eliminar(Id As String) As Boolean

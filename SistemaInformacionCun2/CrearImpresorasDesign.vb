@@ -14,8 +14,8 @@ Public Class CrearImpresorasDesign
     Private Sub BtRegistarImpresoras_Click(sender As Object, e As EventArgs) Handles BtRegistarImpresoras.Click
         Dim administrador = New AdministradorImpresora
 
-        administrador.CrearImpresora(TxSerieImpresora.Text, TxmarcaImpresora.Text, CInt(TextBoxDia.Text), CInt(TextBoxmes.Text), CInt(TextBoxaño.Text))
-        MsgBox("Los datos han sido registrados")
+        Dim conoceridimpresora = administrador.CrearImpresora(TxSerieImpresora.Text, TxmarcaImpresora.Text, CInt(TextBoxDia.Text), CInt(TextBoxmes.Text), CInt(TextBoxaño.Text), TextBoxValorImpresora.Text)
+        MsgBox("Los datos han sido registrados" & conoceridimpresora)
         TextBoxmes.Text = ""
         TextBoxaño.Text = ""
         TextBoxDia.Text = ""

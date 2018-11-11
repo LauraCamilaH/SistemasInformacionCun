@@ -14,12 +14,18 @@ Public Class CrearCPUDesing
 
     Private Sub BtRegistarcpu_Click(sender As Object, e As EventArgs) Handles BtRegistarcpu.Click
         Dim Bdcpu = New AdministrardorCpu
-        Dim idcpu = Bdcpu.CrearCpu(TextBserieCpu.Text, TextBmarcaCpu.Text)
-
+        Dim idcpu = Bdcpu.CrearCpu(TextBserieCpu.Text, TextBmarcaCpu.Text, TextBoxDiaCpu.Text, TextBoxMesCpu.Text, TextBoxAnioCpu.Text, TextBoxValorCpu.Text)
         MsgBox("Se ha creado la cpu con el id " & idcpu)
-
         TextBserieCpu.Text = ""
         TextBmarcaCpu.Text = ""
+        TextBoxDiaCpu.Text = ""
+        TextBoxMesCpu.Text = ""
+        TextBoxValorCpu.Text = ""
+        TextBoxAnioCpu.Text = ""
+
+    End Sub
+
+    Private Sub CrearCPUDesing_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
 End Class

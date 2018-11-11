@@ -50,13 +50,19 @@ Partial Class CRUDPersonasDesign
         Me.BtnDesendente = New System.Windows.Forms.Button()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.TextBoxdia = New System.Windows.Forms.TextBox()
+        Me.TextBoxMes = New System.Windows.Forms.TextBox()
+        Me.TextBoxAño = New System.Windows.Forms.TextBox()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
         CType(Me.DataGridPersonas, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TextBoxApellidoPersonas
         '
-        Me.TextBoxApellidoPersonas.Location = New System.Drawing.Point(280, 194)
+        Me.TextBoxApellidoPersonas.Location = New System.Drawing.Point(280, 144)
         Me.TextBoxApellidoPersonas.Name = "TextBoxApellidoPersonas"
         Me.TextBoxApellidoPersonas.Size = New System.Drawing.Size(250, 20)
         Me.TextBoxApellidoPersonas.TabIndex = 0
@@ -86,7 +92,7 @@ Partial Class CRUDPersonasDesign
         '
         'TextBoxSueldoPersonas
         '
-        Me.TextBoxSueldoPersonas.Location = New System.Drawing.Point(280, 245)
+        Me.TextBoxSueldoPersonas.Location = New System.Drawing.Point(280, 194)
         Me.TextBoxSueldoPersonas.Name = "TextBoxSueldoPersonas"
         Me.TextBoxSueldoPersonas.Size = New System.Drawing.Size(250, 20)
         Me.TextBoxSueldoPersonas.TabIndex = 4
@@ -101,7 +107,7 @@ Partial Class CRUDPersonasDesign
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(277, 128)
+        Me.Label1.Location = New System.Drawing.Point(277, 80)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(79, 13)
         Me.Label1.TabIndex = 6
@@ -110,7 +116,7 @@ Partial Class CRUDPersonasDesign
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(277, 178)
+        Me.Label2.Location = New System.Drawing.Point(277, 128)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(44, 13)
         Me.Label2.TabIndex = 7
@@ -137,7 +143,7 @@ Partial Class CRUDPersonasDesign
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(277, 229)
+        Me.Label5.Location = New System.Drawing.Point(281, 178)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(40, 13)
         Me.Label5.TabIndex = 10
@@ -186,7 +192,7 @@ Partial Class CRUDPersonasDesign
         Me.TextBoxIDPersonas.Location = New System.Drawing.Point(13, 96)
         Me.TextBoxIDPersonas.Name = "TextBoxIDPersonas"
         Me.TextBoxIDPersonas.ReadOnly = True
-        Me.TextBoxIDPersonas.Size = New System.Drawing.Size(517, 20)
+        Me.TextBoxIDPersonas.Size = New System.Drawing.Size(249, 20)
         Me.TextBoxIDPersonas.TabIndex = 15
         '
         'Label10
@@ -200,7 +206,7 @@ Partial Class CRUDPersonasDesign
         '
         'TextBoxPrimerNombrePersonas
         '
-        Me.TextBoxPrimerNombrePersonas.Location = New System.Drawing.Point(280, 144)
+        Me.TextBoxPrimerNombrePersonas.Location = New System.Drawing.Point(280, 96)
         Me.TextBoxPrimerNombrePersonas.Name = "TextBoxPrimerNombrePersonas"
         Me.TextBoxPrimerNombrePersonas.Size = New System.Drawing.Size(250, 20)
         Me.TextBoxPrimerNombrePersonas.TabIndex = 17
@@ -295,11 +301,66 @@ Partial Class CRUDPersonasDesign
         Me.PictureBox1.TabIndex = 27
         Me.PictureBox1.TabStop = False
         '
+        'TextBoxdia
+        '
+        Me.TextBoxdia.Location = New System.Drawing.Point(280, 245)
+        Me.TextBoxdia.Name = "TextBoxdia"
+        Me.TextBoxdia.Size = New System.Drawing.Size(85, 20)
+        Me.TextBoxdia.TabIndex = 28
+        '
+        'TextBoxMes
+        '
+        Me.TextBoxMes.Location = New System.Drawing.Point(371, 245)
+        Me.TextBoxMes.Name = "TextBoxMes"
+        Me.TextBoxMes.Size = New System.Drawing.Size(70, 20)
+        Me.TextBoxMes.TabIndex = 29
+        '
+        'TextBoxAño
+        '
+        Me.TextBoxAño.Location = New System.Drawing.Point(447, 245)
+        Me.TextBoxAño.Name = "TextBoxAño"
+        Me.TextBoxAño.Size = New System.Drawing.Size(82, 20)
+        Me.TextBoxAño.TabIndex = 30
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(284, 228)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(25, 13)
+        Me.Label12.TabIndex = 31
+        Me.Label12.Text = "Día"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(374, 229)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(27, 13)
+        Me.Label13.TabIndex = 32
+        Me.Label13.Text = "Mes"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(471, 228)
+        Me.Label14.Name = "Label14"
+        Me.Label14.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label14.Size = New System.Drawing.Size(25, 13)
+        Me.Label14.TabIndex = 33
+        Me.Label14.Text = "año"
+        '
         'CRUDPersonasDesign
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(554, 591)
+        Me.Controls.Add(Me.Label14)
+        Me.Controls.Add(Me.Label13)
+        Me.Controls.Add(Me.Label12)
+        Me.Controls.Add(Me.TextBoxAño)
+        Me.Controls.Add(Me.TextBoxMes)
+        Me.Controls.Add(Me.TextBoxdia)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.BtnDesendente)
@@ -368,4 +429,10 @@ Partial Class CRUDPersonasDesign
     Friend WithEvents BtnDesendente As Button
     Friend WithEvents Label11 As Label
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents TextBoxdia As TextBox
+    Friend WithEvents TextBoxMes As TextBox
+    Friend WithEvents TextBoxAño As TextBox
+    Friend WithEvents Label12 As Label
+    Friend WithEvents Label13 As Label
+    Friend WithEvents Label14 As Label
 End Class

@@ -11,13 +11,24 @@ Public Class DesignEjercicioClase
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btRegistar.Click
         Dim AdministradorPer = New AdministradorPersonas()
-        Dim id = AdministradorPer.CrearPersona(Textcedula.Text, Textnombre.Text, Textapellido.Text, Textciudad.Text)
+        Dim idpersona = AdministradorPer.CrearPersona(Textcedula.Text, Textprimernombre.Text, TextBoxSegundoNombre.Text, Textapellido.Text, Textciudad.Text, TextBoxCargo.Text, TextBoxSueldo.Text, CInt(TextBoxDíaPersonas.Text), CInt(TextBoxMesPersonas.Text), CInt(TextBoxAnioPersonas.Text))
 
-        MsgBox("Se ha creado la persona con id " & id)
+
+        MsgBox("Se ha creado la persona con id " & idpersona)
         Textcedula.Text = ""
         Textapellido.Text = ""
-        Textnombre.Text = ""
+        Textprimernombre.Text = ""
         Textciudad.Text = ""
+        TextBoxSegundoNombre.Text = ""
+        TextBoxAnioPersonas.Text = ""
+        TextBoxCargo.Text = ""
+        TextBoxDíaPersonas.Text = ""
+        TextBoxCargo.Text = ""
+        TextBoxMesPersonas.Text = ""
+
+
+
+
 
     End Sub
 

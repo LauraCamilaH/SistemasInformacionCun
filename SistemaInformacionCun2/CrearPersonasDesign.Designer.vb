@@ -25,7 +25,7 @@ Partial Class DesignEjercicioClase
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DesignEjercicioClase))
         Me.BtRegresar = New System.Windows.Forms.Button()
         Me.btRegistar = New System.Windows.Forms.Button()
-        Me.Textnombre = New System.Windows.Forms.TextBox()
+        Me.Textprimernombre = New System.Windows.Forms.TextBox()
         Me.Textapellido = New System.Windows.Forms.TextBox()
         Me.Textcedula = New System.Windows.Forms.TextBox()
         Me.Textciudad = New System.Windows.Forms.TextBox()
@@ -73,13 +73,13 @@ Partial Class DesignEjercicioClase
         Me.btRegistar.Text = "Registrar"
         Me.btRegistar.UseVisualStyleBackColor = False
         '
-        'Textnombre
+        'Textprimernombre
         '
-        Me.Textnombre.BackColor = System.Drawing.SystemColors.Window
-        Me.Textnombre.Location = New System.Drawing.Point(94, 106)
-        Me.Textnombre.Name = "Textnombre"
-        Me.Textnombre.Size = New System.Drawing.Size(267, 20)
-        Me.Textnombre.TabIndex = 2
+        Me.Textprimernombre.BackColor = System.Drawing.SystemColors.Window
+        Me.Textprimernombre.Location = New System.Drawing.Point(94, 106)
+        Me.Textprimernombre.Name = "Textprimernombre"
+        Me.Textprimernombre.Size = New System.Drawing.Size(267, 20)
+        Me.Textprimernombre.TabIndex = 2
         '
         'Textapellido
         '
@@ -292,7 +292,7 @@ Partial Class DesignEjercicioClase
         Me.Controls.Add(Me.Textciudad)
         Me.Controls.Add(Me.Textcedula)
         Me.Controls.Add(Me.Textapellido)
-        Me.Controls.Add(Me.Textnombre)
+        Me.Controls.Add(Me.Textprimernombre)
         Me.Controls.Add(Me.btRegistar)
         Me.Controls.Add(Me.BtRegresar)
         Me.Name = "DesignEjercicioClase"
@@ -305,7 +305,7 @@ Partial Class DesignEjercicioClase
 
     Friend WithEvents BtRegresar As Button
     Friend WithEvents btRegistar As Button
-    Friend WithEvents Textnombre As TextBox
+    Friend WithEvents Textprimernombre As TextBox
     Friend WithEvents Textapellido As TextBox
     Friend WithEvents Textcedula As TextBox
     Friend WithEvents Textciudad As TextBox

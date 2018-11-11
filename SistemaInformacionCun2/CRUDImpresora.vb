@@ -1,7 +1,7 @@
 ﻿Public Class CRUDImpresora
 
     Private AdminImpresoras As AdministradorImpresora = New AdministradorImpresora 'llama a la clase administrador de impresora y la instancia
-    Private Columnas As String() = {"Identificador", "Serial", "Marca", "Fecha creación"}
+    Private Columnas As String() = {"Identificador", "Serial", "Marca", "Fecha creación", "valor producto"}
 
     Private Sub CRUDImpresora_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         DataGridImpresoras.Columns.Clear()
@@ -14,21 +14,32 @@
         Next
         Recargar()
     End Sub
+    Public Function EliminarElemento(Matriz As String()(), fila As Integer) As String()()
+        Dim arreglo As String()() = New String(Matriz.Length - 2)() {}
+        Dim contador As Integer = 0
+
+        For Each filas In Matriz
+            If Not contador = fila Then
+                If contador < fila Then
+                    arreglo(contador) = filas
+                Else
+                    arreglo(contador - 1) = filas
+                End If
+            End If
+            contador += 1
+        Next
+
+        Return arreglo
+        Recargar()
+    End Function
 
     Private Sub BtnActualizar_Click(sender As Object, e As EventArgs) Handles BtnActualizar.Click
         Recargar()
     End Sub
 
     Private Sub BtnEliminar_Click(sender As Object, e As EventArgs) Handles BtnEliminar.Click
-        Dim Id = TxtIdentificador.Text
-        If Not String.IsNullOrEmpty(Id) Then
-            If AdminImpresoras.Eliminar(Id) Then
-                MsgBox("El elemento con id " & Id & " ha sido eliminado")
-                Recargar()
-            Else
-                MsgBox("No se pudo eliminar ningún elemento")
-            End If
-        End If
+
+        EliminarElemento(Matriz()(), TxtIdentificador.Text)
     End Sub
 
     Private Sub BtnNuevo_Click(sender As Object, e As EventArgs) Handles BtnNuevo.Click
@@ -110,10 +121,13 @@
         TxtMarcaImpresora.Text = filaSeleccionada.Cells(2).Value
     End Sub
 
-    Protected Overridable Sub LimpiarCamposTexto()
+    Protected Overridable Sub LimpiarCamposTexto() '?
         TxtIdentificador.Text = ""
         TxtSerialImpresora.Text = ""
         TxtMarcaImpresora.Text = ""
+        TextBoxAnio.Text = ""
+        TextBoxdia.Text = ""
+        TextBoxmes.Text = ""
     End Sub
 
     Private Sub LimpiarCampos()
@@ -122,11 +136,11 @@
     End Sub
 
     Private Sub Recargar()
-        Dim BD As List(Of List(Of String)) = AdminImpresoras.CargarBD()
-        LimpiarCampos()
+        Dim BD As String()() = AdminImpresoras.CargarDBMemoria
+        LimpiarCampos() '?
         DataGridImpresoras.Rows.Clear() ''Eliminamos todas las filas del DataGrid
 
-        For Each FilaBD As List(Of String) In BD '' Itera sobre los registros en base de datos
+        For Each FilaBD In BD '' Itera sobre los registros en base de datos
             Dim FilaTabla = New DataGridViewRow ''Se crea una fila para el datagrid
             For Each CeldaBD In FilaBD ''Se itera sobre cada una de las celdas de la fila
                 Dim Celda = New DataGridViewTextBoxCell '' Se crea una celda para el datagrid
@@ -153,5 +167,15 @@
         BtnEliminar.Enabled = True
     End Sub
 
+    Private Sub BtnModificar_Click(sender As Object, e As EventArgs) Handles BtnModificar.Click
 
+    End Sub
+
+    Private Sub BtnAscendente_Click(sender As Object, e As EventArgs) Handles BtnAscendente.Click
+
+    End Sub
+
+    Private Sub BtnDescendente_Click(sender As Object, e As EventArgs) Handles BtnDescendente.Click
+
+    End Sub
 End Class

@@ -43,9 +43,9 @@ Partial Class CRUDImpresora
         Me.BtnAscendente = New System.Windows.Forms.Button()
         Me.BtnDescendente = New System.Windows.Forms.Button()
         Me.BtnModificar = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.TextBoxdia = New System.Windows.Forms.TextBox()
+        Me.TextBoxmes = New System.Windows.Forms.TextBox()
+        Me.TextBoxAnio = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -232,26 +232,26 @@ Partial Class CRUDImpresora
         Me.BtnModificar.Text = "Modificar "
         Me.BtnModificar.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'TextBoxdia
         '
-        Me.TextBox1.Location = New System.Drawing.Point(15, 198)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(80, 20)
-        Me.TextBox1.TabIndex = 17
+        Me.TextBoxdia.Location = New System.Drawing.Point(15, 198)
+        Me.TextBoxdia.Name = "TextBoxdia"
+        Me.TextBoxdia.Size = New System.Drawing.Size(80, 20)
+        Me.TextBoxdia.TabIndex = 17
         '
-        'TextBox2
+        'TextBoxmes
         '
-        Me.TextBox2.Location = New System.Drawing.Point(101, 198)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(80, 20)
-        Me.TextBox2.TabIndex = 18
+        Me.TextBoxmes.Location = New System.Drawing.Point(101, 198)
+        Me.TextBoxmes.Name = "TextBoxmes"
+        Me.TextBoxmes.Size = New System.Drawing.Size(80, 20)
+        Me.TextBoxmes.TabIndex = 18
         '
-        'TextBox3
+        'TextBoxAnio
         '
-        Me.TextBox3.Location = New System.Drawing.Point(187, 198)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(80, 20)
-        Me.TextBox3.TabIndex = 19
+        Me.TextBoxAnio.Location = New System.Drawing.Point(187, 198)
+        Me.TextBoxAnio.Name = "TextBoxAnio"
+        Me.TextBoxAnio.Size = New System.Drawing.Size(80, 20)
+        Me.TextBoxAnio.TabIndex = 19
         '
         'Label5
         '
@@ -316,9 +316,9 @@ Partial Class CRUDImpresora
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.TextBoxAnio)
+        Me.Controls.Add(Me.TextBoxmes)
+        Me.Controls.Add(Me.TextBoxdia)
         Me.Controls.Add(Me.BtnModificar)
         Me.Controls.Add(Me.BtnDescendente)
         Me.Controls.Add(Me.BtnAscendente)
@@ -365,9 +365,9 @@ Partial Class CRUDImpresora
     Friend WithEvents BtnAscendente As Button
     Friend WithEvents BtnDescendente As Button
     Friend WithEvents BtnModificar As Button
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents TextBoxdia As TextBox
+    Friend WithEvents TextBoxmes As TextBox
+    Friend WithEvents TextBoxAnio As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label

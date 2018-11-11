@@ -15,14 +15,15 @@ Public Class CrearMonitorDesign
     Private Sub BttRegistarMonitor_Click(sender As Object, e As EventArgs) Handles BttRegistarMonitor.Click
         Dim administrador = New AdministradorMonitor
 
-        Dim idmonitor = administrador.CrearMonitor(TexBSerieMonitor.Text, TexBMarcaMonitor.Text)
-        MsgBox("los datos fueron registrados con id: " & idmonitor)
+        Dim Conoceridmonitor = administrador.CrearMonitor(TexBSerieMonitor.Text, TexBMarcaMonitor.Text, CInt(TextBoxDíaMonitor.Text), CInt(TextBoMesMonitor.Text), CInt(TextBoxanioMonitor.Text), TextBoxValorMonitor.Text)
+        MsgBox("los datos fueron registrados con id: " & Conoceridmonitor)
 
         TexBSerieMonitor.Text = ""
         TexBMarcaMonitor.Text = ""
+        TextBoMesMonitor.Text = ""
+        TextBoxanioMonitor.Text = ""
+        TextBoxValorMonitor.Text = ""
+        TextBoxDíaMonitor.Text = ""
     End Sub
 
-    Private Sub CrearMonitorDesign_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
 End Class
