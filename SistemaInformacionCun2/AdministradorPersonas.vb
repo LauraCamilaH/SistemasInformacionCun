@@ -2,6 +2,8 @@
 
 Public Class AdministradorPersonas : Inherits AdministradorDB
 
+    Private AdminHistorico As AdministradorHistorico = New AdministradorHistorico
+
     Public Sub New()
         MyBase.New("BDPersonas.txt", 12)
     End Sub
@@ -34,6 +36,8 @@ Public Class AdministradorPersonas : Inherits AdministradorDB
 
     Public Function ActualizarCpu(cedula As String, idcpu As String) As Integer
         Dim resultado = ActualizarRegistroPorCedula(cedula, idcpu, 6)
+        Dim fecha = DateTime.Now.ToString("dd/MM/yyyy")
+        AdminHistorico.Crear({"asignar", "cpu", 1, idcpu, fecha})
         Return resultado
     End Function
 
