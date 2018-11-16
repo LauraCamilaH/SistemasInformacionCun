@@ -6,6 +6,7 @@
         DataGridPersonas.Columns.Clear()
 
         For Each Columna In Columnas
+            'personas
             Dim columnaTabla = New DataGridViewColumn()
             columnaTabla.HeaderText = Columna ' obtiene o establece el texto del título en la celda del encabezado de la columna
             columnaTabla.Name = Columna 'Pone o estable el nombre de las columnas 
@@ -15,7 +16,7 @@
 
             DataGridPersonas.Columns.Add(columnaTabla) ' agrega las columnas de la coleccion 
         Next
-        recargar()
+        Recargar()
     End Sub
     Private Sub LimpiarCampos()
         LimpiarCamposTexto()
