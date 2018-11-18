@@ -76,29 +76,7 @@
 
         Return {TextBoxSerialMonitor.Text, TextBoxMarcaMonitor.Text, fecha, TextBoxValorM.Text}
     End Function
-    Private Function ValidarCampos() As String
 
-        ''Si el campo está vácio o está lleno de espacios
-        If String.IsNullOrWhiteSpace(TextBoxSerialMonitor.Text) Then
-            Return "Por favor ingrese un valor para el serial"
-        End If
-        If String.IsNullOrWhiteSpace(TextBoxMarcaMonitor.Text) Then
-            Return "Por favor ingrese la marca"
-        End If
-        If String.IsNullOrWhiteSpace(TextBoxValorM.Text) Then
-            Return "Por favor ingrese el valor"
-        End If
-        If String.IsNullOrWhiteSpace(TextBoxMesMonitor.Text) Then
-            Return "Por favor ingrese un valor para el mes"
-        End If
-        If String.IsNullOrWhiteSpace(TextBoxDiaMonitor.Text) Then
-            Return "Por favor ingrese el día"
-        End If
-        If String.IsNullOrWhiteSpace(TextBoxAnioMonitor.Text) Then
-            Return "Por favor ingrese el año"
-        End If
-        Return "" ''No hay errores, retornamos una cadena vacia
-    End Function
     Private Sub BtnActualizar_Click(sender As Object, e As EventArgs) Handles BtnActualizar.Click
         RecargarM()
     End Sub
@@ -116,9 +94,8 @@
     End Sub
 
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
-        Dim validacion = ValidarCampos()
-        If Not String.IsNullOrEmpty(validacion) Then
-            MsgBox(validacion)
+
+        If Not Validar() Then
             Return
         End If
 
@@ -171,12 +148,58 @@
         CargarCamposTexto(filaSeleccionada)
         BtnEliminar.Enabled = True
     End Sub
+    Function validar() As Boolean
+        Dim marca = TextBoxMarcaMonitor.Text
+        Dim serie = TextBoxSerialMonitor.Text
+        If (String.IsNullOrEmpty(TextBoxMarcaMonitor.Text)) Then
+            MsgBox("Debe ingresar el nombre de la marca")
+            Return False
+        End If
+        If (String.IsNullOrEmpty(TextBoxSerialMonitor.Text)) Then
+            MsgBox("Debe ingresar el nombre de la serie")
+            Return False
+        End If
 
-    Private Sub BtnModificar_Click(sender As Object, e As EventArgs) 
+        If (Not serie.Length = 6) Then
+            MsgBox("La longitud de la serie  debe ser de 6 caracteres")
+            Return False
+        End If
 
-    End Sub
+        If (Not ValidarEntero(TextBoxValorM.Text, 0, 100000000, "El precio")) Then
+            Return False
+        End If
+        If (Not ValidarEntero(TextBoxAnioMonitor.Text, 2000, 2500, "El año")) Then
+            Return False
+        End If
+        If (Not ValidarEntero(TextBoxMesMonitor.Text, 1, 12, "El mes")) Then
+            Return False
+        End If
+        If (Not ValidarEntero(TextBoxDiaMonitor.Text, 1, 31, "El día")) Then
+            Return False
+        End If
+        Return True
+    End Function
 
-    Private Sub BtnAscendente_Click(sender As Object, e As EventArgs) 
+    Private Function ValidarEntero(valor As String, min As Integer, max As Integer, nombreVariable As String) As Boolean
+        Try ''ejecutarlo que esta despues del try y si falla salta a ejecutar lo que esta en el cacth
 
-    End Sub
+            Dim val = CInt(valor)
+
+            If (val < min) Then
+                MsgBox(nombreVariable & " debe ser mayor  a " & min)
+                Return False
+            End If
+
+            If (val > max) Then
+                MsgBox(nombreVariable & " debe ser menor o igual a " & max)
+                Return False
+            End If
+
+            Return True
+        Catch ex As InvalidCastException
+            MsgBox(nombreVariable & " no es un número valido")
+            Return False
+        End Try
+    End Function
+
 End Class

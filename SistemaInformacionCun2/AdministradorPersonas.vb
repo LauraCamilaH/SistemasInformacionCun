@@ -34,6 +34,67 @@ Public Class AdministradorPersonas : Inherits AdministradorDB
 
     End Function
 
+    Public Function AsignarElemento(idPersona As Integer, idElemento As Integer, tipoElemento As String) As Integer
+
+        Dim idPersonaAsignada = ObtenerPersonaAsignacion(idElemento, tipoElemento) ''Retorna 0 si no está asignado
+
+        If (idPersonaAsignada > 0) Then
+            Return 1 ''Ya está asignado
+        End If
+
+        Dim idElementoAsignado = ObtenerElemento(idPersona, tipoElemento) ''Retorna 0 si no tiene elemento asignado
+        If (idElementoAsignado > 0) Then
+            QuitarElemento(idPersona, tipoElemento, idElementoAsignado)
+        End If
+
+        Asignar(idPersona, tipoElemento, idElemento)
+
+        Return 0
+    End Function
+    ''' <summary>
+    ''' Obtiene el identificador de la persona que tiene asignado el elemento del tipo indicado
+    ''' con el id dado.
+    ''' </summary>
+    ''' <param name="idElemento">El identificador del elemento a buscar</param>
+    ''' <param name="tipoElemento">El nombre del tipo de elemento</param>
+    ''' <returns>Retorna el id de la persona que tiene asignado el elemento o cero si ninguna
+    ''' persona tiene el elemento asignado</returns>
+    Private Function ObtenerPersonaAsignacion(idElemento As Integer, tipoElemento As String) As Integer
+
+        Return 0
+    End Function
+    ''' <summary>
+    ''' Busca el identificador de elemento del tipo indicado asignado a la persona dada.
+    ''' 
+    ''' Por ejemplo: Si buscamos el identificador del monitor actualmente asignado a la persona con id 4
+    ''' entonces llamamos este método con los siguientes parámetros:
+    ''' idPersona -> 4 , tipoElemento -> "monitor"
+    ''' </summary>
+    ''' <param name="idPersona">el identificador de la persona en la base de datos</param>
+    ''' <param name="tipoElemento">el nombre del tipo de elemento Pej: monitor, cpu, impresora</param>
+    ''' <returns>El identificador en base de datos del elemento actualmente asignado a la persona o 0
+    ''' si la persona no tiene actualmente un elemento del tipo dado</returns>
+    Private Function ObtenerElemento(idPersona As Integer, tipoElemento As String) As Integer
+        Return 0
+    End Function
+    ''' <summary>
+    ''' Inserta un registro en la tabla de asignaciones quitando el elemento a la persona indicada
+    ''' </summary>
+    ''' <param name="idPersona"></param>
+    ''' <param name="tipoElemento">Nombre del elemento</param>
+    ''' <param name="idElemento"></param>
+    Private Sub QuitarElemento(idPersona As Integer, tipoElemento As String, idElemento As Integer)
+
+    End Sub
+    ''' <summary>
+    ''' Crea un registro en la tabla de asignaciones asignando el elemento a la persona dada.
+    ''' </summary>
+    ''' <param name="idPersona"></param>
+    ''' <param name="tipoElemento">Nombre del elemento. Pej: monitor, cpu, impresora</param>
+    ''' <param name="idElemento"></param>
+    Private Sub Asignar(idPersona As Integer, tipoElemento As String, idElemento As Integer)
+
+    End Sub
     Public Function ActualizarCpu(cedula As String, idcpu As String) As Integer
         Dim resultado = ActualizarRegistroPorCedula(cedula, idcpu, 6)
         Dim fecha = DateTime.Now.ToString("dd/MM/yyyy")

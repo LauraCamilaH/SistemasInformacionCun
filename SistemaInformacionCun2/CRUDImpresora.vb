@@ -38,10 +38,9 @@
     End Sub
 
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
-        Dim validacion = ValidarCampos()
-        If Not String.IsNullOrEmpty(validacion) Then
-            MsgBox(validacion)
+        If Not validar() Then
             Return
+
         End If
 
         Dim id = TxtIdentificador.Text
@@ -183,25 +182,59 @@
         CargarCamposTexto(filaSeleccionada)
         BtnEliminar.Enabled = True
     End Sub
+    Function validar() As Boolean
+        Dim marca = TxtMarcaImpresora.Text
+        Dim serie = TxTSerial.Text
+        If (String.IsNullOrEmpty(TxtMarcaImpresora.Text)) Then
+            MsgBox("Debe ingresar el nombre de la marca")
+            Return False
+        End If
+        If (String.IsNullOrEmpty(TxTSerial.Text)) Then
+            MsgBox("Debe ingresar el nombre de la marca")
+            Return False
+        End If
 
-    Private Sub BtnModificar_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub BtnAscendente_Click(sender As Object, e As EventArgs) 
-
-        'Dim direction As ListSortDirection
-        'direction = ListSortDirection.Ascending
-        'DGVPersona.Sort(DGVPersona.Columns(1), ListSortDirection.Ascending)
+        If (Not serie.Length = 6) Then
+            MsgBox("La longitud de la serie  debe ser de 6 caracteres")
+            Return False
+        End If
 
 
-    End Sub
+        If (Not ValidarEntero(TextBoxValorI.Text, 0, 100000000, "El precio")) Then
+            Return False
+        End If
+        If (Not ValidarEntero(TextBoxAnio.Text, 2000, 2500, "El año")) Then
+            Return False
+        End If
+        If (Not ValidarEntero(TextBoxmes.Text, 1, 12, "El mes")) Then
+            Return False
+        End If
+        If (Not ValidarEntero(TextBoxdia.Text, 1, 31, "El día")) Then
+            Return False
+        End If
+        Return True
+    End Function
 
-    Private Sub BtnDescendente_Click(sender As Object, e As EventArgs) 
+    Private Function ValidarEntero(valor As String, min As Integer, max As Integer, nombreVariable As String) As Boolean
+        Try ''ejecutarlo que esta despues del try y si falla salta a ejecutar lo que esta en el cacth
 
-        'Dim direction As ListSortDirection
-        'direction = ListSortDirection.Descending
-        'DGVPersona.Sort(DGVPersona.Columns(1), ListSortDirection.Descending)
+            Dim val = CInt(valor)
 
-    End Sub
+            If (val < min) Then
+                MsgBox(nombreVariable & " debe ser mayor o igual a " & min)
+                Return False
+            End If
+
+            If (val > max) Then
+                MsgBox(nombreVariable & " debe ser menor o igual a " & max)
+                Return False
+            End If
+
+            Return True
+        Catch ex As InvalidCastException
+            MsgBox(nombreVariable & " no es un número valido")
+            Return False
+        End Try
+    End Function
+
 End Class

@@ -135,7 +135,7 @@ Public Class AdministradorDB
         Dim SiguienteId = ObtenerUltimoId() + 1
         Arreglo = InsertarElemento(Arreglo, 0, SiguienteId)
 
-        DB = InsertarElemntoMatriz(DB, (DB.Length - 1), Arreglo)
+        DB = InsertarElemntoMatriz(DB, DB.Length, Arreglo)
         ActualizarArchivo(DB)
         Return SiguienteId
     End Function
@@ -230,7 +230,5 @@ Public Class AdministradorDB
         Return arreglo
 
     End Function
-
-
 
 End Class

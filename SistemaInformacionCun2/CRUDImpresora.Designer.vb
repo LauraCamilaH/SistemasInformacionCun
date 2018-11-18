@@ -110,7 +110,7 @@ Partial Class CRUDImpresora
         Me.BtnGuardar.Name = "BtnGuardar"
         Me.BtnGuardar.Size = New System.Drawing.Size(120, 23)
         Me.BtnGuardar.TabIndex = 3
-        Me.BtnGuardar.Text = "Modificar y Guardar"
+        Me.BtnGuardar.Text = "Modificar o Guardar"
         Me.BtnGuardar.UseVisualStyleBackColor = True
         '
         'BtnActualizar

@@ -54,10 +54,9 @@
     End Sub
 
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
-        Dim validacion = ValidarCampos()
-        If Not String.IsNullOrEmpty(validacion) Then
-            MsgBox(validacion)
+        If Not Validar() Then
             Return
+
         End If
 
         Dim id = TextBoxIDcpu.Text
@@ -108,30 +107,58 @@
 
         Return {TextBoxSerieCPU.Text, TextBoxMarcaCpu.Text, fecha, TextBoxValorC.Text}
     End Function
-    Private Function ValidarCampos() As String
-
-        ''Si el campo está vácio o está lleno de espacios
-        If String.IsNullOrWhiteSpace(TextBoxSerieCPU.Text) Then
-            Return "Por favor ingrese un valor para el serial"
+    Function validar() As Boolean
+        Dim marca = TextBoxMarcaCpu.Text
+        Dim serie = TextBoxSerieCPU.Text
+        If (String.IsNullOrEmpty(TextBoxMarcaCpu.Text)) Then
+            MsgBox("Debe ingresar el nombre de la marca")
+            Return False
         End If
-        If String.IsNullOrWhiteSpace(TextBoxMarcaCpu.Text) Then
-            Return "Por favor ingrese la marca "
-        End If
-        If String.IsNullOrWhiteSpace(TextBoxAnioCpu.Text) Then
-            Return "Por favor ingrese el año"
-        End If
-
-        If String.IsNullOrWhiteSpace(TextBoxMesCpu.Text) Then
-            Return "Por favor ingrese el mes"
-        End If
-        If String.IsNullOrWhiteSpace(TextBoxDiaCpu.Text) Then
-            Return "Por favor ingrese el día"
-        End If
-        If String.IsNullOrWhiteSpace(TextBoxValorC.Text) Then
-            Return "Por favor ingrese el Valor"
+        If (String.IsNullOrEmpty(TextBoxSerieCPU.Text)) Then
+            MsgBox("Debe ingresar el nombre de la serie")
+            Return False
         End If
 
-        Return "" ''No hay errores, retornamos una cadena vacia
+        If (Not serie.Length = 6) Then
+            MsgBox("La longitud de la serie  debe ser de 6 caracteres")
+            Return False
+        End If
+
+        Dim precio = TextBoxValorC.Text
+        If (Not ValidarEntero(TextBoxValorC.Text, 0, 100000000, "El precio")) Then
+            Return False
+        End If
+        If (Not ValidarEntero(TextBoxAnioCpu.Text, 2000, 2500, "El año")) Then
+            Return False
+        End If
+        If (Not ValidarEntero(TextBoxMesCpu.Text, 1, 12, "El mes")) Then
+            Return False
+        End If
+        If (Not ValidarEntero(TextBoxDiaCpu.Text, 1, 31, "El día")) Then
+            Return False
+        End If
+        Return True
+    End Function
+    Private Function ValidarEntero(valor As String, min As Integer, max As Integer, nombreVariable As String) As Boolean
+        Try ''ejecutarlo que esta despues del try y si falla salta a ejecutar lo que esta en el cacth
+
+            Dim val = CInt(valor)
+
+            If (val < min) Then
+                MsgBox(nombreVariable & " debe ser mayor  a " & min)
+                Return False
+            End If
+
+            If (val > max) Then
+                MsgBox(nombreVariable & " debe ser menor o igual a " & max)
+                Return False
+            End If
+
+            Return True
+        Catch ex As InvalidCastException
+            MsgBox(nombreVariable & " no es un número valido")
+            Return False
+        End Try
     End Function
     Private Sub CargarCamposTexto(filaSeleccionada As DataGridViewRow)
         TextBoxIDcpu.Text = filaSeleccionada.Cells(0).Value
@@ -168,9 +195,6 @@
         Recargar()
     End Sub
 
-    Private Sub BtnModificar_Click(sender As Object, e As EventArgs)
-
-    End Sub
 
     Private Sub BtnEliminar_Click(sender As Object, e As EventArgs) Handles BtnEliminar.Click
         Dim Id = TextBoxIDcpu.Text

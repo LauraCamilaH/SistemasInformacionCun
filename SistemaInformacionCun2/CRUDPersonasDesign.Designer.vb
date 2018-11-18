@@ -44,7 +44,6 @@ Partial Class CRUDPersonasDesign
         Me.BtnGuardar = New System.Windows.Forms.Button()
         Me.DataGridPersonas = New System.Windows.Forms.DataGridView()
         Me.BtnActualizar = New System.Windows.Forms.Button()
-        Me.BtnModificar = New System.Windows.Forms.Button()
         Me.BtnEliminar = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TextBoxdia = New System.Windows.Forms.TextBox()
@@ -68,7 +67,7 @@ Partial Class CRUDPersonasDesign
         '
         Me.TextBoxCedulaPersonas.AcceptsReturn = True
         Me.TextBoxCedulaPersonas.Location = New System.Drawing.Point(13, 144)
-        Me.TextBoxCedulaPersonas.MaxLength = 3
+        Me.TextBoxCedulaPersonas.MaxLength = 15
         Me.TextBoxCedulaPersonas.Name = "TextBoxCedulaPersonas"
         Me.TextBoxCedulaPersonas.Size = New System.Drawing.Size(250, 20)
         Me.TextBoxCedulaPersonas.TabIndex = 1
@@ -223,7 +222,7 @@ Partial Class CRUDPersonasDesign
         Me.BtnGuardar.Name = "BtnGuardar"
         Me.BtnGuardar.Size = New System.Drawing.Size(120, 23)
         Me.BtnGuardar.TabIndex = 19
-        Me.BtnGuardar.Text = "Guardar"
+        Me.BtnGuardar.Text = "Modificar o Guardar"
         Me.BtnGuardar.UseVisualStyleBackColor = True
         '
         'DataGridPersonas
@@ -250,18 +249,9 @@ Partial Class CRUDPersonasDesign
         Me.BtnActualizar.Text = "Actualizar"
         Me.BtnActualizar.UseVisualStyleBackColor = True
         '
-        'BtnModificar
-        '
-        Me.BtnModificar.Location = New System.Drawing.Point(94, 525)
-        Me.BtnModificar.Name = "BtnModificar"
-        Me.BtnModificar.Size = New System.Drawing.Size(75, 23)
-        Me.BtnModificar.TabIndex = 22
-        Me.BtnModificar.Text = "Modificar"
-        Me.BtnModificar.UseVisualStyleBackColor = True
-        '
         'BtnEliminar
         '
-        Me.BtnEliminar.Location = New System.Drawing.Point(175, 525)
+        Me.BtnEliminar.Location = New System.Drawing.Point(94, 525)
         Me.BtnEliminar.Name = "BtnEliminar"
         Me.BtnEliminar.Size = New System.Drawing.Size(75, 23)
         Me.BtnEliminar.TabIndex = 23
@@ -281,6 +271,7 @@ Partial Class CRUDPersonasDesign
         'TextBoxdia
         '
         Me.TextBoxdia.Location = New System.Drawing.Point(280, 245)
+        Me.TextBoxdia.MaxLength = 2
         Me.TextBoxdia.Name = "TextBoxdia"
         Me.TextBoxdia.Size = New System.Drawing.Size(85, 20)
         Me.TextBoxdia.TabIndex = 28
@@ -288,6 +279,7 @@ Partial Class CRUDPersonasDesign
         'TextBoxMes
         '
         Me.TextBoxMes.Location = New System.Drawing.Point(371, 245)
+        Me.TextBoxMes.MaxLength = 2
         Me.TextBoxMes.Name = "TextBoxMes"
         Me.TextBoxMes.Size = New System.Drawing.Size(70, 20)
         Me.TextBoxMes.TabIndex = 29
@@ -295,6 +287,7 @@ Partial Class CRUDPersonasDesign
         'TextBoxAño
         '
         Me.TextBoxAño.Location = New System.Drawing.Point(447, 245)
+        Me.TextBoxAño.MaxLength = 4
         Me.TextBoxAño.Name = "TextBoxAño"
         Me.TextBoxAño.Size = New System.Drawing.Size(82, 20)
         Me.TextBoxAño.TabIndex = 30
@@ -340,7 +333,6 @@ Partial Class CRUDPersonasDesign
         Me.Controls.Add(Me.TextBoxdia)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.BtnEliminar)
-        Me.Controls.Add(Me.BtnModificar)
         Me.Controls.Add(Me.BtnActualizar)
         Me.Controls.Add(Me.DataGridPersonas)
         Me.Controls.Add(Me.BtnGuardar)
@@ -397,7 +389,6 @@ Partial Class CRUDPersonasDesign
     Friend WithEvents BtnGuardar As Button
     Friend WithEvents DataGridPersonas As DataGridView
     Friend WithEvents BtnActualizar As Button
-    Friend WithEvents BtnModificar As Button
     Friend WithEvents BtnEliminar As Button
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents TextBoxdia As TextBox

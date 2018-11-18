@@ -54,44 +54,68 @@
     End Sub
 
 
-    Private Function ValidarCampos() As String
+    Function validar() As Boolean
 
-        ''Si el campo está vácio o está lleno de espacios
-        If String.IsNullOrWhiteSpace(TextBoxCedulaPersonas.Text) Then
-            Return "Por favor ingrese un valor de la cedula"
+        If (String.IsNullOrEmpty(TextBoxPrimerNombrePersonas.Text)) Then
+            MsgBox("Debe ingresar el primer nombre")
+            Return False
         End If
-        If String.IsNullOrWhiteSpace(TextBoxCargoPersonas.Text) Then
-            Return "Por favor ingrese el cargo"
+        If (String.IsNullOrEmpty(TextBoxSdoNombrePersonas.Text)) Then
+            MsgBox("Debe ingresar el segundo nombre")
+            Return False
         End If
-        If String.IsNullOrWhiteSpace(TextBoxApellidoPersonas.Text) Then
-            Return "Por favor ingrese el apellido"
+        If (String.IsNullOrEmpty(TextBoxApellidoPersonas.Text)) Then
+            MsgBox("Debe ingresar el apellido")
+            Return False
         End If
-        If String.IsNullOrWhiteSpace(TextBoxCiudadPersonas.Text) Then
-            Return "Por favor ingrese  la ciudad"
+        If (String.IsNullOrEmpty(TextBoxCiudadPersonas.Text)) Then
+            MsgBox("Debe ingresar la ciudad ")
+            Return False
         End If
-        If String.IsNullOrWhiteSpace(TextBoxPrimerNombrePersonas.Text) Then
-            Return "Por favor ingrese el Primer Nombre"
+        If (String.IsNullOrEmpty(TextBoxCargoPersonas.Text)) Then
+            MsgBox("Debe ingresar el cargo")
+            Return False
         End If
-        If String.IsNullOrWhiteSpace(TextBoxSdoNombrePersonas.Text) Then
-            Return "Por favor ingrese el segundo nombre"
+        If (Not ValidarEntero(TextBoxCedulaPersonas.Text, 0, 100000000, "La cedula")) Then
+            Return False
         End If
-        If String.IsNullOrWhiteSpace(TextBoxSueldoPersonas.Text) Then
-            Return "Por favor ingrese el sueldo"
+        If (Not ValidarEntero(TextBoxAño.Text, 2000, 2500, "El año")) Then
+            Return False
         End If
-        If String.IsNullOrWhiteSpace(TextBoxCargoPersonas.Text) Then
-            Return "Por favor ingrese el cargo"
+        If (Not ValidarEntero(TextBoxMes.Text, 1, 12, "El mes")) Then
+            Return False
         End If
-        If String.IsNullOrWhiteSpace(TextBoxAño.Text) Then
-            Return "Por favor ingrese el año"
+        If (Not ValidarEntero(TextBoxdia.Text, 1, 31, "El día")) Then
+            Return False
         End If
-        If String.IsNullOrWhiteSpace(TextBoxMes.Text) Then
-            Return "Por favor ingrese el mes"
+        If (Not ValidarEntero(TextBoxSueldoPersonas.Text, 1, 80000000, "El sueldo")) Then
+            Return False
         End If
-        If String.IsNullOrWhiteSpace(TextBoxdia.Text) Then
-            Return "Por favor ingrese el dia"
-        End If
-        Return "" ''No hay errores, retornamos una cadena vacia
+        Return True
     End Function
+
+    Private Function ValidarEntero(valor As String, min As Integer, max As Integer, nombreVariable As String) As Boolean
+        Try ''ejecutarlo que esta despues del try y si falla salta a ejecutar lo que esta en el cacth
+
+            Dim val = CInt(valor)
+
+            If (val < min) Then
+                MsgBox(nombreVariable & " debe ser mayor a  " & min)
+                Return False
+            End If
+
+            If (val > max) Then
+                MsgBox(nombreVariable & " debe ser menor o igual a " & max)
+                Return False
+            End If
+
+            Return True
+        Catch ex As InvalidCastException
+            MsgBox(nombreVariable & " no es un número valido")
+            Return False
+        End Try
+    End Function
+
     Private Sub DataGrid_SelectionChanged(sender As Object, e As EventArgs) Handles DataGridPersonas.SelectionChanged
         If Not DataGridPersonas.SelectedRows.Count = 1 Then
             LimpiarCampos()
@@ -104,9 +128,9 @@
 
 
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
-        Dim validacion = ValidarCampos()
-        If Not String.IsNullOrEmpty(validacion) Then
-            MsgBox(validacion)
+
+        If Not validar() Then
+
             Return
         End If
 
@@ -155,12 +179,14 @@
         ''si no lo hay, entonces es llamado desde el crear y no se debe agregar
         ''este primer elemento
         If Not String.IsNullOrEmpty(Id) Then 'si no es nulo o vacio, registro antiguo tiene id
-            Dim Fila() As String = New String(12) {Id, TextBoxCedulaPersonas.Text, TextBoxPrimerNombrePersonas.Text, fecha, TextBoxSdoNombrePersonas.Text, TextBoxApellidoPersonas.Text, TextBoxCiudadPersonas.Text, Codmonitor, CodCpu, CodImpresora, TextBoxCargoPersonas.Text, TextBoxSueldoPersonas.Text, fecha}
+            Dim Fila() As String = New String(11) {Id, TextBoxCedulaPersonas.Text, TextBoxPrimerNombrePersonas.Text, TextBoxSdoNombrePersonas.Text, TextBoxApellidoPersonas.Text, TextBoxCiudadPersonas.Text, Codmonitor, CodCpu, CodImpresora, TextBoxCargoPersonas.Text, TextBoxSueldoPersonas.Text, fecha}
             Return Fila
 
         End If
 
-        Return {Id, TextBoxCedulaPersonas.Text, TextBoxPrimerNombrePersonas.Text, fecha, TextBoxSdoNombrePersonas.Text, TextBoxApellidoPersonas.Text, TextBoxCiudadPersonas.Text, Codmonitor, CodCpu, CodImpresora, TextBoxCargoPersonas.Text, TextBoxSueldoPersonas.Text, fecha}
+        Return {Id, TextBoxCedulaPersonas.Text, TextBoxPrimerNombrePersonas.Text,
+            TextBoxSdoNombrePersonas.Text, TextBoxApellidoPersonas.Text, TextBoxCiudadPersonas.Text,
+            Codmonitor, CodCpu, CodImpresora, TextBoxCargoPersonas.Text, TextBoxSueldoPersonas.Text, fecha}
     End Function
 
     Private Sub CargarCamposTexto(filaSeleccionada As DataGridViewRow)
@@ -190,9 +216,6 @@
         Recargar()
     End Sub
 
-    Private Sub BtnModificar_Click(sender As Object, e As EventArgs) Handles BtnModificar.Click
-
-    End Sub
 
     Private Sub BtnEliminar_Click(sender As Object, e As EventArgs) Handles BtnEliminar.Click
         Dim Id = TextBoxIDPersonas.Text
