@@ -33,21 +33,13 @@ Partial Class Formularioinicial
         Me.MeArchivo = New System.Windows.Forms.ToolStripMenuItem()
         Me.ItSalirArchivo = New System.Windows.Forms.ToolStripMenuItem()
         Me.EjercicioClaseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AgregarPersonaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AdministradorDePersonalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MeGestionar = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ItmCrearCPU = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AdministradorCPUToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.IToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CrearImpresorasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CRUDToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MeMonitor = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ItmCrearMonitor = New System.Windows.Forms.ToolStripMenuItem()
         Me.AdministradorMonitoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AsignacionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AsignacionEquiposToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ConsultarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ConsultasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -106,7 +98,7 @@ Partial Class Formularioinicial
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MeArchivo, Me.EjercicioClaseToolStripMenuItem, Me.MeGestionar, Me.IToolStripMenuItem, Me.MeMonitor, Me.AsignacionToolStripMenuItem, Me.ConsultarToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MeArchivo, Me.EjercicioClaseToolStripMenuItem, Me.IToolStripMenuItem, Me.MeMonitor, Me.AsignacionToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(595, 24)
@@ -123,21 +115,15 @@ Partial Class Formularioinicial
         'ItSalirArchivo
         '
         Me.ItSalirArchivo.Name = "ItSalirArchivo"
-        Me.ItSalirArchivo.Size = New System.Drawing.Size(96, 22)
+        Me.ItSalirArchivo.Size = New System.Drawing.Size(152, 22)
         Me.ItSalirArchivo.Text = "Salir"
         '
         'EjercicioClaseToolStripMenuItem
         '
-        Me.EjercicioClaseToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AgregarPersonaToolStripMenuItem, Me.AdministradorDePersonalToolStripMenuItem})
+        Me.EjercicioClaseToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AdministradorDePersonalToolStripMenuItem})
         Me.EjercicioClaseToolStripMenuItem.Name = "EjercicioClaseToolStripMenuItem"
         Me.EjercicioClaseToolStripMenuItem.Size = New System.Drawing.Size(69, 20)
         Me.EjercicioClaseToolStripMenuItem.Text = "Personas "
-        '
-        'AgregarPersonaToolStripMenuItem
-        '
-        Me.AgregarPersonaToolStripMenuItem.Name = "AgregarPersonaToolStripMenuItem"
-        Me.AgregarPersonaToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
-        Me.AgregarPersonaToolStripMenuItem.Text = "Agregar Persona"
         '
         'AdministradorDePersonalToolStripMenuItem
         '
@@ -145,37 +131,12 @@ Partial Class Formularioinicial
         Me.AdministradorDePersonalToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
         Me.AdministradorDePersonalToolStripMenuItem.Text = "Administrador de personal "
         '
-        'MeGestionar
-        '
-        Me.MeGestionar.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ItmCrearCPU, Me.AdministradorCPUToolStripMenuItem})
-        Me.MeGestionar.Name = "MeGestionar"
-        Me.MeGestionar.Size = New System.Drawing.Size(45, 20)
-        Me.MeGestionar.Text = " CPU"
-        '
-        'ItmCrearCPU
-        '
-        Me.ItmCrearCPU.Name = "ItmCrearCPU"
-        Me.ItmCrearCPU.Size = New System.Drawing.Size(176, 22)
-        Me.ItmCrearCPU.Text = "Crear CPU"
-        '
-        'AdministradorCPUToolStripMenuItem
-        '
-        Me.AdministradorCPUToolStripMenuItem.Name = "AdministradorCPUToolStripMenuItem"
-        Me.AdministradorCPUToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
-        Me.AdministradorCPUToolStripMenuItem.Text = "Administrador CPU"
-        '
         'IToolStripMenuItem
         '
-        Me.IToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CrearImpresorasToolStripMenuItem, Me.CRUDToolStripMenuItem})
+        Me.IToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CRUDToolStripMenuItem})
         Me.IToolStripMenuItem.Name = "IToolStripMenuItem"
         Me.IToolStripMenuItem.Size = New System.Drawing.Size(77, 20)
         Me.IToolStripMenuItem.Text = "Impresoras"
-        '
-        'CrearImpresorasToolStripMenuItem
-        '
-        Me.CrearImpresorasToolStripMenuItem.Name = "CrearImpresorasToolStripMenuItem"
-        Me.CrearImpresorasToolStripMenuItem.Size = New System.Drawing.Size(211, 22)
-        Me.CrearImpresorasToolStripMenuItem.Text = "Crear Impresoras"
         '
         'CRUDToolStripMenuItem
         '
@@ -185,16 +146,10 @@ Partial Class Formularioinicial
         '
         'MeMonitor
         '
-        Me.MeMonitor.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ItmCrearMonitor, Me.AdministradorMonitoresToolStripMenuItem})
+        Me.MeMonitor.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AdministradorMonitoresToolStripMenuItem})
         Me.MeMonitor.Name = "MeMonitor"
         Me.MeMonitor.Size = New System.Drawing.Size(76, 20)
         Me.MeMonitor.Text = "Monitores "
-        '
-        'ItmCrearMonitor
-        '
-        Me.ItmCrearMonitor.Name = "ItmCrearMonitor"
-        Me.ItmCrearMonitor.Size = New System.Drawing.Size(207, 22)
-        Me.ItmCrearMonitor.Text = "Crear Monitores"
         '
         'AdministradorMonitoresToolStripMenuItem
         '
@@ -214,19 +169,6 @@ Partial Class Formularioinicial
         Me.AsignacionEquiposToolStripMenuItem.Name = "AsignacionEquiposToolStripMenuItem"
         Me.AsignacionEquiposToolStripMenuItem.Size = New System.Drawing.Size(178, 22)
         Me.AsignacionEquiposToolStripMenuItem.Text = "Asignacion equipos"
-        '
-        'ConsultarToolStripMenuItem
-        '
-        Me.ConsultarToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConsultasToolStripMenuItem})
-        Me.ConsultarToolStripMenuItem.Name = "ConsultarToolStripMenuItem"
-        Me.ConsultarToolStripMenuItem.Size = New System.Drawing.Size(73, 20)
-        Me.ConsultarToolStripMenuItem.Text = "Consultar "
-        '
-        'ConsultasToolStripMenuItem
-        '
-        Me.ConsultasToolStripMenuItem.Name = "ConsultasToolStripMenuItem"
-        Me.ConsultasToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
-        Me.ConsultasToolStripMenuItem.Text = "Consultas"
         '
         'Formularioinicial
         '
@@ -260,20 +202,12 @@ Partial Class Formularioinicial
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents MeArchivo As ToolStripMenuItem
     Friend WithEvents ItSalirArchivo As ToolStripMenuItem
-    Friend WithEvents MeGestionar As ToolStripMenuItem
-    Friend WithEvents ItmCrearCPU As ToolStripMenuItem
-    Friend WithEvents MeMonitor As ToolStripMenuItem
-    Friend WithEvents ItmCrearMonitor As ToolStripMenuItem
     Friend WithEvents EjercicioClaseToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents AgregarPersonaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents IToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AsignacionToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents CrearImpresorasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AsignacionEquiposToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ConsultarToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ConsultasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CRUDToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AdministradorDePersonalToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents AdministradorCPUToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MeMonitor As ToolStripMenuItem
     Friend WithEvents AdministradorMonitoresToolStripMenuItem As ToolStripMenuItem
 End Class

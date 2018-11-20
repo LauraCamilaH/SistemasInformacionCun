@@ -1,7 +1,8 @@
 ﻿Public Class CRUDPersonasDesign
 
     Dim AdmiPersonas As AdministradorPersonas = New AdministradorPersonas
-    Private Columnas As String() = {"Identificador", "Cedula", "1er Nombre", "2do Nombre", "Apellido", "ciudad", "id.monitor", "id.cpu", "id.impresora", "cargo", "sueldo", "Fecha Ingreso"} 'nombramos las columnas 
+
+    Private Columnas As String() = {"Identificador", "Cedula", "primer_Nombre", "Seg_Nombre", "Apellido", "ciudad", "id.monitor", "id.cpu", "id.impresora", "cargo", "sueldo", "Fecha Ingreso"} 'nombramos las columnas 
     Private Sub CRUDPersonasDesign_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         DataGridPersonas.Columns.Clear()
 

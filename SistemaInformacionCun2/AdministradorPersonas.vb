@@ -5,7 +5,7 @@ Public Class AdministradorPersonas : Inherits AdministradorDB
     Private AdminHistorico As AdministradorHistorico = New AdministradorHistorico
 
     Public Sub New()
-        MyBase.New("Persona", {})
+        MyBase.New("Persona", {"ID", "CEDULA", "PRIMER_NOMBRE", "SEG_NOMBRE", "APELLIDO", "CIUDAD", "ID_MONITOR", "ID_CPU", "ID_IMPRESORA", "CARGO", "SUELDO", "FECHA_INGRESO"})
     End Sub
 
     Public Function CrearPersona(cedula As String, Primernombre As String, SegundoNombre As String, apellido As String, ciudad As String, cargo As String, sueldo As String, dia As String, mes As String, anio As String) As Integer

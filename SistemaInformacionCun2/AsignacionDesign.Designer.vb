@@ -28,7 +28,6 @@ Partial Class AsignacionDesign
         Me.BtCambiarCpu = New System.Windows.Forms.Button()
         Me.BttCambiarMonitor = New System.Windows.Forms.Button()
         Me.BtHistoria = New System.Windows.Forms.Button()
-        Me.TextBoxListahistoria = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -44,7 +43,12 @@ Partial Class AsignacionDesign
         Me.BtBuscar = New System.Windows.Forms.Button()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.DataGridAsignacion = New System.Windows.Forms.DataGridView()
+        Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Serial = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Marca = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridAsignacion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BtRegresarAsignacion
@@ -91,14 +95,6 @@ Partial Class AsignacionDesign
         Me.BtHistoria.TabIndex = 4
         Me.BtHistoria.Text = "Historia"
         Me.BtHistoria.UseVisualStyleBackColor = True
-        '
-        'TextBoxListahistoria
-        '
-        Me.TextBoxListahistoria.Location = New System.Drawing.Point(21, 325)
-        Me.TextBoxListahistoria.Multiline = True
-        Me.TextBoxListahistoria.Name = "TextBoxListahistoria"
-        Me.TextBoxListahistoria.Size = New System.Drawing.Size(393, 164)
-        Me.TextBoxListahistoria.TabIndex = 5
         '
         'Label1
         '
@@ -224,11 +220,46 @@ Partial Class AsignacionDesign
         Me.PictureBox1.TabIndex = 22
         Me.PictureBox1.TabStop = False
         '
+        'DataGridAsignacion
+        '
+        Me.DataGridAsignacion.AllowUserToAddRows = False
+        Me.DataGridAsignacion.AllowUserToDeleteRows = False
+        Me.DataGridAsignacion.AllowUserToOrderColumns = True
+        Me.DataGridAsignacion.AllowUserToResizeRows = False
+        Me.DataGridAsignacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridAsignacion.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.Serial, Me.Marca})
+        Me.DataGridAsignacion.Location = New System.Drawing.Point(21, 325)
+        Me.DataGridAsignacion.MultiSelect = False
+        Me.DataGridAsignacion.Name = "DataGridAsignacion"
+        Me.DataGridAsignacion.ReadOnly = True
+        Me.DataGridAsignacion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DataGridAsignacion.Size = New System.Drawing.Size(415, 135)
+        Me.DataGridAsignacion.TabIndex = 23
+        '
+        'ID
+        '
+        Me.ID.HeaderText = "Identificador"
+        Me.ID.Name = "ID"
+        Me.ID.ReadOnly = True
+        '
+        'Serial
+        '
+        Me.Serial.HeaderText = "Serial"
+        Me.Serial.Name = "Serial"
+        Me.Serial.ReadOnly = True
+        '
+        'Marca
+        '
+        Me.Marca.HeaderText = "Marca"
+        Me.Marca.Name = "Marca"
+        Me.Marca.ReadOnly = True
+        '
         'AsignacionDesign
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(503, 496)
+        Me.Controls.Add(Me.DataGridAsignacion)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.BtBuscar)
@@ -244,7 +275,6 @@ Partial Class AsignacionDesign
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.TextBoxListahistoria)
         Me.Controls.Add(Me.BtHistoria)
         Me.Controls.Add(Me.BttCambiarMonitor)
         Me.Controls.Add(Me.BtCambiarCpu)
@@ -253,6 +283,7 @@ Partial Class AsignacionDesign
         Me.Name = "AsignacionDesign"
         Me.Text = "AsignacionDising"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridAsignacion, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -263,7 +294,6 @@ Partial Class AsignacionDesign
     Friend WithEvents BtCambiarCpu As Button
     Friend WithEvents BttCambiarMonitor As Button
     Friend WithEvents BtHistoria As Button
-    Friend WithEvents TextBoxListahistoria As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
@@ -279,4 +309,8 @@ Partial Class AsignacionDesign
     Friend WithEvents BtBuscar As Button
     Friend WithEvents Label7 As Label
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents DataGridAsignacion As DataGridView
+    Friend WithEvents ID As DataGridViewTextBoxColumn
+    Friend WithEvents Serial As DataGridViewTextBoxColumn
+    Friend WithEvents Marca As DataGridViewTextBoxColumn
 End Class

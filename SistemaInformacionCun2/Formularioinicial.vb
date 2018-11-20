@@ -34,13 +34,13 @@
     End Sub
 
 
-    Private Sub ItmCrearMonitor_Click(sender As Object, e As EventArgs) Handles ItmCrearMonitor.Click
+    Private Sub ItmCrearMonitor_Click(sender As Object, e As EventArgs)
         Dim CrearMonitorDising = New CrearMonitorDesign
         CrearMonitorDising.Show()
 
     End Sub
 
-    Private Sub ItmCrearCPU_Click(sender As Object, e As EventArgs) Handles ItmCrearCPU.Click
+    Private Sub ItmCrearCPU_Click(sender As Object, e As EventArgs)
         Dim CrearCpuDising = New CrearCPUDesing
         CrearCPUDesing.Show()
 
@@ -64,13 +64,13 @@
 
     End Sub
 
-    Private Sub CrearImpresorasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CrearImpresorasToolStripMenuItem.Click
+    Private Sub CrearImpresorasToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Dim CrearImpresoras = New CrearImpresorasDesign
         CrearImpresorasDesign.Show()
 
     End Sub
 
-    Private Sub ConsultasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConsultasToolStripMenuItem.Click
+    Private Sub ConsultasToolStripMenuItem_Click(sender As Object, e As EventArgs) 
         Dim Consultar = New ConsultarDesign
         ConsultarDesign.Show()
 
@@ -86,7 +86,7 @@
         Crud.Show()
     End Sub
 
-    Private Sub AdministradorCPUToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AdministradorCPUToolStripMenuItem.Click
+    Private Sub AdministradorCPUToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Dim Crud = New CRUDCpuDesign
         Crud.Show()
 
@@ -97,7 +97,7 @@
         Crud.Show()
     End Sub
 
-    Private Sub AgregarPersonaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AgregarPersonaToolStripMenuItem.Click
+    Private Sub AgregarPersonaToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Dim CrearPersonas = New DesignEjercicioClase
         CrearPersonas.Show()
 

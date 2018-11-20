@@ -1,6 +1,8 @@
 ﻿Imports Microsoft.VisualBasic.FileIO
 
 Public Class AsignacionDesign
+    Private AdminAsigna As AdministradorHistorico = New AdministradorHistorico
+    Private Columnas As String() = {"Operacion", "Elemento", "ID_persona", "ID_elemento"}
     Dim currentRow As String()
     Dim Bdcpu As String()()
     Dim numero As Integer
@@ -60,26 +62,7 @@ Public Class AsignacionDesign
         TextBoxMonitor.Text = Datospersona(6)
 
     End Sub
-    Private Sub organizar()
-        Dim cadena As String
-        For index1 As Integer = 0 To (Bdcpu.Length - 1) - 1
-            For index2 As Integer = 0 To (Bdcpu.Length - 1) - 1
-                If CInt(Bdcpu(index2)(3)) < CInt(Bdcpu(index2 + 1)(3)) Then
-                    Dim ArregloLocal As String()
-                    ArregloLocal = Bdcpu(index2 + 1)
-                    Bdcpu(index2 + 1) = Bdcpu(index2)
-                    Bdcpu(index2) = ArregloLocal
 
-                End If
-            Next
-        Next
-        cadena = " Listado de registros enl la base de datos " & vbNewLine
-        For index1 As Integer = 0 To (Bdcpu.Length - 1)
-            cadena &= Bdcpu(index1)(0) & " " & Bdcpu(index1)(1) & " " & Bdcpu(index1)(2) & " " & Bdcpu(index1)(3) & vbNewLine
-
-        Next
-        TextBoxListahistoria.Text = cadena
-    End Sub
 
     Private Sub BttCambiarMonitor_Click(sender As Object, e As EventArgs) Handles BttCambiarMonitor.Click
         Dim administrarPersonas = New AdministradorPersonas
@@ -117,8 +100,18 @@ Public Class AsignacionDesign
     End Sub
 
 
-
     Private Sub AsignacionDesign_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        DataGridAsignacion.Columns.Clear()
+        For Each Columna In Columnas 'ingresa a un ciclo Por cada Columna en el arreglo de string que tenemos 
+            Dim ColumnaTabla = New DataGridViewColumn()
+            ColumnaTabla.HeaderText = Columna ' obtiene o establece el texto del título en la celda del encabezado de la columna
+            ColumnaTabla.Name = Columna 'Pone o estable el nombre de las columnas 
+            ColumnaTabla.SortMode = DataGridViewColumnSortMode.Automatic '' super importante me encanto es el ordenar automatico funciona paracedio a a filtar en excel
+            ColumnaTabla.CellTemplate = New DataGridViewTextBoxCell
+            DataGridAsignacion.Columns.Add(ColumnaTabla) ' agrega las columnas de la coleccion 
+        Next
 
     End Sub
+
+
 End Class

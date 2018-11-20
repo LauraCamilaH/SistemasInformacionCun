@@ -1,5 +1,6 @@
 ﻿Public Class CRUDMonitorDesign
-    Private AdminMonitor As AdministradorMonitor = New AdministradorMonitor ' constructor inicializa un objetollama a la clase que administra el monitor y la instancia
+    Private AdminMonitor As AdministradorMonitor = New AdministradorMonitor '
+    'constructor inicializa un objetollama a la clase que administra el monitor y la instancia
     Private Columnas As String() = {"Identificador", "Serial", "Marca", "Fecha creación", "valor producto"} 'nombramos las columnas 
 
     Private Sub CRUDMonitorDesign_Load(sender As Object, e As EventArgs) Handles MyBase.Load

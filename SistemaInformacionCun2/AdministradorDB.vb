@@ -2,7 +2,9 @@
 Imports MySql.Data.MySqlClient
 
 Public Class AdministradorDB
-
+    ''' <summary>
+    ''' Indica el nombre de las columnas de la tabla que vamos a utilizar 
+    ''' </summary>
     Private nombreColumnas As String()
     Public nombreTabla As String
     ''' <summary>
@@ -37,7 +39,11 @@ Public Class AdministradorDB
         Return Cadena
 
     End Function
-
+    ''' <summary>
+    ''' envia el estement para eliminar los registros de una tabla 
+    ''' </summary>
+    ''' <param name="Id">id del elemento a eliminar </param>
+    ''' <returns> si filas eliminadas igual 0, retorna un false si mayor a 0 renorna un true</returns>
     Public Function Eliminar(Id As String) As Boolean
         Dim conexion = AbrirConexion()
         Dim statement = New MySqlCommand
@@ -82,7 +88,11 @@ Public Class AdministradorDB
         Return If(filasActualizadas = 0, False, True) ''La actualización fue satisfactoria
 
     End Function
-
+    ''' <summary>
+    ''' inserta el nuevo registro en la base de datos 
+    ''' </summary>
+    ''' <param name="Arreglo"></param>
+    ''' <returns></returns>
 
     Public Function Crear(Arreglo As String()) As Integer
 
@@ -122,7 +132,10 @@ Public Class AdministradorDB
             Return -2
         End Try
     End Function
-
+    ''' <summary>
+    ''' Abre la conexion a la base de datos 
+    ''' </summary>
+    ''' <returns></returns>
     Private Function AbrirConexion() As MySqlConnection
         Dim conexion = New MySqlConnection("Server=localhost;Database=inventario_cun;Uid=root;Pwd='';SslMode=None")
         conexion.Open()
@@ -130,7 +143,7 @@ Public Class AdministradorDB
     End Function
 
     ''' <summary>
-    ''' carga en archivo en una arreglo de dos dimensiones y lo retorna 
+    ''' carga en archivo en una arreglo de dos dimensiones y lo retorna por medio de consultas 
     ''' </summary>
     ''' <returns></returns>
     Public Function CargarDBMemoria() As String()()
@@ -148,7 +161,11 @@ Public Class AdministradorDB
         While reader.Read()
             Dim fila = New String(columnas - 1) {}
             For indice = 0 To columnas - 1
-                fila(indice) = reader.GetString(indice)
+                If (Not reader.IsDBNull(indice)) Then
+                    fila(indice) = reader.GetString(indice)
+                Else
+                    fila(indice) = ""
+                End If
             Next
             ReDim Preserve BdMemoria(indiceFila)
             BdMemoria(indiceFila) = fila
