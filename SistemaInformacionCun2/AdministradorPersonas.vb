@@ -127,7 +127,7 @@ Public Class AdministradorPersonas : Inherits AdministradorDB
                 Fila(indice) = valor
             End If
         Next Fila
-        ActualizarArchivo(Datosmemoria)
+        ''ActualizarArchivo(Datosmemoria)
         Return 0
     End Function
 

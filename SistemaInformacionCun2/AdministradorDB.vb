@@ -37,28 +37,6 @@ Public Class AdministradorDB
         Return Cadena
 
     End Function
-    ''' <summary>
-    ''' formatea la matriz en formato cvs y la guarda en el archivo separado por punto y coma
-    ''' </summary>
-    ''' <param name="BaseDatos"></param>
-
-    Public Sub ActualizarArchivo(BaseDatos As String()())
-
-        Dim Cadena As String = ""
-
-        For Each Fila In BaseDatos
-            For Each Celda In Fila
-                Cadena = Cadena & Celda & ";"
-            Next Celda
-            Cadena = Cadena.Remove(Cadena.Length - 1, 1) ''Remover el punto y coma sobrante de cada linea
-            Cadena = Cadena & vbNewLine
-        Next Fila
-
-
-        My.Computer.FileSystem.WriteAllText(SpecialDirectories.MyDocuments & "\" & nombreTabla, Cadena, False) ''sobreescribe el archivo
-
-    End Sub
-
 
     Public Function Eliminar(Id As String) As Boolean
         Dim conexion = AbrirConexion()
@@ -77,27 +55,31 @@ Public Class AdministradorDB
 
 
     Public Function Actualizar(Fila As String()) As Boolean
-        Dim Id = Fila(0) ''El id de la fila viene en el indice cero
-        Dim BaseDatos = CargarDBMemoria()
+        Dim conexion = AbrirConexion()
+        Dim statement = New MySqlCommand
+        statement.Connection = conexion
+        ''UPDATE persona SET primer_nombre=@campo1, seg_nombre=@campo2 WHERE id=@id
+        Dim sql = "UPDATE " & nombreTabla & " SET "
 
-        Dim IndiceAEditar = -1
-        Dim IndiceActual = 0
-
-        For Each FilaBD In BaseDatos ''Recorremos cada fila de la bd
-            If FilaBD(0) = Id Then ''Si el indice es igual al id
-                IndiceAEditar = IndiceActual ''Hemos encontrado el indice a editar
-                Exit For ''Forzamos el fin de la iteración
-            End If
-            IndiceActual += 1
+        For indice = 0 To nombreColumnas.Length - 1
+            sql += nombreColumnas(indice) & " = @campo" & indice & ", "
         Next
 
-        If IndiceAEditar = -1 Then ''No se encontró el registro con el id dado
-            Return False
-        End If
+        sql = sql.Remove(sql.Length - 2, 1) ''Me quita la ultima coma
+        sql += "WHERE id = @id"
 
-        BaseDatos(IndiceAEditar) = Fila
-        ActualizarArchivo(BaseDatos)
-        Return True ''La actualización fue satisfactoria
+        statement.CommandText = sql
+        statement.Prepare()
+
+        For indice = 1 To Fila.Length - 1
+            statement.Parameters.AddWithValue("@campo" & (indice - 1), Fila(indice))
+        Next
+
+        statement.Parameters.AddWithValue("@id", Fila(0))
+
+        Dim filasActualizadas = statement.ExecuteNonQuery()
+
+        Return If(filasActualizadas = 0, False, True) ''La actualización fue satisfactoria
 
     End Function
 
