@@ -2,7 +2,7 @@
 
 Public Class AdministradorMonitor : Inherits AdministradorDB
     Public Sub New()
-        MyBase.New("BDmonitor.cvs", 5)
+        MyBase.New("BDmonitor.cvs", 4)
     End Sub
     Public Function CrearMonitor(serie As String, marca As String, dia As String, mes As String, anio As String, valor As String)
 

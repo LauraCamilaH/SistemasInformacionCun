@@ -116,6 +116,7 @@
 
     Private Sub LimpiarCamposTexto()
         TextBoxAnioMonitor.Text = ""
+        TextBoxMesMonitor.Text = ""
         TextBoxDiaMonitor.Text = ""
         TextBoxIdMonitor.Text = ""
         TextBoxMarcaMonitor.Text = ""

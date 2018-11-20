@@ -39,6 +39,7 @@
     End Sub
     Private Sub LimpiarCamposTexto()
         TextBoxAnioCpu.Text = ""
+        TextBoxMesCpu.Text = ""
         TextBoxDiaCpu.Text = ""
         TextBoxIDcpu.Text = ""
         TextBoxMarcaCpu.Text = ""
