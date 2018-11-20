@@ -163,7 +163,7 @@
             MsgBox("Error interno, comuniquese con el administrador") ''Es un error del programador!!!
         End If
     End Sub
-
+    ''
     Private Function CamposDeTextoArreglo() As String()
         Dim fecha = TextBoxdia.Text & "/" & TextBoxMes.Text & "/" & TextBoxAño.Text
 
