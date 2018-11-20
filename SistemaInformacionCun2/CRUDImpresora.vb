@@ -64,7 +64,7 @@
     Private Sub CrearC()
         Dim NuevoId = AdminImpresoras.Crear(CamposDeTextoArreglo())
         If NuevoId > 0 Then
-            MsgBox("Se ha creado la impresora con Id: " & NuevoId)
+            MsgBox("Se ha creado la impresora")
             Recargar()
             LimpiarCampos()
         ElseIf NuevoId = -1 Then
@@ -75,7 +75,7 @@
     End Sub
 
     Private Function CamposDeTextoArreglo() As String()
-        Dim fecha = TextBoxdia.Text & "/" & TextBoxmes.Text & "/" & TextBoxAnio.Text
+        Dim fecha = TextBoxAnio.Text & "-" & TextBoxmes.Text & "-" & TextBoxdia.Text
 
 
         Dim Id = TxtIdentificador.Text
@@ -131,7 +131,7 @@
             Dim partes = fecha.Split("/")
             TextBoxdia.Text = partes(0)
             TextBoxmes.Text = partes(1)
-            TextBoxAnio.Text = partes(2)
+            TextBoxAnio.Text = partes(2).Substring(0, 4)
         End If
 
     End Sub
@@ -237,4 +237,7 @@
         End Try
     End Function
 
+    Private Sub TxtMarcaImpresora_TextChanged(sender As Object, e As EventArgs) Handles TxtMarcaImpresora.TextChanged
+
+    End Sub
 End Class

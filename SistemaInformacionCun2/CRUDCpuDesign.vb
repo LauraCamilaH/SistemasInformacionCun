@@ -37,14 +37,15 @@
         LimpiarCamposTexto()
         BtnEliminar.Enabled = False
     End Sub
+
     Private Sub LimpiarCamposTexto()
         TextBoxAnioCpu.Text = ""
+        TextBoxMesCpu.Text = ""
         TextBoxDiaCpu.Text = ""
         TextBoxIDcpu.Text = ""
         TextBoxMarcaCpu.Text = ""
         TextBoxValorC.Text = ""
         TextBoxSerieCPU.Text = ""
-
     End Sub
 
 
@@ -77,19 +78,19 @@
     End Sub
 
     Private Sub CrearC()
-        Dim NuevoId = AdmiCpu.Crear(CamposDeTextoArreglo())
-        If NuevoId > 0 Then
-            MsgBox("Se ha creado la impresora con Id: " & NuevoId)
+        Dim Resultado = AdmiCpu.Crear(CamposDeTextoArreglo())
+        If Resultado > 0 Then
+            MsgBox("Se ha creado la impresora")
             Recargar()
             LimpiarCampos()
-        ElseIf NuevoId = -1 Then
+        ElseIf Resultado = -1 Then
             MsgBox("Ya existe un elemento con el serial")
-        ElseIf NuevoId = -2 Then
+        ElseIf Resultado = -2 Then
             MsgBox("Error interno, comuniquese con el administrador") ''Es un error del programador!!!
         End If
     End Sub
     Private Function CamposDeTextoArreglo() As String()
-        Dim fecha = TextBoxDiaCpu.Text & "/" & TextBoxMesCpu.Text & "/" & TextBoxAnioCpu.Text
+        Dim fecha = TextBoxAnioCpu.Text & "-" & TextBoxMesCpu.Text & "-" & TextBoxDiaCpu.Text
 
 
         Dim Id = TextBoxIDcpu.Text
@@ -170,7 +171,7 @@
             Dim partes = fecha.Split("/")
             TextBoxDiaCpu.Text = partes(0)
             TextBoxMesCpu.Text = partes(1)
-            TextBoxAnioCpu.Text = partes(2)
+            TextBoxAnioCpu.Text = partes(2).Substring(0, 4)
         End If
 
         TextBoxValorC.Text = filaSeleccionada.Cells(4).Value

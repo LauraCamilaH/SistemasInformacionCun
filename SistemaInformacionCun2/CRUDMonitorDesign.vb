@@ -48,7 +48,7 @@
     Private Sub Crear()
         Dim NuevoId = AdminMonitor.Crear(CamposDeTextoArreglo())
         If NuevoId > 0 Then
-            MsgBox("Se ha creado la impresora con Id: " & NuevoId)
+            MsgBox("Se ha creado la impresora")
             RecargarM()
             LimpiarCampos()
         ElseIf NuevoId = -1 Then
@@ -58,7 +58,7 @@
         End If
     End Sub
     Private Function CamposDeTextoArreglo() As String()
-        Dim fecha = TextBoxDiaMonitor.Text & "/" & TextBoxMesMonitor.Text & "/" & TextBoxAnioMonitor.Text
+        Dim fecha = TextBoxAnioMonitor.Text & "-" & TextBoxMesMonitor.Text & "-" & TextBoxDiaMonitor.Text
 
 
         Dim Id = TextBoxIdMonitor.Text
@@ -121,6 +121,7 @@
         TextBoxMarcaMonitor.Text = ""
         TextBoxSerialMonitor.Text = ""
         TextBoxMesMonitor.Text = ""
+        TextBoxValorM.Text = ""
 
     End Sub
 
@@ -134,7 +135,7 @@
             Dim partes = fecha.Split("/")
             TextBoxDiaMonitor.Text = partes(0)
             TextBoxMesMonitor.Text = partes(1)
-            TextBoxAnioMonitor.Text = partes(2)
+            TextBoxAnioMonitor.Text = partes(2).Substring(0, 4)
         End If
         TextBoxValorM.Text = filaSeleccionada.Cells(4).Value
 

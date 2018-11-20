@@ -204,7 +204,8 @@
             Dim partes = fecha.Split("/")
             TextBoxdia.Text = partes(0)
             TextBoxMes.Text = partes(1)
-            TextBoxAño.Text = partes(2)
+            TextBoxAño.Text = partes(2).Substring(0, 4) '' trae una partee del la cadena
+
         End If
     End Sub
     Private Sub BtnNuevo_Click(sender As Object, e As EventArgs) Handles BtnNuevo.Click

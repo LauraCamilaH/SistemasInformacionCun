@@ -1,8 +1,10 @@
 ﻿Imports Microsoft.VisualBasic.FileIO
+Imports MySql.Data.MySqlClient
 
 Public Class AdministradorDB
 
-    Public nombreArchivo As String
+    Private nombreColumnas As String()
+    Public nombreTabla As String
     ''' <summary>
     ''' Es la cantidad de campos que debe contener cualquier 
     ''' elemento (sin contar el campo ID) que se debe ingresar, esto se valida al momento
@@ -10,22 +12,12 @@ Public Class AdministradorDB
     ''' </summary>
     Private CantidadCampos As Integer
 
-    Public Sub New(nombre As String, campos As Integer)
-        nombreArchivo = nombre
-        CantidadCampos = campos
+    Public Sub New(nombre As String, nombresColumnas As String())
+        nombreTabla = nombre
+        nombreColumnas = nombresColumnas
+        CantidadCampos = nombreColumnas.Length
     End Sub
-    ''' <summary>
-    ''' obtiene el ultimo id ingresado en la base de datos
-    ''' </summary>
-    ''' <returns></returns>
-    Public Function ObtenerUltimoId() As Integer
-        Dim Basedatos As String()() = CargarDBMemoria() 'cargael archivo en una variable que se llama base de datos 
-        If Basedatos.Length = 0 Then
-            Return 0
-        End If
-        Dim UltimaFila = Basedatos(Basedatos.Length - 1) ' para saber el indice a lo longitud de un arreglo cualquiera le resto-1  para saber el indice 
-        Return UltimaFila(0) ' retorna el valor del indice que esta e cero en este caso es el Id 
-    End Function
+
     ''' <summary>
     ''' Obtiene todo lo que esta en la base de datos y formatea en cadena de texto
     ''' </summary>
@@ -63,31 +55,24 @@ Public Class AdministradorDB
         Next Fila
 
 
-        My.Computer.FileSystem.WriteAllText(SpecialDirectories.MyDocuments & "\" & nombreArchivo, Cadena, False) ''sobreescribe el archivo
+        My.Computer.FileSystem.WriteAllText(SpecialDirectories.MyDocuments & "\" & nombreTabla, Cadena, False) ''sobreescribe el archivo
 
     End Sub
 
 
     Public Function Eliminar(Id As String) As Boolean
-        Dim BaseDatos = CargarDBMemoria()
+        Dim conexion = AbrirConexion()
+        Dim statement = New MySqlCommand
+        statement.Connection = conexion
+        Dim sql = "delete from " & nombreTabla & " where id = @id"
+        statement.CommandText = sql
+        statement.Prepare()
+        statement.Parameters.AddWithValue("@id", Id)
+        Dim FilasEliminadas = statement.ExecuteNonQuery()
+        conexion.Close()
 
-        Dim IndiceEliminar As Integer = -1 'Indicador para saber si entra al primer if 
-        Dim IndiceActual As Integer = 0
+        Return If(FilasEliminadas = 0, False, True)
 
-        For Each FilaDB In BaseDatos
-            If FilaDB(0) = Id Then
-                IndiceEliminar = IndiceActual
-                Exit For
-            End If
-            IndiceActual += 1
-        Next
-
-        If IndiceEliminar = -1 Then
-            Return False
-        End If
-        BaseDatos = EliminarElemento(BaseDatos, IndiceEliminar)
-        ActualizarArchivo(BaseDatos)
-        Return True
     End Function
 
 
@@ -118,57 +103,48 @@ Public Class AdministradorDB
 
 
     Public Function Crear(Arreglo As String()) As Integer
-        Dim DB = CargarDBMemoria()
 
-        If Not Arreglo.Count = CantidadCampos Then
-            Return -2 ''La cantidad de campos no es valida
-        End If
+        Dim conexion = AbrirConexion()
+        Dim statement = New MySqlCommand
+        statement.Connection = conexion
 
-        Dim ValorUnico = Arreglo(0) ''Como no se incluye el id, el valor único está en el índice cero
+        Dim sql = "INSERT INTO " & nombreTabla & " ( "
+        ''( campo1, campo2, campo3 )  VALUES ( @campo1, @campo2, @campo3)
 
-        For Each FilaDB In DB
-            If ValorUnico = FilaDB(1) Then
-                Return -1 ''Ya existe un elemento con el valor unico
-            End If
+        For Each nombreColumna In nombreColumnas
+            sql += nombreColumna & ", "
         Next
+        sql = sql.Remove(sql.Length - 2, 1) ''Remueve la ultima coma que sobra
+        sql += ") VALUES ( "
 
-        Dim SiguienteId = ObtenerUltimoId() + 1
-        Arreglo = InsertarElemento(Arreglo, 0, SiguienteId)
+        For indice = 1 To nombreColumnas.Length
+            sql += "@campo" & indice & ", "
+        Next
+        sql = sql.Remove(sql.Length - 2, 1) ''Remueve la ultima coma que sobra
+        sql += ")"
 
-        DB = InsertarElemntoMatriz(DB, DB.Length, Arreglo)
-        ActualizarArchivo(DB)
-        Return SiguienteId
+        statement.CommandText = sql
+        statement.Prepare()
+
+        For indice = 1 To nombreColumnas.Length
+            statement.Parameters.AddWithValue("@campo" & indice, Arreglo(indice - 1))
+        Next
+        Try
+            Dim filasAfectadas = statement.ExecuteNonQuery
+            conexion.Close()
+            Return 1
+        Catch ex As MySqlException
+            If ex.Number = 1062 Then ''Codigo de error para una clave duplicada
+                Return -1
+            End If
+            Return -2
+        End Try
     End Function
 
-    Public Function InsertarElemento(Arreglo As String(), indice As Integer, insertar As String) As String()
-
-        Dim retornar As String() = New String(Arreglo.Length) {}
-        Dim contador As Integer = 0
-        For Each valor In Arreglo
-            If contador < indice Then
-                retornar(contador) = valor
-            Else
-                retornar(contador + 1) = valor
-            End If
-            contador += 1
-        Next
-        retornar(indice) = insertar
-        Return retornar
-    End Function
-    Public Function InsertarElemntoMatriz(matriz As String()(), indice As Integer, insertar As String()) As String()()
-        ''[a,b,c],[g,h,i],     1, [d,e,f]  -> [a,b,c],[d,e,f],[g,h,i]
-        Dim retornar As String()() = New String(matriz.Length)() {}
-        Dim contador As Integer = 0
-        For Each valor In matriz
-            If contador < indice Then
-                retornar(contador) = valor
-            Else
-                retornar(contador + 1) = valor
-            End If
-            contador += 1
-        Next
-        retornar(indice) = insertar
-        Return retornar
+    Private Function AbrirConexion() As MySqlConnection
+        Dim conexion = New MySqlConnection("Server=localhost;Database=inventario_cun;Uid=root;Pwd='';SslMode=None")
+        conexion.Open()
+        Return conexion
     End Function
 
     ''' <summary>
@@ -176,59 +152,33 @@ Public Class AdministradorDB
     ''' </summary>
     ''' <returns></returns>
     Public Function CargarDBMemoria() As String()()
-
-        Dim currentRow As String()
+        Dim conexion = AbrirConexion()
+        Dim statement = New MySqlCommand
+        statement.Connection = conexion
+        statement.CommandText = "SELECT * FROM " & nombreTabla
+        statement.Prepare()
         Dim BdMemoria As String()() = {}
-        Dim indiceFilaActual As Integer
 
-        Dim rutaArchivo = SpecialDirectories.MyDocuments & "\" & nombreArchivo
+        Dim reader = statement.ExecuteReader()
+        Dim columnas = reader.FieldCount
+        Dim indiceFila = 0
 
-        If Not FileSystem.FileExists(rutaArchivo) Then ''No Existe este archivo?
-            Return BdMemoria ''Retorna la matriz (vacía)
-        End If
+        While reader.Read()
+            Dim fila = New String(columnas - 1) {}
+            For indice = 0 To columnas - 1
+                fila(indice) = reader.GetString(indice)
+            Next
+            ReDim Preserve BdMemoria(indiceFila)
+            BdMemoria(indiceFila) = fila
+            indiceFila += 1
+        End While
 
-        Using MyReader As New Microsoft.VisualBasic.FileIO.TextFieldParser(rutaArchivo)
-            MyReader.TextFieldType = FileIO.FieldType.Delimited
-            MyReader.SetDelimiters(",")
-            indiceFilaActual = 0
-            While Not MyReader.EndOfData
-                Try
-                    currentRow = MyReader.ReadFields()
-                    Dim currentField As String
-                    For Each currentField In currentRow
-                        Dim filaActual() As String = currentField.Split(";")
-                        ReDim Preserve BdMemoria(indiceFilaActual)
-                        BdMemoria(indiceFilaActual) = filaActual
-                        indiceFilaActual += 1
-                    Next
-                Catch ex As Microsoft.VisualBasic.
-                        FileIO.MalformedLineException
-                    MsgBox("no existe archivo de lectura")
+        reader.Close()
+        conexion.Close()
 
-                End Try
-            End While
-
-        End Using
         Return BdMemoria
     End Function
 
-    Public Function EliminarElemento(Matriz As String()(), fila As Integer) As String()()
-        Dim arreglo As String()() = New String(Matriz.Length - 2)() {}
-        Dim contador As Integer = 0
 
-        For Each filas In Matriz
-            If Not contador = fila Then
-                If contador < fila Then
-                    arreglo(contador) = filas
-                Else
-                    arreglo(contador - 1) = filas
-                End If
-            End If
-            contador += 1
-        Next
-
-        Return arreglo
-
-    End Function
 
 End Class

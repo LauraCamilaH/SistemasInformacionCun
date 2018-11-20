@@ -5,20 +5,20 @@ Public Class AdministradorPersonas : Inherits AdministradorDB
     Private AdminHistorico As AdministradorHistorico = New AdministradorHistorico
 
     Public Sub New()
-        MyBase.New("BDPersonas.txt", 12)
+        MyBase.New("Persona", {})
     End Sub
 
     Public Function CrearPersona(cedula As String, Primernombre As String, SegundoNombre As String, apellido As String, ciudad As String, cargo As String, sueldo As String, dia As String, mes As String, anio As String) As Integer
-        Dim idpersonas = ObtenerUltimoId() + 1
+        Dim idpersonas = 2
         Dim idmonitor = "0"
         Dim idcpu = "0"
         Dim idimpresora = "0"
         Dim fecha = dia & "/" & mes & "/" & anio
         Dim Cadena = idpersonas & ";" & cedula & ";" & Primernombre & ";" & SegundoNombre & ";" & apellido & ";" & ciudad & ";" & idmonitor & ";" & idcpu & ";" & idimpresora & ";" & cargo & ";" & sueldo & ";" & fecha & vbCrLf
-        
+
         'Escribe la linea de texto en el archivo
 
-        My.Computer.FileSystem.WriteAllText(SpecialDirectories.MyDocuments & "\" & nombreArchivo, Cadena, True)
+        My.Computer.FileSystem.WriteAllText(SpecialDirectories.MyDocuments & "\" & nombreTabla, Cadena, True)
 
         Return idpersonas
     End Function
