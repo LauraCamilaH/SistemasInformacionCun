@@ -54,8 +54,8 @@
             LimpiarCampos()
         ElseIf NuevoId = -1 Then
             MsgBox("Ya existe un elemento con el serial")
-            'ElseIf NuevoId = -2 Then
-            ''Es un error del programador!!!
+        ElseIf NuevoId = -2 Then
+            MsgBox("erro!!") ''Es un error del programador!!!
         End If
     End Sub
     Private Function CamposDeTextoArreglo() As String()

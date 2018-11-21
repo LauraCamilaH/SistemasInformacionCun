@@ -107,7 +107,7 @@ Public Class AdministradorDB
             sql += nombreColumna & ", "
         Next
         sql = sql.Remove(sql.Length - 2, 1) ''Remueve la ultima coma que sobra
-        sql += ") VALUESs ( "
+        sql += ") VALUES ( "
 
         For indice = 1 To nombreColumnas.Length
             sql += "@campo" & indice & ", "
