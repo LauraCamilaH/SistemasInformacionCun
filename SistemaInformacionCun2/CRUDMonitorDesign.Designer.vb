@@ -44,6 +44,8 @@ Partial Class CRUDMonitorDesign
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.TextBoxValorM = New System.Windows.Forms.TextBox()
+        Me.Caracteristicas = New System.Windows.Forms.Label()
+        Me.TextBoxCara = New System.Windows.Forms.TextBox()
         CType(Me.DataGridMonitor, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -242,11 +244,29 @@ Partial Class CRUDMonitorDesign
         Me.TextBoxValorM.Size = New System.Drawing.Size(254, 20)
         Me.TextBoxValorM.TabIndex = 24
         '
+        'Caracteristicas
+        '
+        Me.Caracteristicas.AutoSize = True
+        Me.Caracteristicas.Location = New System.Drawing.Point(275, 172)
+        Me.Caracteristicas.Name = "Caracteristicas"
+        Me.Caracteristicas.Size = New System.Drawing.Size(76, 13)
+        Me.Caracteristicas.TabIndex = 25
+        Me.Caracteristicas.Text = "Caracteristicas"
+        '
+        'TextBoxCara
+        '
+        Me.TextBoxCara.Location = New System.Drawing.Point(412, 169)
+        Me.TextBoxCara.Name = "TextBoxCara"
+        Me.TextBoxCara.Size = New System.Drawing.Size(120, 20)
+        Me.TextBoxCara.TabIndex = 26
+        '
         'CRUDMonitorDesign
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(554, 516)
+        Me.Controls.Add(Me.TextBoxCara)
+        Me.Controls.Add(Me.Caracteristicas)
         Me.Controls.Add(Me.TextBoxValorM)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.PictureBox1)
@@ -300,4 +320,6 @@ Partial Class CRUDMonitorDesign
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label7 As Label
     Friend WithEvents TextBoxValorM As TextBox
+    Friend WithEvents Caracteristicas As Label
+    Friend WithEvents TextBoxCara As TextBox
 End Class

@@ -2,7 +2,7 @@
 
 Public Class AdministradorMonitor : Inherits AdministradorDB
     Public Sub New()
-        MyBase.New("Monitor", {"serie", "marca", "fecha_ingreso", "precio_compra"})
+        MyBase.New("Monitor", {"serie", "marca", "fecha_ingreso", "precio_compra", "caracteristicas"})
     End Sub
     Public Function CrearMonitor(serie As String, marca As String, dia As String, mes As String, anio As String, valor As String)
 

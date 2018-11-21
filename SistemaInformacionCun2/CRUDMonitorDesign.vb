@@ -1,7 +1,7 @@
 ﻿Public Class CRUDMonitorDesign
     Private AdminMonitor As AdministradorMonitor = New AdministradorMonitor '
     'constructor inicializa un objetollama a la clase que administra el monitor y la instancia
-    Private Columnas As String() = {"Identificador", "Serial", "Marca", "Fecha creación", "valor producto"} 'nombramos las columnas 
+    Private Columnas As String() = {"Identificador", "Serial", "Marca", "Fecha creación", "valor producto", "caracteristicas"} 'nombramos las columnas 
 
     Private Sub CRUDMonitorDesign_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         DataGridMonitor.Columns.Clear()
@@ -54,14 +54,12 @@
             LimpiarCampos()
         ElseIf NuevoId = -1 Then
             MsgBox("Ya existe un elemento con el serial")
-        ElseIf NuevoId = -2 Then
-            MsgBox("Error interno, comuniquese con el administrador") ''Es un error del programador!!!
+            'ElseIf NuevoId = -2 Then
+            ''Es un error del programador!!!
         End If
     End Sub
     Private Function CamposDeTextoArreglo() As String()
         Dim fecha = TextBoxAnioMonitor.Text & "-" & TextBoxMesMonitor.Text & "-" & TextBoxDiaMonitor.Text
-
-
         Dim Id = TextBoxIdMonitor.Text
 
         ''Esta función es llamada al crear o actualizar, por tal motivo debemos
@@ -70,12 +68,12 @@
         ''si no lo hay, entonces es llamado desde el crear y no se debe agregar
         ''este primer elemento
         If Not String.IsNullOrEmpty(Id) Then 'si no es nulo o vacio, registro antiguo tiene id
-            Dim Fila() As String = New String(4) {Id, TextBoxSerialMonitor.Text, TextBoxMarcaMonitor.Text, fecha, TextBoxValorM.Text}
+            Dim Fila() As String = New String(5) {Id, TextBoxSerialMonitor.Text, TextBoxMarcaMonitor.Text, fecha, TextBoxValorM.Text, TextBoxCara.Text}
             Return Fila
 
         End If
 
-        Return {TextBoxSerialMonitor.Text, TextBoxMarcaMonitor.Text, fecha, TextBoxValorM.Text}
+        Return {TextBoxSerialMonitor.Text, TextBoxMarcaMonitor.Text, fecha, TextBoxValorM.Text, TextBoxCara.Text}
     End Function
 
     Private Sub BtnActualizar_Click(sender As Object, e As EventArgs) Handles BtnActualizar.Click
@@ -123,6 +121,7 @@
         TextBoxSerialMonitor.Text = ""
         TextBoxMesMonitor.Text = ""
         TextBoxValorM.Text = ""
+        TextBoxCara.Text = ""
 
     End Sub
 
@@ -139,7 +138,7 @@
             TextBoxAnioMonitor.Text = partes(2).Substring(0, 4)
         End If
         TextBoxValorM.Text = filaSeleccionada.Cells(4).Value
-
+        TextBoxCara.Text = filaSeleccionada.Cells(5).Value
     End Sub
     Private Sub DataGrid_SelectionChanged(sender As Object, e As EventArgs) Handles DataGridMonitor.SelectionChanged
         If Not DataGridMonitor.SelectedRows.Count = 1 Then
