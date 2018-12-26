@@ -166,6 +166,7 @@ Partial Class CrearCPUDesing
         Me.TextBoxValorCpu.Name = "TextBoxValorCpu"
         Me.TextBoxValorCpu.Size = New System.Drawing.Size(343, 20)
         Me.TextBoxValorCpu.TabIndex = 16
+        Me.TextBoxValorCpu.Text = "0"
         '
         'Label5
         '

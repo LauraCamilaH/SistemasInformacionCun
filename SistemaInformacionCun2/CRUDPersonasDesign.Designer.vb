@@ -44,7 +44,6 @@ Partial Class CRUDPersonasDesign
         Me.BtnGuardar = New System.Windows.Forms.Button()
         Me.DataGridPersonas = New System.Windows.Forms.DataGridView()
         Me.BtnActualizar = New System.Windows.Forms.Button()
-        Me.BtnModificar = New System.Windows.Forms.Button()
         Me.BtnEliminar = New System.Windows.Forms.Button()
         Me.BtnAscendente = New System.Windows.Forms.Button()
         Me.BtnDesendente = New System.Windows.Forms.Button()
@@ -240,18 +239,9 @@ Partial Class CRUDPersonasDesign
         Me.BtnActualizar.Text = "Actualizar"
         Me.BtnActualizar.UseVisualStyleBackColor = True
         '
-        'BtnModificar
-        '
-        Me.BtnModificar.Location = New System.Drawing.Point(94, 525)
-        Me.BtnModificar.Name = "BtnModificar"
-        Me.BtnModificar.Size = New System.Drawing.Size(75, 23)
-        Me.BtnModificar.TabIndex = 22
-        Me.BtnModificar.Text = "Modificar"
-        Me.BtnModificar.UseVisualStyleBackColor = True
-        '
         'BtnEliminar
         '
-        Me.BtnEliminar.Location = New System.Drawing.Point(175, 525)
+        Me.BtnEliminar.Location = New System.Drawing.Point(94, 525)
         Me.BtnEliminar.Name = "BtnEliminar"
         Me.BtnEliminar.Size = New System.Drawing.Size(75, 23)
         Me.BtnEliminar.TabIndex = 23
@@ -305,7 +295,6 @@ Partial Class CRUDPersonasDesign
         Me.Controls.Add(Me.BtnDesendente)
         Me.Controls.Add(Me.BtnAscendente)
         Me.Controls.Add(Me.BtnEliminar)
-        Me.Controls.Add(Me.BtnModificar)
         Me.Controls.Add(Me.BtnActualizar)
         Me.Controls.Add(Me.DataGridPersonas)
         Me.Controls.Add(Me.BtnGuardar)
@@ -362,7 +351,6 @@ Partial Class CRUDPersonasDesign
     Friend WithEvents BtnGuardar As Button
     Friend WithEvents DataGridPersonas As DataGridView
     Friend WithEvents BtnActualizar As Button
-    Friend WithEvents BtnModificar As Button
     Friend WithEvents BtnEliminar As Button
     Friend WithEvents BtnAscendente As Button
     Friend WithEvents BtnDesendente As Button
